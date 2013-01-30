@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Eitan.Web.Models.ViewModelDetailed>
+
+@{
+    ViewBag.Title = "News";
+}
+
+<div id="news-container" class="model-collection-container">
+    <div class="news-div">
+        @foreach (var item in Model)
+        {
+            <div class="news-item model-item" data-created="@item.Creation">
+                <a href="~/News/Details/@item.ID">
+                    <div class="news-item-image-wrap">
+                        <img class="model-item-image" src="@Url.Content("~/Images/News/thumb_" + @item.ImagePath)" alt="@item.Title" title="@item.Title" />
+                    </div>
+                    <div class="news-item-text">
+                        <h2>@item.Title</h2>
+                        <div class="news-text-content">
+                            @Html.Raw(item.Content)
+                        </div>
+                        <div class="news-text-date">
+                            @item.Creation.ToString("dd/MM/yyyy hh:mm")
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+    @if ((bool)ViewBag.isMoreItems)
+    {
+    <input type="button" class="btn-more-News btn-more" data-path="News" data-name="News" data-page="1" value="More News" style="display: block" />
+    }
+</div>

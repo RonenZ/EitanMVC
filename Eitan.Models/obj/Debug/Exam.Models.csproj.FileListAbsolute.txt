@@ -1,0 +1,7 @@
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\bin\Debug\Eitan.Models.dll.config
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\bin\Debug\Eitan.Models.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\bin\Debug\Eitan.Models.pdb
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\bin\Debug\EntityFramework.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\bin\Debug\EntityFramework.xml
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\obj\Debug\Eitan.Models.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Models\obj\Debug\Eitan.Models.pdb

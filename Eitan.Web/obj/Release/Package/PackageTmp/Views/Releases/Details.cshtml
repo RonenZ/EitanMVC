@@ -1,0 +1,62 @@
+﻿@model Eitan.Models.Release
+
+@{
+    ViewBag.Title = Model.Title;
+}
+@Scripts.Render("~/bundles/jqueryui")
+<link href="~/Content/acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" />
+<link href="~/Content/acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
+<link href="~/Content/acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" type="text/css">
+<link href="~/Content/acornmediaplayer/themes/barebones/acorn.barebones.css" rel="stylesheet" type="text/css">
+<script src="~/Content/acornmediaplayer/jquery.acornmediaplayer.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.release-audio-player').acornMediaPlayer({ theme: 'darkglass', volumeSlider: 'vertical' });
+    })
+</script>
+
+<!-- Release Single Wrapper -->
+<div id="release-single-wrap">
+    <!-- Release Info Div -->
+    <div id="release-info">
+        <div class="details-left-image-container">
+            <img class="details-left-image" src="~/Images/Releases/@Model.MainImage" alt="@Model.Title" title="@Model.Title" />
+        </div>
+        <div class="details-right-content">
+            <div id="details-release-artist" class="details-title">@Model.Title</div>
+            <br />
+            <div id="details-release-title" class="details-subtitle">@if(Model.Label != null) { @Model.Label.Title}</div>
+            <div id="details-release-content" class="details-content">
+                @Html.Raw(Model.Content)
+            </div>
+            <div id="details-release-add-info" class="details-additional-info">
+                <div class="details-property-div"><span class="property-type">Style:</span>bla</div>
+                <div class="details-property-div"><span class="property-type">Released:</span>@Model.Date_Release.ToString("dd/MM/yyyy")</div>
+                <div class="details-property-div"><span class="property-type">Format:</span></div>
+                <div class="details-property-div"><span class="property-type">Cat-No:</span>@Model.CategoryNum</div>
+                <div class="details-property-div"><span class="property-type">Barcode:</span>123456</div>
+            </div>
+        </div>
+    </div>
+    <!-- END Release Info Div -->
+
+    <!-- Release Tracks List -->
+    <div id="release-track-list">
+        <div class="release-track-count">@Model.Songs.Count tracks total</div>
+        @foreach (var song in Model.Songs)
+        {
+            <div class="song-wrap">
+                <span class="song-title">@song.Title</span><span class="song-artist"> Eitan </span>
+                <audio class="release-audio-player">
+                    <source src="~/Songs/@song.FilePath" />
+                </audio>
+
+            </div>
+        }
+    </div>
+    <!-- END Release Tracks List -->
+
+    <!-- FB Comments -->
+    @Html.Partial("_FBComments")
+    <!-- END FB Comments -->
+</div>

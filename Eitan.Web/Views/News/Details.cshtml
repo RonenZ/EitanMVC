@@ -1,0 +1,37 @@
+﻿@model Eitan.Models.News
+
+@{
+    ViewBag.Title = Model.Title;
+}
+<!-- News Single Wrapper -->
+<div id="news-single-wrap">
+    <!-- News Left Widgit -->
+    <div class="news-left-column">
+        <div class="news-widgit">
+            <div class="news-widgit-date">
+                <span id="news-date-month">@Model.Date_Creation.ToString("MMM")</span>
+                <span id="news-date-day">@Model.Date_Creation.ToString("dd")</span>
+                <span id="news-date-year">@Model.Date_Creation.ToString("yyyy")</span>
+            </div>
+            <div class="news-widgit-share">
+            </div>
+        </div>
+    </div>
+    <!-- News Right Column -->
+    <div class="news-right-column">
+        <div class="news-top-image-container">
+            <img class="news-top-image" src="~/Images/News/@Model.MainImage" alt="@Model.Title" title="@Model.Title" />
+        </div>
+        <div id="news-title-bar">
+            <div class="news-title-icon"></div>
+            <div class="news-title-content">@Model.Title</div>
+        </div>
+        <div id="news-single-content">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+    <!-- FB Comments -->
+    @Html.Partial("_FBComments")
+    <!-- END FB Comments -->
+</div>
+<!-- END News Single Wrapper -->

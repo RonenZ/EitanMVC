@@ -1,0 +1,87 @@
+﻿@model Eitan.Models.Project
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+@using Eitan.Web.Models
+
+
+<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="~/Scripts/jquery.coda-slider-3.0.min.js"></script>
+<link href="~/Content/coda-slider.css" rel="stylesheet" />
+<div id="project-single-wrap">
+    <div class="float-right" id="project-single-slider">
+        <div class="main-images">
+            <div class="coda-slider" id="slider-id">
+                <div>
+                    <p>
+                        <img class="project-main-image" src="~/Images/Projects/@Model.MainImage" alt="@Model.Title" alt="@Model.Title" />
+                    </p>
+                </div>
+                @if (Model.VideoPath != null && Model.VideoPath.Contains("youtube.com"))
+                {
+                    var videoid = Model.VideoPath.GetYoutubeVideoID();
+                    <div>
+                        <p>
+                            <iframe class="project-iframe" src="http://www.youtube.com/embed/@videoid?wmode=transparent&amp;rel=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                        </p>
+                    </div>
+                }
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div id="project-info" class="float-left">
+        <div id="details-project-title" class="details-title">@Model.Title</div>
+        <div id="details-project-add-info" class="details-additional-info">
+            @*<div class="details-property-div"><span class="property-type">Title:</span>@Model.Title</div>*@
+            <div class="details-property-div"><span class="property-type">Date:</span>@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+            <div class="details-property-div"><span class="property-type">Client:</span>@Model.ClientID</div>
+            @if (!string.IsNullOrEmpty(Model.Link_External)){
+                <div class="details-property-div"><span class="property-type">External Link:</span><a href="@Model.Link_External">Click Here!</a></div>
+            }
+        </div>
+        <div class="details-content">
+            @Html.Raw(Model.Content)
+        </div>
+
+    </div>
+
+</div>
+<!-- FB Comments -->
+@Html.Partial("_FBComments")
+<!-- END FB Comments -->
+
+<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+<script src="~/Scripts/camera.min.js"></script>
+<link href="~/Content/camera.css" rel="stylesheet" />
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        $('#slider-id').codaSlider(
+        {
+            @if (Model.VideoPath == null || Model.VideoPath == string.Empty)
+            {
+                <text>dynamicArrows: false</text>
+            }
+        });
+
+        $(".coda-nav-left, .coda-nav-right").click(function () {
+            //alert("test");
+            stopVideo($(".project-iframe"));
+        });
+
+        function stopVideo($video) {
+            var video = $video.attr("src");
+            $video.delay(5000).attr("src", "");
+            $video.attr("src", video);
+            $video;
+        }
+    });
+</script>

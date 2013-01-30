@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Eitan.Models.Picture>
+
+<link href="~/Content/camera.css" rel="stylesheet" />
+<script src="~/Scripts/camera.min.js"></script>
+<div class="camera-slider-container camera_wrap camera_azure_skin"  id="camera_wrap">
+    @foreach (var item in Model)
+    {
+        <div class="home-main-image" data-thumb="/Images/@ViewBag.FolderName/@item.Source" data-src="/Images/@ViewBag.FolderName/@item.Source">
+                    </div>   
+    }
+</div>
+
+
+
+<script type="text/javascript">
+    $('#camera_wrap').ready(function () {
+        $('#camera_wrap').delay(3000).camera({
+            thumbnails: false,
+            navigation: false,
+            loader: 'none',
+                height: '@ViewBag.SliderSize' +'px',
+                pagination: false,
+                time: 2500,
+                fx: 'simpleFade'
+            });
+    });
+
+</script>

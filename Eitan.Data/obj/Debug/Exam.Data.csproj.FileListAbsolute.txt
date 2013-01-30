@@ -1,0 +1,10 @@
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\Exam.Data.dll.config
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\Exam.Data.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\Exam.Data.pdb
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\Eitan.Models.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\EntityFramework.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\Eitan.Models.pdb
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\bin\Debug\EntityFramework.xml
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\obj\Debug\Exam.Data.csprojResolveAssemblyReference.cache
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\obj\Debug\Exam.Data.dll
+C:\Users\ronen\documents\visual studio 2012\Projects\ninject\Exam.Data\obj\Debug\Exam.Data.pdb

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>EITAN REITER - @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+    
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/knockout-2.1.0.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/website.js"></script>
+    <header>
+        <div id="header">
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("EITAN REITER", "Index", "Home")</p>
+                    <div class="site-info">Musical Production Master</div>
+                </div>
+                <div>
+                    @*<section id="login" class="float-right">
+                        @Html.Partial("_LoginPartial")
+                    </section>*@
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("News", "Index", "News", null, new { Class = "AjaxLink", data_type = "News" })</li>
+                            <li>@Html.ActionLink("Projects", "Index", "Projects", null, new { Class = "AjaxLink", data_type = "Projects" })</li>
+                            <li>@Html.ActionLink("Studio", "Studio", "h")</li>
+                            <li>@Html.ActionLink("Discography", "Index", "Releases", null, new { Class = "AjaxLink", data_type = "Releases" })</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "h")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="~/Scripts/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.history.js")"></script>
+    <script src="~/Scripts/View.js"></script>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            <div id="render-body">
+                @RenderBody()
+            </div>
+            <div id="knockout-js">
+                @Html.Partial("_KnockoutPartials")
+            </div>
+            <div class="ajax-loading-div">
+                <div class="ajax-loading-image"></div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Eitan Reiter</p>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

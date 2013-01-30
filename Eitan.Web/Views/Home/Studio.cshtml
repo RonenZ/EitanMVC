@@ -1,0 +1,15 @@
+﻿@model Eitan.Models.Page
+
+@{
+    ViewBag.Title = "Studio";
+}
+
+@{
+    ViewBag.FolderName = "Studio";
+    ViewBag.SliderSize = "286";
+}
+@Html.Partial("_CameraSlider", (List<Eitan.Models.Picture>)ViewBag.SliderImages)
+
+@Html.Partial("_LeftColumnImages", (List<Eitan.Models.Picture>)ViewBag.LeftImages)
+
+@Html.Raw(Model.Content)
