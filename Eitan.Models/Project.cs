@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Eitan.Models
 {
+    public class Client : BasicModel { }
+
     public class Project : MainModel, IBasicWithImageModel
     {
         public int ClientID { get; set; }
+        public virtual Client Client { get; set; }
+
         public int TypeID { get; set; }
         public virtual ProjectType Type { get; set; }
         public string Link_External { get; set; }

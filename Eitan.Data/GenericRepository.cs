@@ -30,35 +30,39 @@ namespace Eitan.Data
                 throw new ArgumentNullException("DbContext");
 
             DbContext = _DbContext;
-            DbSet = null;
+            DbSet = _DbContext.Set<T>();
         }
 
 
-        public virtual IQueryable<T> GetAll()
+        public virtual IQueryable<T> GetAll(string include = "")
         {
-            return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAll @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
+            //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAll @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
+            if (string.IsNullOrEmpty(include))
+                return DbSet;
+
+            return DbSet.Include(include).AsQueryable();
         }
 
         public virtual IQueryable<T> GetAllDesc(string include = "")
         {
-            //if(string.IsNullOrEmpty(include))
-            //    return DbSet.OrderByDescending(o => o.Date_Creation);
-            
-            //return DbSet.Include(include).OrderByDescending(o => o.Date_Creation);
-            return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAllDESC  @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
+            if (string.IsNullOrEmpty(include))
+                return DbSet.OrderByDescending(o => o.Date_Creation);
+
+            return DbSet.Include(include).OrderByDescending(o => o.Date_Creation);
+            //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAllDESC  @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
         }
 
         public virtual T GetByID(int id, params Expression<Func<T, object>>[] includes)
         {
-            //if (includes != null  && includes.Length > 0)
-            //{
-            //    return includes.Aggregate(this.GetAll(), 
-            //              (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
-            //}
+            if (includes != null && includes.Length > 0)
+            {
+                return includes.Aggregate(this.GetAll(),
+                          (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
+            }
 
-            //return DbSet.Find(id);
+            return DbSet.Find(id);
 
-            return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getById  @TableName, @Id", new SqlParameter("@TableName", TableName), new SqlParameter("@Id", id)).FirstOrDefault();
+            //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getById  @TableName, @Id", new SqlParameter("@TableName", TableName), new SqlParameter("@Id", id)).FirstOrDefault();
         }
 
 

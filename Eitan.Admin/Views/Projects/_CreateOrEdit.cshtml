@@ -53,6 +53,14 @@
     <input type="file" name="UploadedImage" id="UploadedImage" />
 </div>
 
+<div class="editor-label">
+    קישור חיצוני:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Link_External)
+    @Html.ValidationMessageFor(model => model.Link_External)
+</div>
+
 
 
 <script type="text/javascript">
