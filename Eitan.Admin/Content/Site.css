@@ -108,6 +108,37 @@ h5, h6 {
 /* main layout
 ----------------------------------------------------------*/
 
+.sub-menu {
+    font-size: 17px;
+    display: none;
+    border: 1px solid rgb(185, 185, 185);
+    padding: 10px 10px 10px 25px;
+    
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    background-color: white;
+}
+
+    .sub-menu li {
+        width: 134px;
+        float: right;
+    }
+    .sub-menu li:hover
+    {
+        background-color: rgb(185, 185, 185);
+    }
+
+#menu li
+{
+    position: relative;
+}
+
+#menu li:hover > .sub-menu
+{
+    display: block;
+}
+
 .content-wrapper {
     margin: 0 auto;
     max-width: 960px;

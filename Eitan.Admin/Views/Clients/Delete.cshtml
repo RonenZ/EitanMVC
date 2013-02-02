@@ -1,0 +1,31 @@
+﻿@model Eitan.Models.Client
+
+@{
+    ViewBag.Title = "מחיקת לקוח";
+}
+
+<h2>מחיקת לקוח</h2>
+
+<h3>בטוח שאתה רוצה למחוק את הלקוח הזה?</h3>
+<fieldset>
+    <legend>לקוח</legend>
+
+
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">תמונה</div>
+    <div class="display-field"><img style="max-width:700px" src="/Images/Clients/@Model.MainImage" alt="@Model.Title" title="@Model.Title" /></div>
+    
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("בחזרה לרשימת לקוחות", "Index")
+    </p>
+}
+
+

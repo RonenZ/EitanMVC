@@ -23,7 +23,11 @@ namespace Eitan.Data
 
         public DbSet<Eitan.Models.Project> Projects { get; set; }
 
+        public DbSet<Eitan.Models.ProjectType> ProjectTypes { get; set; }
+
         public DbSet<Eitan.Models.Release> Releases { get; set; }
+
+        public DbSet<Eitan.Models.Client> Clients{ get; set; }
 
         public DbSet<Eitan.Models.Page> Pages { get; set; }
 
