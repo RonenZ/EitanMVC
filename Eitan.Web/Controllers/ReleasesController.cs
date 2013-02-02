@@ -41,7 +41,7 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Details(int id)
         {
-            Release release = Uow.ReleaseRepository.GetAllDescWithIncludes().FirstOrDefault(f => f.ID == id);
+            Release release = Uow.ReleaseRepository.GetByID(id);
             return View(release);
         }
 

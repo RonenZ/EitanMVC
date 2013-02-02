@@ -21,5 +21,10 @@ namespace Eitan.Data
         {
             return DbContext.Set<Label>();
         }
+
+        public IQueryable<Genre> GetAllGenres()
+        {
+            return DbContext.Set<Genre>();
+        }
     }
 }

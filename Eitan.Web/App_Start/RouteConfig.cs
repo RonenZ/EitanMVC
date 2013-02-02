@@ -15,15 +15,10 @@ namespace Eitan.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default_Admin",
-                url: "Admin/{controller}/{action}/{id}",
-                defaults: new { area = "Admin", controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
                 name: "HomeDefault",
                 url: "h/{action}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Eitan.Web.Controllers" }
             );
 
             routes.MapRoute(

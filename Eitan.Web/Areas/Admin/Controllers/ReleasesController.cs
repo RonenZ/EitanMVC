@@ -38,13 +38,14 @@ namespace Eitan.Web.Areas.Admin.Controllers
         public ViewResult Details(int id)
         {
             Release release = Uow.ReleaseRepository.GetByID(id, s => s.Songs);
+            
             return View(release);
         }
 
 
         public ActionResult Create()
         {
-            ViewBag.Labels = Uow.ReleaseRepository.GetAllLabels().ToList();
+            ViewBagReleases();
             return View();
         }
 
@@ -79,7 +80,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Labels = Uow.ReleaseRepository.GetAllLabels().ToList();
+            ViewBagReleases();
 
             return View(Entity);
         }
@@ -89,11 +90,19 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            ViewBag.Labels = Uow.ReleaseRepository.GetAllLabels().ToList();
+            ViewBagReleases();
 
             var Entity = Uow.ReleaseRepository.GetByID(id);
 
             return View(Entity);
+        }
+
+        private void ViewBagReleases()
+        {
+            ViewBag.Labels = Uow.ReleaseRepository.GetAllLabels().ToList();
+            ViewBag.Genres = Uow.ReleaseRepository.GetAllGenres().ToList();
+            ViewBag.ReleaseTypes = StaticCode.ReleaseTypes;
+
         }
 
         //
@@ -121,7 +130,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Labels = Uow.ReleaseRepository.GetAllLabels().ToList();
+            ViewBagReleases();
 
             return View(EditEntity);
         }

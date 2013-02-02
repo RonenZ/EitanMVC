@@ -12,9 +12,12 @@ namespace Eitan.Models
         {
             Songs = new HashSet<Song>();
         }
+
         public DateTime Date_Release { get; set; }
         public string MainImage { get; set; }
         public string RectImage { get; set; }
+        public int GenreID { get; set; }
+        public virtual Genre Genre { get; set; }
         public int LabelID { get; set; }
         public virtual Label Label { get; set; }
         public int Type { get; set; }

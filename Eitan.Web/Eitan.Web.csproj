@@ -212,6 +212,7 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArtistsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClientsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\EitanApiBaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\EitanBaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs">

@@ -17,8 +17,9 @@ namespace Eitan.Web.Models
     {
         public static Dictionary<int, string> ReleaseTypes = new Dictionary<int, string>()
         {
-            {0, "Album"} ,{1, "Various Artists"}, {2, "EP"}
+            {1, "Artist album"}, {2, "Artist Ep"}, {3, "My Album"}, {4, "My EP"}
         };
+
         public static ViewModelBase ToViewModelBase<T>(this IQueryable<T> Entities) where T : class, IBasicModel
         {
             return Entities.Select(s => new ViewModelBase() { ID = s.ID, Title = s.Title, Creation = s.Date_Creation}).FirstOrDefault();

@@ -27,12 +27,12 @@
                     </section>*@
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("News", "Index", "News", null, new { Class = "AjaxLink", data_type = "News" })</li>
-                            <li>@Html.ActionLink("Projects", "Index", "Projects", null, new { Class = "AjaxLink", data_type = "Projects" })</li>
-                            <li>@Html.ActionLink("Studio", "Studio", "h")</li>
-                            <li>@Html.ActionLink("Discography", "Index", "Releases", null, new { Class = "AjaxLink", data_type = "Releases" })</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "h")</li>
+                            <li><a href="~/">Home</a></li>
+                            <li><a href="~/News" class="AjaxLink" data-type="News">News</a></li>
+                            <li><a href="~/Projects" class="AjaxLink" data-type="Projects">Projects</a></li>
+                            <li><a href="~/h/Studio">Studio</a></li>
+                            <li><a href="~/Releases" class="AjaxLink" data-type="Releases">Discography</a></li>
+                            <li><a href="~/h/Contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -70,6 +70,12 @@ namespace Eitan.Data
                 .HasForeignKey(r => r.LabelID)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Release>()
+                .HasRequired(r => r.Genre)
+                .WithMany()
+                .HasForeignKey(r => r.GenreID)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Song>()
                 .HasRequired(s => s.Genre)
                 .WithMany()

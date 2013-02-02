@@ -26,5 +26,16 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Release\EntityFramewo
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Release\Eitan.Models.pdb
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Release\EntityFramework.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.csprojResolveAssemblyReference.cache
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.FirstUpdate.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.PicturePage.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.SEOPage.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.UPDATE123.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.UPDATE4.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.UPDATE5.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.UPDATE6.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.check1.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.check2.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.Migrations.check5.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.csproj.GenerateResource.Cache
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Release\Eitan.Data.pdb
