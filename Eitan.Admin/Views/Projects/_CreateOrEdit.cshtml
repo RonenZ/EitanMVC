@@ -17,6 +17,13 @@
     @Html.ValidationMessageFor(model => model.Content)
 </div>
 
+<div class="editor-label">
+    לקוח :
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ClientID, (IEnumerable<SelectListItem>)ViewBag.Clients)
+    @Html.ValidationMessageFor(model => model.ClientID)
+</div>
 
 <div class="editor-label">
     סוג פרוייקט:

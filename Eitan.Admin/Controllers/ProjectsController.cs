@@ -23,12 +23,16 @@ namespace Eitan.Admin.Controllers
             ViewBag.ProjectsActive = "active";
         }
 
-       private void ViewBagProjectTypes(int id = 0)
+       private void ViewBagProjects(int id = 0)
        {
            ViewBag.ProjectTypes = Uow.ProjectRepository
                                      .GetAllProjectTypes()
                                      .ToList()
-                                     .Select(s => new SelectListItem() { Text = s.Title, Value = s.ID.ToString(), Selected = (id == s.ID) });
+                                     .Select(s => new SelectListItem() { Text = s.Title, Value = s.ID.ToString()});
+
+           ViewBag.Clients = Uow.ProjectRepository.GetAllClients()
+                                                  .ToList()
+                                                  .Select(s => new SelectListItem() { Text = s.Title, Value = s.ID.ToString()});
        }
 
         //
@@ -58,7 +62,7 @@ namespace Eitan.Admin.Controllers
 
         public ActionResult Create()
         {
-            ViewBagProjectTypes();
+            ViewBagProjects();
             return View();
         }
 
@@ -99,7 +103,7 @@ namespace Eitan.Admin.Controllers
         {
             var Entity = Uow.ProjectRepository.GetByID(id);
 
-            ViewBagProjectTypes(id);
+            ViewBagProjects();
 
             return View(Entity);
         }

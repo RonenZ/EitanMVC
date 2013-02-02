@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Eitan.Models
 {
-    public class Client : BasicModel { }
+    public class Client : BasicModel {
+        public string MainImage { get; set; }
+    }
 
     public class Project : MainModel, IBasicWithImageModel
     {

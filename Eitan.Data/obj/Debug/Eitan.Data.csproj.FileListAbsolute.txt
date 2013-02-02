@@ -26,13 +26,5 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Debug\EntityFramework
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Debug\Eitan.Models.pdb
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\bin\Debug\EntityFramework.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.csprojResolveAssemblyReference.cache
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.FirstUpdate.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.PicturePage.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.SEOPage.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.UPDATE123.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.UPDATE4.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.UPDATE5.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.UPDATE6.resources
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.csproj.GenerateResource.Cache
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.pdb
