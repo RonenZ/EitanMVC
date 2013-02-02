@@ -1,0 +1,24 @@
+﻿@model Eitan.Models.Project
+
+@{
+    ViewBag.Title = "הוספה";
+}
+
+<h2>הוספת פרוייקט</h2>
+
+@using (Html.BeginForm("Create", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" })){
+    @Html.ValidationSummary(true)
+        
+        @*Html.Partial("_FBPostMessage")*@
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="הוספה" />
+        </p>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לחדשות", "Index")
+</div>
+
+

@@ -2,10 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.Helpers;
 
 namespace Eitan.Web.Models
 {
@@ -171,6 +175,98 @@ namespace Eitan.Web.Models
                 return false;
             }
             return true;
+        }
+
+
+        public static string GetPasswordHashed(this string value)
+        {
+            return Convert.ToBase64String(new MD5CryptoServiceProvider().ComputeHash(new UTF8Encoding().GetBytes(value)));
+        }
+
+        public static bool CompareStringAndHash(this string value, string hash)
+        {
+            string hashOfInput = value.GetPasswordHashed();
+
+            // Create a StringComparer an compare the hashes.
+            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
+
+            if (0 == comparer.Compare(hashOfInput, hash))
+                return true;
+
+            return false;
+        }
+
+        public static void CreateDirIfNotExist(this string path)
+        {
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+        }
+
+        public static string SaveUploadedFile(this HttpPostedFileBase File, string fullpath)
+        {
+            var filename = File.FileName;
+            fullpath.CreateDirIfNotExist();
+            File.SaveAs(fullpath + filename);
+
+            return filename;
+        }
+
+        public static string SaveImage(this string fullpath, WebImage image, bool isThumb = true, int width = 470, int height = 227)
+        {
+            var filename = image.FileName;
+            fullpath.CreateDirIfNotExist();
+            image.Save(fullpath + filename);
+            if (isThumb)
+            {
+                image.Resize(width, height);
+                image.Save(fullpath + "thumb_" + filename);
+            }
+            return filename;
+        }
+
+        //public static string SaveLinkImage(this string fullpath, string imgpath, string url)
+        //{
+        //    var request = (HttpWebRequest)WebRequest.Create(imgpath);
+        //    var response = (HttpWebResponse)request.GetResponse();
+        //    WebImage image = new WebImage(response.GetResponseStream());
+        //    var filename = url.Trim().Replace(".", "").Replace(" ", "_").Replace("&", "").Replace("?", "").Replace("@", "").Replace(":", "").Replace("/", "");
+
+        //    image.Save(fullpath + filename, "png");
+
+        //    return filename + ".png";
+        //}
+
+
+
+        public static string SaveFile(this string fullpath, HttpPostedFileBase file)
+        {
+            var filename = file.FileName;
+            fullpath.CreateDirIfNotExist();
+            file.SaveAs(fullpath + filename);
+
+            return filename;
+        }
+
+
+        public static string FBSaveImages(this HttpPostedFileBase[] files, string path, string property)
+        {
+            var sb = new StringBuilder();
+            files = files.Where(w => w != null).ToArray();
+            foreach (var file in files)
+            {
+                MemoryStream target = new MemoryStream();
+                file.InputStream.CopyTo(target);
+                byte[] data = target.ToArray();
+                var image = new WebImage(data);
+                image.FileName = file.FileName;
+                var filename = property + "_" + image.FileName;
+                path.CreateDirIfNotExist();
+                image.Resize(159, 159);
+                image.Save(path + filename);
+                sb.Append(filename + ";");
+            }
+
+            return sb.ToString();
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "עמוד הבית";
+}
+
+<h3>עמוד הבית</h3>
+
+<div class="dashboard-property">
+    כמות פרוייקטים:
+        <span class="dashboard-value">
+            @ViewBag.ProjectsCount
+        </span>
+</div>
+@if (ViewBag.ProjectID != null)
+{
+    <div class="dashboard-property">
+        פרוייקט אחרון:
+        <span class="dashboard-value">
+            <a href="~/Projects/Edit/@ViewBag.ProjectID" >@ViewBag.ProjectTitle</a>
+        </span>
+    </div>
+}
+<div class="dashboard-property">
+    כמות חדשות:
+        <span class="dashboard-value">
+            @ViewBag.NewsCount
+        </span>
+</div>
+@if (ViewBag.NewsID != null)
+{
+    <div class="dashboard-property">
+        מודעה אחרונה:
+        <span class="dashboard-value">
+            <a href="~/News/Edit/@ViewBag.NewsID" >@ViewBag.NewsTitle</a>
+        </span>
+    </div>
+}
+<div class="dashboard-property">
+    כמות דיסקוגרפיות:
+        <span class="dashboard-value">
+            @ViewBag.ReleasesCount
+        </span>
+</div>
+@if (ViewBag.ReleaseID != null)
+{
+    <div class="dashboard-property">
+        אלבום אחרון:
+        <span class="dashboard-value">
+            <a href="~/Releases/Edit/@ViewBag.ReleaseID" >@ViewBag.ReleaseTitle</a>
+        </span>
+    </div>
+}

@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
+  <parameter name="Eitan.Admin.Models.EitanAdminContext-Web.config Connection String" description="Eitan.Admin.Models.EitanAdminContext Connection String used in web.config by the application to access the database." defaultValue="Eitan.Admin.Models.EitanAdminContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Programming\\Projects\\VS\ 2012\\EitanReiter\\Eitan\.Admin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Eitan.Admin.Models.EitanAdminContext']/@connectionString" />
+  </parameter>
   <parameter name="Eitan.Admin.Models.UsersContext-Web.config Connection String" description="Eitan.Admin.Models.UsersContext Connection String used in web.config by the application to access the database." defaultValue="Eitan.Admin.Models.UsersContext_ConnectionString" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\Programming\\Projects\\VS\ 2012\\EitanReiter\\Eitan\.Admin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Eitan.Admin.Models.UsersContext']/@connectionString" />
   </parameter>

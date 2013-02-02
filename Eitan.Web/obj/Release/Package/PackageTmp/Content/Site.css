@@ -59,6 +59,7 @@ mark {
 }
 
 #render-body{
+    display: inline-block;
 }
 
 h1, h2, h3,

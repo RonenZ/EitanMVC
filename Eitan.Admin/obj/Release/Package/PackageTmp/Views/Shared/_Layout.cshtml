@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-       
+
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">@Html.ActionLink("איתן ריטר - ניהול", "Index", "Home")</p>
@@ -20,21 +20,28 @@
                 <section id="login">
                     @Html.Partial("_LoginPartial")
                 </section>
-                 @if (User.Identity.IsAuthenticated)
-                 {
-                <nav>
-                    <ul id="menu">
-                        <li class="@ViewBag.HomeActive">@Html.ActionLink("עמוד הבית", "Index", "Home")</li>
-                        <li class="@ViewBag.NewsActive">@Html.ActionLink("חדשות", "Index", "News")</li>
-                        <li class="@ViewBag.ProjectsActive">@Html.ActionLink("פרוייקטים", "Index", "Projects")</li>
-                        <li class="@ViewBag.ReleasesActive">@Html.ActionLink("דיסקוגרפיה", "Index", "Releases")</li>
-                        <li class="@ViewBag.ArtistsActive">@Html.ActionLink("אמנים", "Index", "Artists")</li>
-                    </ul>
-                </nav>
-                 }
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <nav>
+                        <ul id="menu">
+                            <li class="@ViewBag.HomeActive">@Html.ActionLink("עמוד הבית", "Index", "Home")</li>
+                            <li class="@ViewBag.NewsActive">@Html.ActionLink("חדשות", "Index", "News")</li>
+                            <li class="@ViewBag.ProjectsActive">@Html.ActionLink("פרוייקטים", "Index", "Projects")</li>
+                            <li class="@ViewBag.ReleasesActive">@Html.ActionLink("דיסקוגרפיה", "Index", "Releases")</li>
+                            <li class="@ViewBag.ArtistsActive">
+                                <a href="#">נוספים</a>
+                                <ul class="sub-menu">
+                                    <li>@Html.ActionLink("לקוחות", "Index", "Clients")</li>
+                                    <li>@Html.ActionLink("אמנים", "Index", "Artists")</li>
+                                    <li>@Html.ActionLink("סוגי פרוייקטים", "Index", "ProjectType")</li>
+                                </ul>
+                        </ul>
+                    </nav>
+                }
             </div>
         </div>
-        
+
     </header>
     <div id="body">
         @RenderSection("featured", required: false)

@@ -1,0 +1,27 @@
+﻿@model Eitan.Models.Client
+
+@{
+    ViewBag.Title = "עריכת לקוח";
+}
+
+<h2>עריכת לקוח</h2>
+
+@using (Html.BeginForm("Edit", "Clients", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>לקוח</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Date_Creation)
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לרשימת לקוחות", "Index")
+</div>

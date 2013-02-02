@@ -19,7 +19,6 @@ namespace Eitan.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
             // Tell WebApi to use our custom Ioc (Ninject)
             IocConfig.RegisterIoc(GlobalConfiguration.Configuration);
 
