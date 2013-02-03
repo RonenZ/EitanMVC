@@ -38,7 +38,7 @@
 </div>
 <div class="editor-field">
     @Html.DropDownListFor(model => model.GenreID, new SelectList((IEnumerable<Eitan.Models.Genre>)ViewBag.Genres, "ID", "Title"))
-    @Html.ValidationMessageFor(model => model.Content)
+    @Html.ValidationMessageFor(model => model.GenreID)
 </div>
 
 <div class="editor-label">

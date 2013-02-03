@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Eitan.Models.Genre>
+
+@{
+    ViewBag.Title = "סגנונות";
+}
+
+<h2>סגנונות</h2>
+
+<p>
+    @Html.ActionLink("הוספת סגנון חדש", "Create")
+</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>כותרת</th>
+            <th>תאריך</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+            <tr class="@{if ((i++ % 2) == 0)
+                         {<text>normal-tr-item</text>}
+                         else
+                         {<text>alternate-tr-item</text>}}">
+                <td>
+                    @Html.ActionLink("עריכה", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("מחיקה", "Delete", new { id = item.ID })
+                </td>
+                <td width="250">
+                    @item.Title
+                </td>
+                <td>
+
+                    @item.Date_Creation.ToString("dd/MM/yyyy")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

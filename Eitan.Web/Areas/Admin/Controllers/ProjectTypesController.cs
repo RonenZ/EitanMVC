@@ -17,7 +17,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ProjectTypeController()
         {
-            ViewBag.ClientsActive = "active";
+            ViewBag.ProjectTypesActive = "active";
         }
 
         //

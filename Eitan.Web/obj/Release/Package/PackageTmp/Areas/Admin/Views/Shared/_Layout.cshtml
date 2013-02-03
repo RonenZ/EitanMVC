@@ -32,9 +32,11 @@
                             <li class="@ViewBag.ArtistsActive">
                                 <a href="#">נוספים</a>
                                 <ul class="sub-menu">
-                                    <li>@Html.ActionLink("לקוחות", "Index", "Clients")</li>
-                                    <li>@Html.ActionLink("אמנים", "Index", "Artists")</li>
-                                    <li>@Html.ActionLink("סוגי פרוייקטים", "Index", "ProjectType")</li>
+                                    <li class="@ViewBag.ClientsActive">@Html.ActionLink("לקוחות", "Index", "Clients")</li>
+                                    <li class="@ViewBag.ArtistsActive">@Html.ActionLink("אמנים", "Index", "Artists")</li>
+                                    <li class="@ViewBag.LabelsActive">@Html.ActionLink("חברות תקליטים", "Index", "Labels")</li>
+                                    <li class="@ViewBag.GenresActive">@Html.ActionLink("סגנונות", "Index", "Genres")</li>
+                                    <li class="@ViewBag.ProjectTypesActive">@Html.ActionLink("סוגי פרוייקטים", "Index", "ProjectType")</li>
                                 </ul>
                         </ul>
                     </nav>

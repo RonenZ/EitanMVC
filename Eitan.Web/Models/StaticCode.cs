@@ -22,7 +22,7 @@ namespace Eitan.Web.Models
 
         public static ViewModelBase ToViewModelBase<T>(this IQueryable<T> Entities) where T : class, IBasicModel
         {
-            return Entities.Select(s => new ViewModelBase() { ID = s.ID, Title = s.Title, Creation = s.Date_Creation}).FirstOrDefault();
+            return Entities.Select(s => new ViewModelBase() { ID = s.ID, Title = s.Title, CreationDate = s.Date_Creation}).FirstOrDefault();
         }
 
         public static ViewModelWithImage ToViewModelWithImage<T>(this IQueryable<T> Entities) where T : class, IBasicWithImageModel
@@ -32,7 +32,7 @@ namespace Eitan.Web.Models
 
                 ID = s.ID,
                 Title = s.Title,
-                Creation = s.Date_Creation,
+                CreationDate = s.Date_Creation,
                 ImagePath = s.MainImage
             }).FirstOrDefault();
         }
@@ -43,7 +43,7 @@ namespace Eitan.Web.Models
             {
                 ID = s.ID,
                 Title = s.Title,
-                Creation = s.Date_Creation,
+                CreationDate = s.Date_Creation,
                 ImagePath = s.RectImage,
                 TypeID = s.Type,
                 SubTitle = s.Label.Title
@@ -60,7 +60,7 @@ namespace Eitan.Web.Models
             {
                 ID = s.ID,
                 Title = s.Title,
-                Creation = s.Date_Creation,
+                CreationDate = s.Date_Creation,
                 ImagePath = s.MainImage
             });
         }
@@ -71,7 +71,7 @@ namespace Eitan.Web.Models
             {
                 ID = s.ID,
                 Title = s.Title,
-                Creation = s.Date_Creation,
+                CreationDate = s.Date_Creation,
                 ImagePath = s.MainImage,
                 Type = ReleaseTypes[s.Type],
                 TypeID = s.Type,
@@ -86,7 +86,7 @@ namespace Eitan.Web.Models
             {
                 ID = s.ID,
                 Title = s.Title,
-                Creation = s.Date_Creation,
+                CreationDate = s.Date_Creation,
                 ImagePath = s.MainImage,
                 Type = s.Type == null ? string.Empty : s.Type.Title,
                 SubTitle = "Client" + s.ClientID.ToString()
@@ -97,7 +97,7 @@ namespace Eitan.Web.Models
 
         public static IEnumerable<ViewModelDetailed> ToViewModelsImageDetail<T>(this IQueryable<T> Entities) where T : class, IBasicDetailed, IBasicWithImageModel
         {
-            var result = Entities.Select(s => new ViewModelDetailed() { ID = s.ID, Title = s.Title, Creation = s.Date_Creation, 
+            var result = Entities.Select(s => new ViewModelDetailed() { ID = s.ID, Title = s.Title, CreationDate = s.Date_Creation, 
                 ImagePath = s.MainImage, Content = s.Content }).ToList();
 
             foreach (var item in result)
@@ -108,7 +108,7 @@ namespace Eitan.Web.Models
 
         public static ViewModelDetailed ToViewModelImageDetail<T>(this T Entity) where T : class, IBasicDetailed, IBasicWithImageModel
         {
-            var result = new ViewModelDetailed() { ID = Entity.ID, Title = Entity.Title, Creation = Entity.Date_Creation, 
+            var result = new ViewModelDetailed() { ID = Entity.ID, Title = Entity.Title, CreationDate = Entity.Date_Creation, 
                 ImagePath = Entity.MainImage, Content = Entity.Content.The_Excerpt(100) };
             return result;
         }

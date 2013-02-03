@@ -16,7 +16,7 @@ namespace Eitan.Web.Models
             this.ID = _ID;
             this.Title = _Title;
             this.SubTitle = _SubTitle;
-            this.Creation = _Creation;
+            this.CreationDate = _Creation;
             this.Type = Type;
         }
 
@@ -25,7 +25,14 @@ namespace Eitan.Web.Models
         public string SubTitle { get; set; }
         public string Type { get; set; }
         public int TypeID { get; set; }
-        public DateTime Creation { get; set; }
+        public string Creation
+        {
+            get
+            {
+                return CreationDate.ToString("dd/MM/yyyy");
+            }
+        }
+        public DateTime CreationDate { get; set; }
     }
 
     public class ViewModelWithImage : ViewModelBase

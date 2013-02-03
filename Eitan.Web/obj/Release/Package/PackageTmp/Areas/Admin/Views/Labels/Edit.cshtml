@@ -1,0 +1,27 @@
+﻿@model Eitan.Models.Label
+
+@{
+    ViewBag.Title = "עריכת חברת תקליטים";
+}
+
+<h2>עריכת חברת תקליטים</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>לקוח</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Date_Creation)
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לרשימת חברות", "Index")
+</div>

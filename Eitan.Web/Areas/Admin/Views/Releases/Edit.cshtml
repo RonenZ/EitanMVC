@@ -12,6 +12,8 @@
     @Html.HiddenFor(model => model.ID)
     
     @Html.Partial("_CreateOrEdit", Model)
+    @Html.Partial("_SongsList", Model.Songs)
+    
     <p>
         <input type="submit" value="שמירה" />
     </p>

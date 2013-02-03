@@ -1,0 +1,21 @@
+﻿@model Eitan.Models.Client
+
+@{
+    ViewBag.Title = "פטרי סגנון";
+}
+
+<h2>פרטים</h2>
+
+<fieldset>
+    <legend>סגנון</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

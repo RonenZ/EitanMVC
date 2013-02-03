@@ -1,4 +1,44 @@
-﻿/*#region RESET */
+﻿/* Minification failed. Returning unminified contents.
+(468,30): run-time error CSS1019: Unexpected token, found ':'
+(468,30): run-time error CSS1042: Expected function, found ':'
+(468,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+(552,30): run-time error CSS1019: Unexpected token, found ':'
+(552,30): run-time error CSS1042: Expected function, found ':'
+(552,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+ */
+/* Minification failed. Returning unminified contents.
+(460,30): run-time error CSS1019: Unexpected token, found ':'
+(460,30): run-time error CSS1042: Expected function, found ':'
+(460,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+(544,30): run-time error CSS1019: Unexpected token, found ':'
+(544,30): run-time error CSS1042: Expected function, found ':'
+(544,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+ */
+/* Minification failed. Returning unminified contents.
+(452,30): run-time error CSS1019: Unexpected token, found ':'
+(452,30): run-time error CSS1042: Expected function, found ':'
+(452,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+(536,30): run-time error CSS1019: Unexpected token, found ':'
+(536,30): run-time error CSS1042: Expected function, found ':'
+(536,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+ */
+/* Minification failed. Returning unminified contents.
+(444,30): run-time error CSS1019: Unexpected token, found ':'
+(444,30): run-time error CSS1042: Expected function, found ':'
+(444,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+(528,30): run-time error CSS1019: Unexpected token, found ':'
+(528,30): run-time error CSS1042: Expected function, found ':'
+(528,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+ */
+/* Minification failed. Returning unminified contents.
+(436,30): run-time error CSS1019: Unexpected token, found ':'
+(436,30): run-time error CSS1042: Expected function, found ':'
+(436,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+(520,30): run-time error CSS1019: Unexpected token, found ':'
+(520,30): run-time error CSS1042: Expected function, found ':'
+(520,30): run-time error CSS1062: Expected semicolon or closing curly-brace, found ':'
+ */
+/*#region RESET */
 
 html {
     margin: 0;
@@ -19,9 +59,9 @@ a {
     text-decoration: none;
 }
 
-a img{
-    border: none;
-}
+    a img {
+        border: none;
+    }
 
     a:link, a:visited,
     a:active, a:hover {
@@ -35,6 +75,19 @@ header, footer, hgroup,
 nav, section {
     display: block;
 }
+
+#footer {
+    position: relative;
+    line-height: 25px;
+    font-size: 15px;
+    padding: 15px;
+    height: 120px;
+    width: 921px;
+    color: white;
+    background: url('Images/footer-bg.jpg');
+    left: 8px;
+}
+
 
 mark {
     background-color: #a6dbed;
@@ -58,7 +111,7 @@ mark {
     visibility: hidden;
 }
 
-#render-body{
+#render-body {
     display: inline-block;
 }
 
@@ -108,9 +161,9 @@ h5, h6 {
     }
 
 
-.contact-form
-{
+.contact-form {
 }
+
 #contact-page {
     float: left;
     width: 350px;
@@ -118,49 +171,48 @@ h5, h6 {
 
     #contact-page .field-validation-error span {
         vertical-align: top;
-    
         color: red;
-}
+    }
 
 
-#contact-page .details-title{
-    display: inline-block;
-}
-#contact-page .btnSendContact {
-    margin-right: 12px;
-    border-radius: 3px;
-    float: right;
-    font-size: 17px;
-    color: white;
-    border: 0px;
-    background-color: black;
-    padding: 15px 85px;
+    #contact-page .details-title {
+        display: inline-block;
+    }
+
+    #contact-page .btnSendContact {
+        margin-right: 12px;
+        border-radius: 3px;
+        float: right;
+        font-size: 17px;
+        color: white;
+        border: 0px;
+        background-color: black;
+        padding: 15px 85px;
+    }
+
+.ui-input-area {
 }
 
-.ui-input-area
-{
-}
 .ui-input {
 }
 
-.ui-span
-{
+.ui-span {
     font-size: 17px;
     color: #383838;
     display: block;
     margin-bottom: 6px;
 }
 
-.ui-input input[type="text"]
-{
-    background-color: #F9F9F9;  border: 1px solid #737272;  border-radius: 2px;
+.ui-input input[type="text"] {
+    background-color: #F9F9F9;
+    border: 1px solid #737272;
+    border-radius: 2px;
     width: 330px;
     padding: 5px 3px;
     margin-bottom: 10px;
 }
 
-.ui-input-area textarea
-{
+.ui-input-area textarea {
     height: 170px;
     background-color: #f9f9f9;
     border: 1px solid #737272;
@@ -169,6 +221,7 @@ h5, h6 {
     margin-bottom: 10px;
     resize: none;
 }
+
 .fb-comments {
     position: relative !important;
 }
@@ -211,7 +264,7 @@ h5, h6 {
     min-height: 500px;
     padding-left: 15px;
     background: url("../Images/accent.png") no-repeat;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .featured + .main-content {
@@ -307,26 +360,26 @@ ul#menu {
     background-position-x: -130px !important;
 }
 
-.home-item-Discography .zoom{
+.home-item-Discography .zoom {
     background-position-x: -49px !important;
 }
 
 
-.release-item .zoom{
+.release-item .zoom {
     background: url('Images/icons-sprites.png') no-repeat !important;
     background-position: 0px 0px;
 }
 
-.release-type-1 .zoom{
+.release-type-1 .zoom {
     background-position: 0px -43px !important;
 }
- 
-.release-type-2 .zoom{
+
+.release-type-2 .zoom {
     margin-left: 45% !important;
     background-position: -66px 0px !important;
 }
 
-.release-type-0 .zoom{
+.release-type-0 .zoom {
     margin-left: 35% !important;
     background-position: -66px -43px !important;
 }
@@ -339,9 +392,8 @@ ul#menu {
     height: 227px;
 }
 
-.standard-rect-image{
+.standard-rect-image {
     width: 470px;
-
     height: 227px;
 }
 
@@ -387,20 +439,20 @@ ul#menu {
     overflow: hidden;
 }
 
-   #home-items-wrap  .portfolio-item-hover-content div.zoom {
-        position: relative;
-        background: url('images/Home-Sprites.png') no-repeat -5px -5px;
-        margin-left: -15px;
-        display: inline-block;
-        width: 35px;
-        height: 35px;
-        text-indent: -9999px;
-        margin-left: 40%;
-    }
+#home-items-wrap .portfolio-item-hover-content div.zoom {
+    position: relative;
+    background: url('images/Home-Sprites.png') no-repeat -5px -5px;
+    margin-left: -15px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-indent: -9999px;
+    margin-left: 40%;
+}
 
-       #home-items-wrap  .portfolio-item-hover-content div.zoom:hover {
-            background-color: transparent !important;
-        }
+    #home-items-wrap .portfolio-item-hover-content div.zoom:hover {
+        background-color: transparent !important;
+    }
 
 #home-items-wrap .portfolio-item-hover-content {
     line-height: 0;
@@ -422,24 +474,24 @@ ul#menu {
     overflow: hidden;
 }
 
-    #home-items-wrap  .portfolio-item-hover-content .hover-options {
-        display: block;
-        font-style: normal;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        background: #000000;
-        opacity: 0;
-        filter: alpha(opacity:0);
-        cursor: pointer;
-    }
+#home-items-wrap .portfolio-item-hover-content .hover-options {
+    display: block;
+    font-style: normal;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: 0;
+    filter: alpha(opacity:0);
+    cursor: pointer;
+}
 
-    /*********** ************/
+/*********** ************/
 
-    .portfolio-type {
+.portfolio-type {
     font-size: 19px;
     position: relative;
     color: white;
@@ -476,7 +528,7 @@ ul#menu {
     overflow: hidden;
 }
 
-   .portfolio-item-hover-content div.zoom {
+    .portfolio-item-hover-content div.zoom {
         position: relative;
         background: url('images/Home-Sprites.png') no-repeat -5px -5px;
         margin-left: -15px;
@@ -487,7 +539,7 @@ ul#menu {
         margin-left: 30%;
     }
 
-       .portfolio-item-hover-content div.zoom:hover {
+        .portfolio-item-hover-content div.zoom:hover {
             background-color: transparent !important;
         }
 
@@ -506,20 +558,20 @@ ul#menu {
 }
 
 
-    .portfolio-item-hover-content .hover-options {
-        display: block;
-        font-style: normal;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        background: #000000;
-        opacity: 0;
-        filter: alpha(opacity:0);
-        cursor: pointer;
-    }
+.portfolio-item-hover-content .hover-options {
+    display: block;
+    font-style: normal;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: 0;
+    filter: alpha(opacity:0);
+    cursor: pointer;
+}
 
 /*#endregion */
 
@@ -531,9 +583,10 @@ ul#menu {
     width: 315px;
 }
 
-.model-item a{
-    display: block;
-}
+    .model-item a {
+        display: block;
+    }
+
 .model-item-image {
     width: 315px;
     height: 152px;
@@ -542,16 +595,20 @@ ul#menu {
 
 
 .standard-list-bar {
+    left: 0;
+    z-index: 1000;
+    bottom: 0px;
+    position: absolute;
     margin-top: -4px;
     display: inline-block;
     padding: 20px 0;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.57);
     color: white;
     width: 100%;
     text-align: center;
 }
 
-.left-column{
+.left-column {
     width: 445px;
     float: left;
 }
@@ -565,10 +622,11 @@ ul#menu {
 
 /*#region NEWS */
 /********** NEWS ***********/
-#news-div{
+#news-div {
     margin-bottom: 10px;
     padding-left: 5px;
 }
+
 #news-single-wrap {
 }
 
@@ -655,11 +713,12 @@ ul#menu {
     width: 950px;
     margin-left: 7px;
 }
-.news-item:hover
-{
-    background-color:#f3f3f3;
-    cursor: pointer;
-}
+
+    .news-item:hover {
+        background-color: #f3f3f3;
+        cursor: pointer;
+    }
+
     .news-item .model-item-image {
         border: 2px solid black;
         -moz-border-radius: 3px;
@@ -706,17 +765,17 @@ ul#menu {
 /************ PROJECTS *************/
 #details-project-add-info {
     padding: 10px 0px;
-
     border-bottom: 1px dashed;
     margin-bottom: 10px;
     margin: 0px 10px 10px 5px;
 }
 
-#project-single-wrap{
+#project-single-wrap {
     width: 100%;
     display: inline-block;
     margin-bottom: 30px;
 }
+
 .project-item {
     padding: 2px;
 }
@@ -733,12 +792,11 @@ ul#menu {
     width: 300px;
 }
 
-.project-main-image{
+.project-main-image {
     float: left;
     display: block !important;
     border: 3px solid black;
     max-width: 635px;
- 
 }
 
 #project-single-slider {
@@ -746,7 +804,7 @@ ul#menu {
     margin-right: 15px;
 }
 
-#project-info .details-content{
+#project-info .details-content {
     margin-bottom: 30px;
     font-size: 16px;
 }
@@ -915,3 +973,8 @@ ul#menu {
 
 
 /*#endregion */
+
+
+
+
+

@@ -26,7 +26,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ViewResult Index()
         {
-            return View(context.Clients.ToList());
+            return View(context.Clients.Where(w => w.isDeleted == false).ToList());
         }
 
         //
@@ -114,7 +114,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Client client = context.Clients.Single(x => x.ID == id);
-            context.Clients.Remove(client);
+            client.isDeleted = true;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

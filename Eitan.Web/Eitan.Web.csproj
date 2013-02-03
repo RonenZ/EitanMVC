@@ -212,6 +212,8 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArtistsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ClientsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GenresController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LabelsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\EitanApiBaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\EitanBaseController.cs" />
@@ -659,6 +661,7 @@
     <Content Include="Content\Images\camera_skins.png" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\favicon.jpg" />
+    <Content Include="Content\Images\footer-bg.jpg" />
     <Content Include="Content\Images\Home-Sprites.png" />
     <Content Include="Content\Images\icons-sprites.png" />
     <Content Include="Content\Images\loading.gif" />
@@ -899,6 +902,22 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\_CreateOrEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Genres\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\_CreateOrEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Labels\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Releases\_SongsList.cshtml" />
+    <Content Include="Areas\Admin\Views\Releases\CreateSong.cshtml" />
+    <Content Include="Areas\Admin\Views\Releases\EditSong.cshtml" />
+    <Content Include="Areas\Admin\Views\Releases\DeleteSong.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -1025,6 +1044,7 @@
     <Content Include="Views\Shared\_FBComments.cshtml" />
     <Content Include="Views\Shared\_CameraSlider.cshtml" />
     <Content Include="Views\Shared\_LeftColumnImages.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
