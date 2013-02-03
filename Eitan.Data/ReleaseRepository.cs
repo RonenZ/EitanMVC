@@ -19,12 +19,12 @@ namespace Eitan.Data
 
         public IQueryable<Label> GetAllLabels()
         {
-            return DbContext.Set<Label>();
+            return DbContext.Set<Label>().Where(w => w.isDeleted == false);
         }
 
         public IQueryable<Genre> GetAllGenres()
         {
-            return DbContext.Set<Genre>();
+            return DbContext.Set<Genre>().Where(w => w.isDeleted == false);
         }
     }
 }

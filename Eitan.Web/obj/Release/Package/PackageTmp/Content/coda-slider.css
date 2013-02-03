@@ -25,7 +25,7 @@ css-tricks.com/musings-on-preprocessing/
   * Main wrapper padding 
   *
   *******************************************************/
-  padding: 20px 0; 
+  padding: 0; 
   width: 651px !important;
 }
   
@@ -35,7 +35,6 @@ css-tricks.com/musings-on-preprocessing/
     * Inner wrapper styles 
     *
     *******************************************************/
-    min-height: 430px !important;
     /******************************************************
     * 
     * Width of the container. Typically you will want to 

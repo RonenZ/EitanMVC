@@ -44,7 +44,7 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Details(int id)
         {
-            Project project = Uow.ProjectRepository.GetByID(id);
+            Project project = Uow.ProjectRepository.GetByID(id, p => p.Client, p => p.Type);
 
             return View(project);
         }

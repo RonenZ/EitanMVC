@@ -21,7 +21,7 @@ namespace Eitan.Models
         public int LabelID { get; set; }
         public virtual Label Label { get; set; }
         public int Type { get; set; }
-        public int CategoryNum { get; set; }
+        public string CategoryNum { get; set; }
         public string Link_External { get; set; }
 
         public int SeoId { get; set; }

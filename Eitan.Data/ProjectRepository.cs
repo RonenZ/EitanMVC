@@ -14,12 +14,12 @@ namespace Eitan.Data
 
         public IQueryable<ProjectType> GetAllProjectTypes()
         {
-            return DbContext.Set<ProjectType>().OrderBy(o => o.Title);
+            return DbContext.Set<ProjectType>().Where(w => w.isDeleted == false).OrderBy(o => o.Title);
         }
 
         public IQueryable<Client> GetAllClients()
         {
-            return DbContext.Set<Client>().OrderBy(o => o.Title);
+            return DbContext.Set<Client>().Where(w => w.isDeleted == false).OrderBy(o => o.Title);
         }
     }
 }

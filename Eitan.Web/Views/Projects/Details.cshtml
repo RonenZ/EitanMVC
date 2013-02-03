@@ -40,7 +40,8 @@
         <div id="details-project-add-info" class="details-additional-info">
             @*<div class="details-property-div"><span class="property-type">Title:</span>@Model.Title</div>*@
             <div class="details-property-div"><span class="property-type">Date:</span>@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
-            <div class="details-property-div"><span class="property-type">Client:</span>@Model.ClientID</div>
+            <div class="details-property-div"><span class="property-type">Client:</span>@if(Model.Client != null) { @Model.Client.Title}</div>
+            <div class="details-property-div"><span class="property-type">Type:</span>@if(Model.Type != null) { @Model.Type.Title}</div>
             @if (!string.IsNullOrEmpty(Model.Link_External)){
                 <div class="details-property-div"><span class="property-type">External Link:</span><a href="@Model.Link_External">Click Here!</a></div>
             }

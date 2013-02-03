@@ -918,6 +918,9 @@
     <Content Include="Areas\Admin\Views\Releases\CreateSong.cshtml" />
     <Content Include="Areas\Admin\Views\Releases\EditSong.cshtml" />
     <Content Include="Areas\Admin\Views\Releases\DeleteSong.cshtml" />
+    <Content Include="Areas\Admin\Views\Releases\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />

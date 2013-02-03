@@ -26,15 +26,14 @@
             <div id="details-release-artist" class="details-title">@Model.Title</div>
             <br />
             <div id="details-release-title" class="details-subtitle">@if(Model.Label != null) { @Model.Label.Title}</div>
+            <div id="details-release-add-info" class="details-additional-info">
+                <div class="details-property-div"><span class="property-type">Style:</span>@if(Model.Genre != null) { @Model.Genre.Title}</div>
+                <div class="details-property-div"><span class="property-type">Release Date:</span>@Model.Date_Release.ToString("dd/MM/yyyy")</div>
+                <div class="details-property-div"><span class="property-type">Format:</span>@Eitan.Web.Models.StaticCode.ReleaseTypes[Model.Type]</div>
+                <div class="details-property-div"><span class="property-type">Cat. No.:</span>@Model.CategoryNum</div>
+            </div>
             <div id="details-release-content" class="details-content">
                 @Html.Raw(Model.Content)
-            </div>
-            <div id="details-release-add-info" class="details-additional-info">
-                <div class="details-property-div"><span class="property-type">Style:</span>bla</div>
-                <div class="details-property-div"><span class="property-type">Released:</span>@Model.Date_Release.ToString("dd/MM/yyyy")</div>
-                <div class="details-property-div"><span class="property-type">Format:</span></div>
-                <div class="details-property-div"><span class="property-type">Cat-No:</span>@Model.CategoryNum</div>
-                <div class="details-property-div"><span class="property-type">Barcode:</span>123456</div>
             </div>
         </div>
     </div>
@@ -42,13 +41,13 @@
 
     <!-- Release Tracks List -->
     <div id="release-track-list">
-        <div class="release-track-count">@Model.Songs.Count tracks total</div>
+        <div class="release-track-count">@Model.Songs.Count tracks in total</div>
         @foreach (var song in Model.Songs)
         {
             <div class="song-wrap">
-                <span class="song-title">@song.Title</span><span class="song-artist"> Eitan </span>
+                <span class="song-title">@song.Title</span> <span class="song-artist">@if(song.Genre != null) {@song.Genre.Title} </span>
                 <audio class="release-audio-player">
-                    <source src="~/Songs/@song.FilePath" />
+                    <source src="~/Files/Releases/@song.FilePath" />
                 </audio>
 
             </div>

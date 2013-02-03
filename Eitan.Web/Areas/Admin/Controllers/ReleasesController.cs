@@ -62,6 +62,10 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
                 ReleasesUpsert(Entity, SEOEntity, SEOfile);
 
+                Uow.ReleaseRepository.Add(Entity);
+
+                Uow.Commit();
+
                 return RedirectToAction("Index");
             }
 
@@ -106,6 +110,8 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
                 ReleasesUpsert(Entity, POSTSEO, null);
 
+                Uow.Commit();
+
                 return RedirectToAction("Index");
             }
             ViewBag.RelID = id;
@@ -129,13 +135,13 @@ namespace Eitan.Web.Areas.Admin.Controllers
         // POST: /Clients/Create
 
         [HttpPost]
-        public ActionResult CreateSong(int HdnRelID, Song song, HttpPostedFileBase file)
+        public ActionResult CreateSong(int HdnRelID, Song song, HttpPostedFileBase UploadedFile)
         {
             Release rel = Uow.ReleaseRepository.GetByID(HdnRelID);
             if (ModelState.IsValid && rel != null)
             {
-                if (file != null)
-                    song.FilePath = Server.MapPath("/Files/Releases/").SaveFile(file);
+                if (UploadedFile != null)
+                    song.FilePath = Server.MapPath("/Files/Releases/").SaveFile(UploadedFile);
                 
                 song.Date_Creation = DateTime.Now;
 
@@ -168,15 +174,15 @@ namespace Eitan.Web.Areas.Admin.Controllers
         // POST: /Clients/Edit/5
 
         [HttpPost]
-        public ActionResult EditSong(int HdnRelID, Song song, HttpPostedFileBase file)
+        public ActionResult EditSong(int HdnRelID, Song song, HttpPostedFileBase UploadedFile)
         {
             if (ModelState.IsValid)
             {
                 Song Entity = Uow.SongRepository.GetByID(song.ID);
                 UpdateModel(Entity);
 
-                if (file != null)
-                    song.FilePath = Server.MapPath("/Files/Releases/").SaveFile(file);
+                if (UploadedFile != null)
+                    Entity.FilePath = Server.MapPath("/Files/Releases/").SaveFile(UploadedFile);
 
                 Uow.Commit();
                 return RedirectToAction("Edit", new { id = HdnRelID });
@@ -224,9 +230,27 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 if (SEOfile != null)
                     SEOEntity.ogImage = SEOfile.FBSaveImages(Server.MapPath("/Images/SEO/"), "News");
             }
-            Uow.ReleaseRepository.Add(Entity);
 
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            Release rel = Uow.ReleaseRepository.GetByID(id);
+            return View(rel);
+        }
+
+        //
+        // POST: /ProjectTypes/Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Release rel = Uow.ReleaseRepository.GetByID(id);
+
+            Uow.ReleaseRepository.Delete(rel);
             Uow.Commit();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

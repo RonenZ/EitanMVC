@@ -117,6 +117,25 @@ namespace Eitan.Web.Areas.Admin.Controllers
         }
 
 
+        public ActionResult Delete(int id)
+        {
+            News news = Uow.NewsRepository.GetByID(id);
+            return View(news);
+        }
+
+        //
+        // POST: /ProjectTypes/Delete/5
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            News news = Uow.NewsRepository.GetByID(id);
+
+            Uow.NewsRepository.Delete(news);
+            Uow.Commit();
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

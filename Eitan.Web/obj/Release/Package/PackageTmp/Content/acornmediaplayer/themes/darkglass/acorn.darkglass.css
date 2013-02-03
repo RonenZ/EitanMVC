@@ -126,14 +126,14 @@
 	border-radius: 10px;
 }
 .acorn-player.darkglass .acorn-seek-slider .ui-slider-range {		
-	background: #4cbae8;
+	background: #929496;
 	
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
 }
 .acorn-player.darkglass .acorn-buffer {
-	background: #90221b !important;
+	background: black !important;
 }
 .acorn-player.darkglass .acorn-seek-slider .ui-state-focus, .acorn-player.darkglass .acorn-seek-slider .ui-slider-handle.ui-state-hover {
 	background: #fff !important;

@@ -1,0 +1,36 @@
+﻿@model Eitan.Models.Release
+
+@{
+    ViewBag.Title = "מחיקת דיסקוגרפיה";
+}
+
+<h2>מחיקת דיסקוגרפיה</h2>
+
+<h3>בטוח שאתה רוצה למחוק את?</h3>
+<fieldset>
+    <legend></legend>
+
+
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    @{ string imageVal = ""; }
+    @if (Model != null && !string.IsNullOrEmpty(Model.MainImage))
+    {
+        imageVal = Model.MainImage;
+        <a href="/Images/Releases/@imageVal" target="_blank">
+        <img src="/Images/Releases/@Model.MainImage"  class="admin-prev-image" alt="@Model.MainImage" title="@Model.MainImage" />
+        </a>
+    }
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("בחזרה לדיסקוגרפיה", "Index")
+    </p>
+}
+
+
