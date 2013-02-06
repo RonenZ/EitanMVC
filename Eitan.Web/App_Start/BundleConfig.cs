@@ -18,6 +18,17 @@ namespace Eitan.Web
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            // Made by URBNStream
+            bundles.Add(new ScriptBundle("~/bundles/Custom").Include(
+                        "~/Scripts/Custom/View.js",
+                        "~/Scripts/Custom/website.js"));
+
+            // Always Needed
+            bundles.Add(new ScriptBundle("~/bundles/Layout").Include(
+                    "~/Scripts/knockout-2.1.0.js",
+                    "~/Scripts/jquery.isotope.min.js",
+                    "~/Scripts/jquery.history.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

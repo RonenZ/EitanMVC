@@ -4,16 +4,20 @@
     ViewBag.Title = Model.Title;
 }
 @Scripts.Render("~/bundles/jqueryui")
-<link href="~/Content/acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" />
-<link href="~/Content/acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
-<link href="~/Content/acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" type="text/css">
-<link href="~/Content/acornmediaplayer/themes/barebones/acorn.barebones.css" rel="stylesheet" type="text/css">
-<script src="~/Content/acornmediaplayer/jquery.acornmediaplayer.js"></script>
-<script type="text/javascript">
-    $(function () {
-        $('.release-audio-player').acornMediaPlayer({ theme: 'darkglass', volumeSlider: 'vertical' });
-    })
-</script>
+@section head{
+    <link href="~/Content/acornmediaplayer/acornmediaplayer.base.css" rel="stylesheet" />
+    <link href="~/Content/acornmediaplayer/themes/access/acorn.access.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/acornmediaplayer/themes/darkglass/acorn.darkglass.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/acornmediaplayer/themes/barebones/acorn.barebones.css" rel="stylesheet" type="text/css">
+}
+@section scripts{
+    <script src="~/Content/acornmediaplayer/jquery.acornmediaplayer.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.release-audio-player').acornMediaPlayer({ theme: 'darkglass', volumeSlider: 'vertical' });
+        })
+    </script>
+}
 
 <!-- Release Single Wrapper -->
 <div id="release-single-wrap">

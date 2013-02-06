@@ -24,8 +24,10 @@ css-tricks.com/musings-on-preprocessing/
   * 
   * Main wrapper padding 
   *
-  *******************************************************/
-  padding: 0; 
+  *******************************************************/ 
+  margin-bottom: 10px;
+  padding-top: 12px;
+  margin-left: 5px;
   width: 651px !important;
 }
   

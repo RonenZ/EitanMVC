@@ -665,6 +665,7 @@
     <Content Include="Content\Images\Home-Sprites.png" />
     <Content Include="Content\Images\icons-sprites.png" />
     <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\lte-ie8-fix.css.css" />
     <Content Include="Content\Projektor\changelog.txt" />
     <Content Include="Content\Projektor\design.html" />
     <Content Include="Content\Projektor\jarisplayer.swf" />
@@ -999,8 +1000,8 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\native.history.js" />
-    <Content Include="Scripts\View.js" />
-    <Content Include="Scripts\website.js" />
+    <Content Include="Scripts\Custom\View.js" />
+    <Content Include="Scripts\Custom\website.js" />
     <Content Include="Songs\01 - Orchids in the Moonlight.mp3" />
     <Content Include="Songs\02 - Blue Tango.mp3" />
     <Content Include="Songs\03 - Jalousie.mp3" />

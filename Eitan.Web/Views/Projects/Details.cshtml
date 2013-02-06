@@ -6,10 +6,42 @@
 
 @using Eitan.Web.Models
 
+@section head{
+    <link href="~/Content/coda-slider.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+    <script src="~/Scripts/jquery.coda-slider-3.0.min.js"></script>
+    
+    <script type="text/javascript">
 
-<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
-<script src="~/Scripts/jquery.coda-slider-3.0.min.js"></script>
-<link href="~/Content/coda-slider.css" rel="stylesheet" />
+        $(document).ready(function () {
+
+
+            $('#slider-id').codaSlider(
+            {
+            @if (Model.VideoPath == null || Model.VideoPath == string.Empty)
+            {
+                <text>dynamicArrows: false</text>
+            }
+        });
+
+        $(".coda-nav-left, .coda-nav-right").click(function () {
+            //alert("test");
+            stopVideo($(".project-iframe"));
+        });
+
+        function stopVideo($video) {
+            var video = $video.attr("src");
+            $video.delay(5000).attr("src", "");
+            $video.attr("src", video);
+            $video;
+        }
+    });
+</script>
+
+}
+
 <div id="project-single-wrap">
     <div class="float-right" id="project-single-slider">
         <div class="main-images">
@@ -56,33 +88,3 @@
 <!-- FB Comments -->
 @Html.Partial("_FBComments")
 <!-- END FB Comments -->
-
-<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
-<script src="~/Scripts/camera.min.js"></script>
-<link href="~/Content/camera.css" rel="stylesheet" />
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-
-        $('#slider-id').codaSlider(
-        {
-            @if (Model.VideoPath == null || Model.VideoPath == string.Empty)
-            {
-                <text>dynamicArrows: false</text>
-            }
-        });
-
-        $(".coda-nav-left, .coda-nav-right").click(function () {
-            //alert("test");
-            stopVideo($(".project-iframe"));
-        });
-
-        function stopVideo($video) {
-            var video = $video.attr("src");
-            $video.delay(5000).attr("src", "");
-            $video.attr("src", video);
-            $video;
-        }
-    });
-</script>

@@ -1,8 +1,10 @@
 ﻿$(document).ready(function () {
 
-    $('#render-body img').hide().load(function () {
-        $(this).fadeIn(500);
-    });
+    if (!isRunningIE8OrBelow) {
+        $('#render-body img').hide().load(function () {
+            $(this).fadeIn(500);
+        });
+    }
 
     if ($('.portfolio-item-hover-content').length && jQuery()) {
             function hover_effect() {
