@@ -6,10 +6,13 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+        var isRunningIE8OrBelow = false;
+    </script>
     <!--[if lte IE  8]>
         <link href='~/Content/lte-ie8-fix.css' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
-            var isRunningIE8OrBelow = true;
+            isRunningIE8OrBelow = true;
         </script>
     <![endif]-->
     @RenderSection("head", required: false)
@@ -23,7 +26,8 @@
                     <p class="site-title">@Html.ActionLink("EITAN REITER", "Index", "Home")</p>
                     <div class="site-info">Musical Production Master</div>
                 </div>
-                <div>
+                @Html.Partial("_SocialBtns")
+                <div id="menu-wrap">
                     <nav>
                         <ul id="menu">
                             <li><a href="~/">Home</a></li>
@@ -34,6 +38,7 @@
                             <li><a href="~/h/Contact">Contact</a></li>
                         </ul>
                     </nav>
+
                 </div>
             </div>
         </div>

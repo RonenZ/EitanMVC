@@ -96,6 +96,14 @@ ul#menu li, ul#menu li > * {
     transition: background-color .5s ease, border .5s ease, color .2s ease, opacity .2s ease-in-out;
 }
 
+.btn-social:hover, .btn-social:hover > * {
+    -webkit-transition: background .7s ease, border .7s ease, color .7s ease, opacity .7s ease-in-out;
+    -moz-transition: background .7s ease, border .7s ease, color .7s ease, opacity .7s ease-in-out;
+    -ms-transition: background .7s ease, border .7s ease, color .7s ease, opacity .7s ease-in-out;
+    -o-transition: background .7s ease, border .7s ease, color .7s ease, opacity .7s ease-in-out;
+    transition: background .7s ease, border .7s ease, color .7s ease, opacity .7s ease-in-out;
+}
+
 #render-body {
     display: inline-block;
 }
@@ -130,6 +138,51 @@ h5, h6 {
 
 /* main layout
 ----------------------------------------------------------*/
+.btn-social {
+    margin-right: 5px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(Images/social-icons-sprites.png) no-repeat 0px -39px;
+    float: left;
+}
+
+.social-btn-wrap {
+    float: right;
+
+    position: relative;
+    top: 2px;
+    right: 0px;
+}
+
+.social-btn-wrap #social-lnk-fb {
+ 
+}
+.social-btn-wrap #social-lnk-soundcloud {
+    background-position: -32px -39px;
+ }
+.social-btn-wrap #social-lnk-youtube {
+    background-position: -100px -39px;
+ }
+.social-btn-wrap #social-lnk-beatport {
+    background-position: -167px -39px;
+ }
+
+.social-btn-wrap #social-lnk-fb:hover {
+ background-position: 0px 0px;
+}
+
+.social-btn-wrap #social-lnk-soundcloud:hover {
+    background-position: -32px 0px;
+ }
+.social-btn-wrap #social-lnk-youtube:hover {
+    background-position: -100px 0px;
+ }
+.social-btn-wrap #social-lnk-beatport:hover {
+    background-position: -167px 0px;
+ }
+
+
 .btn-more {
     margin: 15px auto;
     font-size: 16px;
@@ -288,17 +341,21 @@ footer {
 
 /* menu
 ----------------------------------------------------------*/
-ul#menu {
+#menu-wrap{
     width: 100%;
     border-top: 1px dashed;
     border-bottom: 1px dashed;
+    display: inline-block;
+}
+ul#menu {
+    width: 800px;
+
     float: left;
     padding: 6px 0px;
     font-size: 1.3em;
     font-weight: 600;
     margin: 0;
     text-align: right;
-    margin-top: 5px;
 }
 
     ul#menu li {
@@ -385,7 +442,7 @@ ul#menu {
 }
 
 .home-large-image {
-    margin-bottom: 15px;
+    margin-bottom: 11px;
 }
 
 /*********** Portfolio **************/
@@ -960,23 +1017,3 @@ ul#menu {
 
 
 /*#endregion */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
