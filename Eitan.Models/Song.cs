@@ -11,6 +11,8 @@ namespace Eitan.Models
         public int GenreID { get; set; }
         public virtual Genre Genre { get; set; }
         public string FilePath { get; set; }
+        public string SoundCloudID { get; set; }
+        public bool isSoundCloudSet { get; set; }
 
         public virtual ICollection<Release> News { get; set; }
         public virtual ICollection<Artist> Artists { get; set; }

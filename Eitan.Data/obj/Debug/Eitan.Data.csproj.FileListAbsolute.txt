@@ -39,3 +39,5 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migr
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.csproj.GenerateResource.Cache
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.pdb
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.Update12022013.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.Update120220132.resources

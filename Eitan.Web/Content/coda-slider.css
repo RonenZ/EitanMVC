@@ -28,7 +28,7 @@ css-tricks.com/musings-on-preprocessing/
   margin-bottom: 10px;
   padding-top: 12px;
   margin-left: 5px;
-  width: 651px !important;
+  width: 642px !important;
 }
   
   .coda-slider-wrapper .coda-slider {
@@ -54,18 +54,22 @@ css-tricks.com/musings-on-preprocessing/
       * of the container as well. 
       *
       *******************************************************/
-      width: 660px; 
+      width: 659px; 
     }
       
       .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
-    width: 645px;
+    width: 648px;
         /******************************************************
         * 
         * Panel wrapper styles 
         *
         *******************************************************/ 
-      }
-  
+      ;
+    float: right;
+}
+  .coda-slider-wrapper p
+  {
+      margin-top: 0px !important;}
   .coda-slider-wrapper .coda-nav {
     /******************************************************
     * 
@@ -219,8 +223,7 @@ css-tricks.com/musings-on-preprocessing/
   * 
   * Margin between slider and arrows 
   *
-  *******************************************************/
-  margin: 0 10px; 
+  *******************************************************/ 
 }
 
 /**********************************************************************
@@ -235,9 +238,12 @@ css-tricks.com/musings-on-preprocessing/
   * Wrapper styles 
   *
   *************************************************/
+  display: inline-block;
   clear: both;
   position: relative;
   overflow: hidden; 
+  padding-right: 10px;
+  padding-top: 27px;
 }
   
   .coda-slider-wrapper .coda-slider {
@@ -246,7 +252,7 @@ css-tricks.com/musings-on-preprocessing/
     * slider styles 
     *
     *************************************************/
-    float: left;
+    display: inline !important;
     overflow: hidden;
     position: relative; 
   }

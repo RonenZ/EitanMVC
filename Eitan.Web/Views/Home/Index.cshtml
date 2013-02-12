@@ -5,7 +5,15 @@
 }
 
 <div id="home-items-wrap">
-<img class="home-large-image home-item" src="images/Home/home-large1.jpg" />
+@*<img class="home-large-image home-item" src="images/Home/home-large1.jpg" />*@
+@{
+    ViewBag.FolderName = "Pages";
+    ViewBag.SliderSize = "286";
+        }
+@if (ViewBag.Images != null)
+{
+@Html.Partial("_CameraSlider", (IEnumerable<Eitan.Models.Picture>)ViewBag.Images)
+}
     
 @foreach (var item in Model.Values)
 {

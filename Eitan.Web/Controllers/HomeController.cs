@@ -18,6 +18,9 @@ namespace Eitan.Web.Controllers
         {
             var HomeModel = new HomePageViewModel();
 
+            var Homepage = Uow.PagesRepository.GetByType(1000);
+            ViewBag.Images = Homepage.Images;
+
             HomeModel["Project"].Item = Uow.ProjectRepository
                                               .GetAllDesc()
                                               .ToViewModelWithImage();

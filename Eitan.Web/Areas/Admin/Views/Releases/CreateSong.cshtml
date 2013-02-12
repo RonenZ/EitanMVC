@@ -35,6 +35,20 @@
         </span>
         <input type="file" name="UploadedFile" id="UploadedFile" />
     </div>    
+    
+    <div class="editor-label">
+        סאונדקלאוד:
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.SoundCloudID)
+        @Html.ValidationMessageFor(model => model.SoundCloudID)
+    </div>    
+    <div class="editor-label">
+        האם סט:
+    </div>
+    <div class="editor-field">
+        @Html.CheckBoxFor(model => model.isSoundCloudSet)
+    </div>  
 
     @Html.Hidden("HdnRelID", (int)ViewBag.RelId)
 

@@ -9,12 +9,12 @@
                             <span class="portfolio-type" data-bind="text: Type">Discography </span>
                             <div class="portfolio-content-title" data-bind="text: SubTitle">
                             </div>
-                            </div>
-                            <img class="model-item-image" data-bind="attr:{src: '/Images/Releases/thumb_' + ImagePath, title: Title, alt: Title}" />
-                            <div class="release-item-bar standard-list-bar" data-bind="text: Title"></div>
-                            <div class="hover-options" style="opacity: 0;"></div>
                         </div>
+                        <img class="model-item-image" data-bind="attr:{src: '/Images/Releases/thumb_' + ImagePath, title: Title, alt: Title}" />
+                        <div class="release-item-bar standard-list-bar" data-bind="text: Title"></div>
+                        <div class="hover-options" style="opacity: 0;"></div>
                     </div>
+                </div>
             </a>
         </div>
     </div>
@@ -51,8 +51,9 @@
                 </div>
                 <div class="news-item-text">
                     <h2 data-bind="text: Title"></h2>
-                    <div class="news-text-content" data-bind="text: Content">
+                    <div class="news-text-content" data-bind="html: Content + '...<span class=span-read-more>Read More..</span>'">
                     </div>
+              
                     <div class="news-text-date" data-bind="text: Creation">
                     </div>
                 </div>

@@ -19,7 +19,7 @@
 	list-style: none
 }
 .camera_wrap {
-	margin-bottom: 20px;
+	margin-bottom: 12px;
 	display: none;
 	float: left;
 	position: relative;
@@ -36,7 +36,8 @@
 	z-index: 1;
 }
 .camera_wrap {
-	height: 440px;
+	min-height: 286px;
+	max-width: 954px;
 	width: 100%;
 }
 .camera_src {

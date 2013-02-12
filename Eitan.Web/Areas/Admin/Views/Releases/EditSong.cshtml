@@ -12,12 +12,12 @@
 
 
     <div class="editor-label">
-    כותרת:
-</div>
-<div class="editor-field">
-    @Html.EditorFor(model => model.Title)
-    @Html.ValidationMessageFor(model => model.Title)
-</div>
+        כותרת:
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Title)
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
 
     
     <div class="editor-label">
@@ -32,18 +32,31 @@
         העלאת קובץ:
     </div>
     <div class="editor-field">
-        <span class="admin-info-span">
-        </span>
+        <span class="admin-info-span"></span>
         <input type="file" name="UploadedFile" id="UploadedFile" />
     </div>    
 
+    <div class="editor-label">
+        סאונדקלאוד:
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.SoundCloudID)
+        @Html.ValidationMessageFor(model => model.SoundCloudID)
+    </div>    
+    <div class="editor-label">
+        האם סט:
+    </div>
+    <div class="editor-field">
+        @Html.CheckBoxFor(model => model.isSoundCloudSet)
+    </div>  
+    
     @Html.Hidden("HdnRelID", (int)ViewBag.RelId)
 
-        <p>
-            <input type="submit" value="שמירה" />
-        </p>
+    <p>
+        <input type="submit" value="שמירה" />
+    </p>
 }
 
 <div>
-    @Html.ActionLink("בחזרה לעמוד דיסקוגרפיה", "Edit", "Releases", new { ID = ViewBag.RelId})
+    @Html.ActionLink("בחזרה לעמוד דיסקוגרפיה", "Edit", "Releases", new { ID = ViewBag.RelId })
 </div>

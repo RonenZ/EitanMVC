@@ -96,6 +96,14 @@
     <Compile Include="Migrations\201302022302468_check5.Designer.cs">
       <DependentUpon>201302022302468_check5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201302121119062_Update12022013.cs" />
+    <Compile Include="Migrations\201302121119062_Update12022013.Designer.cs">
+      <DependentUpon>201302121119062_Update12022013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302121139589_Update12022013-2.cs" />
+    <Compile Include="Migrations\201302121139589_Update12022013-2.Designer.cs">
+      <DependentUpon>201302121139589_Update12022013-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PagesRepository.cs" />
     <Compile Include="ProjectRepository.cs" />
@@ -143,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201302022302468_check5.resx">
       <DependentUpon>201302022302468_check5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302121119062_Update12022013.resx">
+      <DependentUpon>201302121119062_Update12022013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302121139589_Update12022013-2.resx">
+      <DependentUpon>201302121139589_Update12022013-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
