@@ -56,6 +56,9 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.15.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -934,6 +937,8 @@
     <Content Include="Areas\Admin\Views\Pages\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Paging.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Search.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />

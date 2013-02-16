@@ -13,6 +13,7 @@ namespace Eitan.Data
         void setTableName(string tablename);
         IQueryable<T> GetAllDesc(string include = "");
         IQueryable<T> GetAll(string include = "");
+        IQueryable<T> SearchStringInTitle(string value);
         T GetByID(int id, params Expression<Func<T, object>>[] includes);
         void Add(T Entity);
         void Update(T Entity);

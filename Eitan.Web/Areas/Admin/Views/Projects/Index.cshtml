@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Eitan.Models.Project>
+﻿@model PagedList.IPagedList<Eitan.Models.Project>
 
 @using Eitan.Web.Models
 @{
@@ -10,6 +10,8 @@
 <p>
     @Html.ActionLink("הוספת פרוייקט", "Create")
 </p>
+    @Html.Partial("_Search")
+    @Html.Partial("_Paging")
 <table>
     <thead>
         <tr>
@@ -53,3 +55,4 @@
         }
     </tbody>
 </table>
+@Html.Partial("_Paging")

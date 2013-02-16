@@ -33,7 +33,6 @@ namespace Eitan.Data
             DbSet = _DbContext.Set<T>();
         }
 
-
         public virtual IQueryable<T> GetAll(string include = "")
         {
             //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAll @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
@@ -42,7 +41,6 @@ namespace Eitan.Data
 
             return DbSet.Include(include).AsQueryable();
         }
-
 
         public virtual T GetByID(int id, params Expression<Func<T, object>>[] includes)
         {
@@ -57,6 +55,10 @@ namespace Eitan.Data
             //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getById  @TableName, @Id", new SqlParameter("@TableName", TableName), new SqlParameter("@Id", id)).FirstOrDefault();
         }
 
+        public virtual IQueryable<T> SearchStringInTitle(string value)
+        {
+            return GetAllDesc().Where(w => w.Title.ToLower().Contains(value.ToLower()));
+        }
 
         public virtual void Add(T Entity)
         {

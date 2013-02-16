@@ -15,6 +15,37 @@ body {
     padding: 0;
 }
 
+.admin-paging-wrap{
+    text-align: center;
+    color: #333;
+    direction: ltr;
+    font-size: 13px;
+}
+
+.admin-paging-wrap a
+{
+    text-decoration: none
+}
+
+
+    /******** Search *******/
+    .admin-search-module{
+    display: inline-block;
+
+    }
+
+        .admin-search-module #search-bar {
+    float: right;
+        }
+
+        .admin-search-module #btn-search-submit
+        {
+    clear: left;
+    float: right;
+
+        }
+
+
 /******** SEO *********/
 .editor-seo-wrap
 {
@@ -921,8 +952,6 @@ tr.pager td {
         float: none;
         width: auto;
     }
-
-
 
     /* footer
     ----------------------------------------------------------*/

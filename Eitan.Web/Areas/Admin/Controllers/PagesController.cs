@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Web.Helpers;
 using Eitan.Web.Controllers;
 using Eitan.Web.Models;
+using PagedList;
 
 namespace Eitan.Web.Areas.Admin.Controllers
 {   
@@ -27,11 +28,16 @@ namespace Eitan.Web.Areas.Admin.Controllers
         //
         // GET: /Projects/
 
-        public ViewResult Index()
+        public ViewResult Index(int pagenum = 1, string searchbar = "")
         {
-            return View(Uow.PagesRepository
-                            .GetAllDesc()
-                            .Take(pageSize));
+            if (string.IsNullOrEmpty(searchbar.Trim()))
+            {
+                return View(Uow.PagesRepository.GetAllDesc()
+                                              .ToPagedList(pagenum, pageSize));
+            }
+
+            return View(Uow.PagesRepository.SearchStringInTitle(searchbar)
+                                              .ToPagedList(pagenum, pageSize));
         }
 
 

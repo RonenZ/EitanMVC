@@ -74,3 +74,5 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\System.Spatial.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\obj\Debug\Eitan.Web.csprojResolveAssemblyReference.cache
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\obj\Debug\Eitan.Web.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\obj\Debug\Eitan.Web.pdb
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\PagedList.dll
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\PagedList.xml
