@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201302151652355_Update2342312.Designer.cs">
       <DependentUpon>201302151652355_Update2342312.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201302161405403_SEO.cs" />
+    <Compile Include="Migrations\201302161405403_SEO.Designer.cs">
+      <DependentUpon>201302161405403_SEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302161417235_SEO2.cs" />
+    <Compile Include="Migrations\201302161417235_SEO2.Designer.cs">
+      <DependentUpon>201302161417235_SEO2.cs</DependentUpon>
+    </Compile>
     <Compile Include="SEORepository.cs" />
     <Compile Include="EitanDbContext.cs" />
     <Compile Include="EitanUow.cs" />
@@ -102,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201302151652355_Update2342312.resx">
       <DependentUpon>201302151652355_Update2342312.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302161405403_SEO.resx">
+      <DependentUpon>201302161405403_SEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302161417235_SEO2.resx">
+      <DependentUpon>201302161417235_SEO2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

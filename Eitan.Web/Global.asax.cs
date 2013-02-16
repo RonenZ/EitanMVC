@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -18,6 +19,7 @@ namespace Eitan.Web
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
             // Tell WebApi to use our custom Ioc (Ninject)
             IocConfig.RegisterIoc(GlobalConfiguration.Configuration);

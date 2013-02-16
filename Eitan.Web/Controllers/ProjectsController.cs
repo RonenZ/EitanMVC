@@ -44,7 +44,9 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Details(int id)
         {
-            Project project = Uow.ProjectRepository.GetByID(id, p => p.Client, p => p.Type);
+            Project project = Uow.ProjectRepository.GetByID(id, p => p.Client, p => p.Type, r => r.SEO);
+
+            ViewBag.SEO = project.SEO;
 
             return View(project);
         }

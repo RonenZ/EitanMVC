@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Eitan.Models.Page>
+
+@using Eitan.Web.Models
+@{
+    ViewBag.Title = "עמודי תוכן";
+}
+
+<h2>פרוייקטים</h2>
+
+<p>
+    @Html.ActionLink("הוספת עמוד תוכן", "Create")
+</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>כותרת
+            </th>
+            <th>תקציר
+            </th>
+            <th>תאריך 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+        
+            <tr class="@{if ((i++ % 2) == 0)
+                         {<text>normal-tr-item</text>}
+                         else
+                         {<text>alternate-tr-item</text>}} ">
+                <td class="td-edit">
+                    @Html.ActionLink("עריכה", "Edit", new { id = item.ID }) |
+                </td>
+                <td width="350">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td width="350">
+                    @item.Content.The_Excerpt(200)...
+                </td>
+                <td>
+                    @item.Date_Creation.ToString("dd/MM/yyyy")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

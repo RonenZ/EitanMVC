@@ -42,25 +42,25 @@ namespace Eitan.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Release>()
-                .HasRequired(r => r.SEO)
+                .HasOptional(r => r.SEO)
                 .WithMany()
                 .HasForeignKey(r => r.SeoId)
                 .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Page>()
-            .HasRequired(r => r.SEO)
+            .HasOptional(r => r.SEO)
             .WithMany()
             .HasForeignKey(r => r.SeoId)
             .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Project>()
-            .HasRequired(r => r.SEO)
+            .HasOptional(r => r.SEO)
             .WithMany()
             .HasForeignKey(r => r.SeoId)
             .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<News>()
-             .HasRequired(r => r.SEO)
+             .HasOptional(r => r.SEO)
              .WithMany()
              .HasForeignKey(r => r.SeoId)
              .WillCascadeOnDelete(true);
@@ -99,7 +99,7 @@ namespace Eitan.Data
               HasMany(c => c.Songs).
               WithMany(p => p.News);
 
-            modelBuilder.Entity<SEO>().Property(p => p.SEOID)
+            modelBuilder.Entity<SEO>().Property(p => p.SEO_ID)
             .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }

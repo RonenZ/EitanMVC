@@ -77,7 +77,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 InsertImage(Entity, "UploadedImage", "Projects");
-                UpsertSEO(Entity, SEOEntity.SEOID, SEOEntity, SEOfile, "Projects");
+                UpsertSEO(Entity, SEOEntity.SEO_ID, SEOEntity, SEOfile, "Projects");
 
                 Entity.Date_Creation = DateTime.Now;
                 Uow.ProjectRepository.Add(Entity);
@@ -115,7 +115,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 UpdateModel(Entity);
 
                 InsertImage(Entity, "UploadedImage", "Projects");
-                UpsertSEO(Entity, POSTSEO.SEOID, POSTSEO, SEOfile, "Projects");
+                UpsertSEO(Entity, POSTSEO.SEO_ID, POSTSEO, SEOfile, "Projects");
 
                 Uow.Commit();
 

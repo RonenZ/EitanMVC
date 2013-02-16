@@ -11,7 +11,7 @@ namespace Eitan.Models
         public string MainImage { get; set; }
         public string Link_External { get; set; }
 
-        public int SeoId { get; set; }
+        public int? SeoId { get; set; }
         public virtual SEO SEO { get; set; }
     }
 }

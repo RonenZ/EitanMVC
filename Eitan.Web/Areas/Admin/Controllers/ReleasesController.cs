@@ -224,7 +224,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
             InsertImage(Entity, "UploadedRectImage", "Releases");
 
-            UpsertSEO(Entity, SEOEntity.SEOID, SEOEntity, SEOfile, "Releases");
+            UpsertSEO(Entity, SEOEntity.SEO_ID, SEOEntity, SEOfile, "Releases");
         }
 
 

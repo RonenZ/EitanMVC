@@ -40,7 +40,7 @@ namespace Eitan.Models
 
     public interface IWithSEO
     {
-        int SeoId { get; set; }
+        int? SeoId { get; set; }
         SEO SEO { get; set; }
     }
 }

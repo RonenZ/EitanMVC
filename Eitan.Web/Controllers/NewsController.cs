@@ -39,7 +39,9 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Details(int id)
         {
-            var news = Uow.NewsRepository.GetByID(id);
+            var news = Uow.NewsRepository.GetByID(id, r => r.SEO);
+
+            ViewBag.SEO = news.SEO;
             return View(news);
         }
 

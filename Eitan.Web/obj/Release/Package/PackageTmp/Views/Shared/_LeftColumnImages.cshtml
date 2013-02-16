@@ -1,9 +1,0 @@
-﻿@model IEnumerable<Eitan.Models.Picture>
-
-
-<div class="left-column">
-    @foreach (var item in Model)
-    {
-        <img class="column-image" src="/Images/@ViewBag.FolderName/@item.Source" alt="@item.Title" title="@item.Title" />
-    }
-</div>

@@ -26,7 +26,7 @@ namespace Eitan.Web.Controllers
             {
                 Uow.SEORepository.Add(POSTSEO);
                 Uow.Commit();
-                Entity.SeoId = POSTSEO.SEOID;
+                Entity.SeoId = POSTSEO.SEO_ID;
             }
 
 

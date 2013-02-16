@@ -85,7 +85,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 UpdateModel(Entity);
 
                 InsertImage(Entity, "UploadedImage", "News");
-                UpsertSEO(EditEntity, POSTSEO.SEOID, POSTSEO, SEOfile, "News");
+                UpsertSEO(EditEntity, POSTSEO.SEO_ID, POSTSEO, SEOfile, "News");
 
                 Uow.Commit();
 

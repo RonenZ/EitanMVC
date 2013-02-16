@@ -44,7 +44,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
             {
                 Uow.SEORepository.Add(SEO);
                 Uow.Commit();
-                Entity.SeoId = SEO.SEOID;
+                Entity.SeoId = SEO.SEO_ID;
             }
 
 

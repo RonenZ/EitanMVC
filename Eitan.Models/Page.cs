@@ -10,7 +10,7 @@ namespace Eitan.Models
         public string Content { get; set; }
         public int Type { get; set; }
 
-        public int SeoId { get; set; }
+        public virtual int? SeoId { get; set; }
         public virtual SEO SEO { get; set; }
 
         public virtual ICollection<Picture> Images { get; set; }

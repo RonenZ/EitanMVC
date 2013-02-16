@@ -9,7 +9,7 @@ namespace Eitan.Models
     public class SEO
     {
         [Key]
-        public int SEOID { get; set; }
+        public int SEO_ID { get; set; }
         public string ogTitle { get; set; }
         public string ogImage { get; set; }
         public string ogDescription { get; set; }

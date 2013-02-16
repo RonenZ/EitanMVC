@@ -1,0 +1,25 @@
+﻿@model Eitan.Models.Page
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    כותרת:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Title)
+    @Html.ValidationMessageFor(model => model.Title)
+</div>
+
+<div class="editor-label">
+    תוכן:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Content)
+    @Html.ValidationMessageFor(model => model.Content)
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {        generateTinyMCE('#Content');
+    });
+</script>

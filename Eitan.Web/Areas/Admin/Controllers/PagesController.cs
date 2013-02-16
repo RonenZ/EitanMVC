@@ -77,7 +77,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Entity = Uow.PagesRepository.GetByID(id);
+            var Entity = Uow.PagesRepository.GetByID(id, p => p.SEO);
 
             return View(Entity);
         }

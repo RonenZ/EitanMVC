@@ -24,7 +24,7 @@ namespace Eitan.Models
         public string CategoryNum { get; set; }
         public string Link_External { get; set; }
 
-        public int SeoId { get; set; }
+        public virtual int? SeoId { get; set; }
         public virtual SEO SEO { get; set; }
 
         public virtual ICollection<Song> Songs { get; set; }

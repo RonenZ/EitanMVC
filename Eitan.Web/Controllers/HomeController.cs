@@ -19,6 +19,7 @@ namespace Eitan.Web.Controllers
             var HomeModel = new HomePageViewModel();
 
             var Homepage = Uow.PagesRepository.GetByType(1000);
+            ViewBag.SEO = Homepage.SEO;
             ViewBag.Images = Homepage.Images;
 
             HomeModel["Project"].Item = Uow.ProjectRepository
@@ -52,6 +53,8 @@ namespace Eitan.Web.Controllers
         {
             var StudioPage = Uow.PagesRepository.GetByType(11);
 
+            ViewBag.SEO = StudioPage.SEO;
+
             //Top Slider Images - of type 22
             ViewBag.SliderImages = StudioPage.Images.Where(w => w.PictureType == 22).ToList();
             //Left Side Images - of type 33
@@ -63,6 +66,8 @@ namespace Eitan.Web.Controllers
         public ActionResult Contact()
         {
             var ContactPage = Uow.PagesRepository.GetByType(15);
+
+            ViewBag.SEO = ContactPage.SEO;
 
             ViewBag.PageTitle = ContactPage.Title;
             ViewBag.PageContent = ContactPage.Content;

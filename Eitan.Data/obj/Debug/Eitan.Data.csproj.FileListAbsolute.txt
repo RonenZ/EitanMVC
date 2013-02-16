@@ -33,3 +33,5 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migr
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.csproj.GenerateResource.Cache
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.pdb
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.SEO.resources
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Data\obj\Debug\Eitan.Data.Migrations.SEO2.resources

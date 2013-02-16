@@ -46,11 +46,11 @@ namespace Eitan.Data
 
         public virtual T GetByID(int id, params Expression<Func<T, object>>[] includes)
         {
-            //if (includes != null && includes.Length > 0)
-            //{
-            //    return includes.Aggregate(this.GetAll(),
-            //              (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
-            //}
+            if (includes != null && includes.Length > 0)
+            {
+                return includes.Aggregate(this.GetAll(),
+                          (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
+            }
 
             return DbSet.Find(id);
 

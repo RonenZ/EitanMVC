@@ -665,6 +665,8 @@
     <Content Include="Content\Images\Home-Sprites.png" />
     <Content Include="Content\Images\icons-sprites.png" />
     <Content Include="Content\Images\loading.gif" />
+    <Content Include="Content\Images\SEO-globe.png" />
+    <Content Include="Content\Images\Share-Sprites.png" />
     <Content Include="Content\Images\social-icons-sprites.png" />
     <Content Include="Content\lte-ie8-fix.css.css" />
     <Content Include="Content\Projektor\changelog.txt" />
@@ -926,6 +928,12 @@
     <Content Include="Areas\Admin\Views\Shared\_SEOInput.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_SEO_StandAlone.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_SEO_Basic.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\_CreateOrEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -1057,6 +1065,9 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_SocialBtns.cshtml" />
     <Content Include="Views\Shared\_Menu_Links.cshtml" />
+    <Content Include="Views\Shared\_SEO.cshtml" />
+    <Content Include="Views\Shared\_ShareBtns.cshtml" />
+    <Content Include="Views\Shared\_Floated_Share.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

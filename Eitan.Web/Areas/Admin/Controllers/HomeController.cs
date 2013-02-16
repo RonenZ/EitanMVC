@@ -2,6 +2,7 @@
 using Eitan.Web.Controllers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,6 +15,10 @@ namespace Eitan.Web.Areas.Admin.Controllers
         {
             Uow = uow;
             ViewBag.HomeActive = "active";
+        }
+
+        public ActionResult Index()
+        {
             ViewBag.ProjectsCount = Uow.ProjectRepository.GetAll().Count();
             var ProjEntity = Uow.ProjectRepository.GetAllDesc().FirstOrDefault();
             if (ProjEntity != null)
@@ -35,11 +40,6 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 ViewBag.ReleaseID = RelEntity.ID;
                 ViewBag.ReleaseTitle = RelEntity.Title;
             }
-        }
-
-        public ActionResult Index()
-        {
-            var SEOs = Uow.SEORepository.GetAll();
 
             return View();
         }

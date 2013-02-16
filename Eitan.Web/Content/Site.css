@@ -187,6 +187,271 @@ nav, section {
     
 }
 
+/********* SHARE ***********/
+/*#region Share*/
+.share-link
+{
+    float: left;
+    padding: 0px !important;
+    overflow: hidden;
+    display: inline-block;
+    width: 28px!important;
+    height: 27px!important;
+    background: url(images/Home-Sprites.png);
+}
+.news-widgit-share .share-btns-wrap
+{
+    padding: 0px;
+    width: auto !important;
+}
+
+.news-widgit-share .share-link {
+    margin: 16px 21px;
+}
+
+.floated-share-div .share-link {
+    margin: 10px;
+}
+
+.floated-share-div .share-btns-wrap {
+    display:none;
+    padding: 0px;
+}
+
+.share-googplus
+{
+    background-position: -100px 0px!important;
+}
+
+    .share-googplus:hover
+    {
+        background-position: -100px -30px!important;
+    }
+
+.share-tweet
+{
+    background-position: -65px 0px!important;
+}
+
+    .share-tweet:hover
+    {
+        background-position: -65px -30px!important;
+    }
+
+.share-fb
+{
+    background-position: 0 0px!important;
+}
+
+    .share-fb:hover
+    {
+        background-position: 0px -30px!important;
+    }
+
+.fb_share
+{
+    background-position: -30px 0px!important;
+}
+
+    .fb_share span
+    {
+        visibility: hidden !important;
+    }
+
+    .fb_share:hover
+    {
+        background-position: -30px -30px!important;
+    }
+
+
+.floated-share-div{
+    z-index: 100;
+    top: 20px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: #424243;
+    height: 50px;
+}
+
+.floated-share-div .floated-toggle{
+    padding-right: 20px;
+    margin-left: 6px;
+    float: right;
+    color: #cccccc;
+
+    font-size: 27px;
+}
+
+.floated-share-div .share-wrap{
+    float: right;
+
+}
+
+.qr-single-div
+{
+    margin: 0px 34px;
+    float: left;
+}
+
+.qr-single-image
+{
+    border-radius: 10px;
+    border: 10px solid #0f89e4;
+}
+
+.qr-single-title
+{
+    margin-top: 3px;
+    font-size: 20px;
+    font-family: 'Maven Pro', arial;
+    color: #757575;
+    text-align: center;
+}
+
+#twttrHubFrame
+{
+    opacity: 0;
+}
+
+.share-btns-wrap
+{
+    padding-left: 30px;
+    height: 28px;
+}
+
+.article-header .share-btns-wrap
+{
+    float: right;
+}
+
+    .article-header .share-btns-wrap .share-link
+    {
+        margin-right: 20px;
+    }
+
+.social-article-header .share-btns-wrap
+{
+    padding-left: 0px;
+    height: 28px;
+}
+
+.social-article-header .share-btns-wrap
+{
+    float: left;
+}
+
+    .social-article-header .share-btns-wrap .share-link
+    {
+        margin-right: 2px;
+    }
+
+.content-wrapper .share-btns-wrap
+{
+    width: 737px;
+    margin: 20px auto 20px auto;
+}
+
+.share-span
+{
+    text-align: center;
+    margin: 5px 10px 0px 7px;
+    display: block;
+    float: left;
+    color: #979C9E;
+    font-family: 'Maven Pro', arial;
+    font-size: 17px;
+    font-weight: 400 !important;
+}
+
+#popup-share-btns
+{
+    z-index: 10;
+    top: 9px;
+    right: 25px;
+    position: absolute;
+    height: 30px;
+}
+
+    #popup-share-btns iframe, .share-btns-wrap iframe
+    {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        font-size: 0;
+        width: 33px!important;
+        height: 27px!important;
+        overflow: hidden;
+    }
+
+.share-link
+{
+    float: left;
+    padding: 0px !important;
+    overflow: hidden;
+    display: inline-block;
+    width: 24px!important;
+    height: 18px!important;
+    background: url(images/Share-Sprites.png);
+}
+
+.share-googplus
+{
+    background-position: 0px -72px!important;
+}
+
+    .share-googplus:hover
+    {
+        background-position: -34px -72px!important;
+    }
+
+.share-tweet
+{
+    background-position: 0px 0px!important;
+}
+
+    .share-tweet:hover
+    {
+        background-position: -34px 0px!important;
+    }
+
+.share-fb
+{
+    background-position: 0 0px!important;
+}
+
+    .share-fb:hover
+    {
+        background-position: 0px -30px!important;
+    }
+
+.fb_share
+{
+    background-position: 0px -34px!important;
+}
+
+    .fb_share span
+    {
+        visibility: hidden !important;
+    }
+
+    .fb_share:hover
+    {
+        background-position: -34px -34px!important;
+    }
+
+.FBConnectButton_Text
+{
+    display: none!important;
+}
+
+.fblike
+{
+    visibility: hidden!important;
+}
+/*#endregion*/
+
 #footer-social-links .footer-fb-link
 {
     background-position: 0px -132px;

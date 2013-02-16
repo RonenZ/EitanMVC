@@ -41,7 +41,10 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Details(int id)
         {
-            Release release = Uow.ReleaseRepository.GetByID(id, r => r.Genre, r => r.Label, r => r.Songs);
+            Release release = Uow.ReleaseRepository.GetByID(id, r => r.Genre, r => r.Label, r => r.Songs, r=>r.SEO);
+
+            ViewBag.SEO = release.SEO;
+
             return View(release);
         }
 
