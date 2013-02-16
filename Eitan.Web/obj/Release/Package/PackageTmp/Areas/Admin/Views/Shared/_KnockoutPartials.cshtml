@@ -1,0 +1,81 @@
+﻿<div id="releases-div" class="model-collection-wrap" data-bind="template: {foreach: Releases, afterAdd: releaseAdded}">
+    <div class="release-item model-item isotope-item">
+        <a data-bind="attr:{href: '/Releases/Details/' + ID}">
+            <img class="model-item-image" data-bind="attr:{src: '/Images/Releases/' + ImagePath, title: Title, alt: Title}" />
+            <div class="news-item-text">
+                <h2 data-bind="text: Title"></h2>
+                <div class="news-text-content" data-bind="text: Content">
+                </div>
+                <div class="news-text-date" data-bind="text: Creation">
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="projects-div" class="model-collection-wrap" data-bind="template: {foreach: Projects, afterAdd: projectAdded}">
+    <div class="project-item model-item isotope-item">
+        <img class="model-item-image" data-bind="attr:{src: '/Images/Projects/' + ImagePath, title: Title, alt: Title}" />
+        <div class="news-item-text">
+            <h2 data-bind="text: Title"></h2>
+            <div class="news-text-content" data-bind="text: Content">
+            </div>
+            <div class="news-text-date" data-bind="text: Creation">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="news-div" class="model-collection-wrap" data-bind="template: {foreach: News, afterAdd: newsAdded}">
+    <div class="news-item model-item isotope-item">
+        <a data-bind="attr:{href: '/News/Details/' + ID}">
+            <div class="news-item-image-wrap">
+                <img class="model-item-image" data-bind="attr:{src: '/Images/News/thumb_' + ImagePath, title: Title, alt: Title}" />
+            </div>
+            <div class="news-item-text">
+                <h2 data-bind="text: Title"></h2>
+                <div class="news-text-content" data-bind="text: Content">
+                </div>
+                <div class="news-text-date" data-bind="text: Creation">
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        ko.applyBindings(ViewModel);
+
+        //$("#releases-div").isotope({
+        //    layoutMode: 'fitRows',
+        //    itemSelector: '.isotope-item'
+        //});
+
+        //$("#projects-div").isotope({
+        //    layoutMode: 'fitRows',
+        //    itemSelector: '.isotope-item'
+        //});
+
+        //$("#news-div").isotope({
+        //    layoutMode: 'fitRows',
+        //    animationOptions: {
+        //        duration: 750,
+        //        easing: 'easeInOutBack',
+        //        queue: false
+        //    },
+        //    itemSelector: '.isotope-item'
+        //});
+
+        $(".AjaxLink").click(function () {
+            var type = $(this).data("type");
+
+            $("#render-body").hide();
+            //reset_isotope(type);
+            eval("ViewModel.Load" + type + "();");
+            return false;
+        });
+    });
+
+    function reset_isotope(colname) {
+        //colname = colname.toLowerCase();
+        //$("#" + colname + "-div").isotope('remove', $("#" + colname + "-div .isotope-item")).isotope('reLayout');
+    }
+</script>

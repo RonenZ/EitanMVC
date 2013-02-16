@@ -1,0 +1,29 @@
+@model Eitan.Models.ProjectType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Client</legend>
+
+    <div class="display-label">Date_Creation</div>
+    <div class="display-field">@String.Format("{0:g}", Model.Date_Creation)</div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">isDeleted</div>
+    <div class="display-field">@Model.isDeleted</div>
+
+    <div class="display-label">MainImage</div>
+    <div class="display-field">@Model.MainImage</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

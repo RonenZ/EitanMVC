@@ -1,0 +1,116 @@
+﻿@model Eitan.Models.Release
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<link href="~/Areas/Admin/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/themes/base/jquery.ui.datepicker.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Scripts/jquery-ui-1.8.20.min.js"></script>
+
+
+<div class="editor-label">
+    כותרת:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Title)
+    @Html.ValidationMessageFor(model => model.Title)
+</div>
+
+<div class="editor-label">
+    תוכן:
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Content)
+    @Html.ValidationMessageFor(model => model.Content)
+</div>
+
+<div class="editor-label">
+    סוג ריליס:
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.Type, new SelectList((Dictionary<int, string>)ViewBag.ReleaseTypes, "Key", "Value"))
+    @Html.ValidationMessageFor(model => model.Content)
+</div>
+
+<div class="editor-label">
+    תאריך יציאה:
+</div>
+<div class="editor-field">
+    @Html.TextBoxFor(model => model.Date_Release, new { Class = "datepicker-txt", Autocomplete="off"})
+    @Html.ValidationMessageFor(model => model.Date_Release)
+</div>
+
+<div class="editor-label">
+    סגנון:
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.GenreID, new SelectList((IEnumerable<Eitan.Models.Genre>)ViewBag.Genres, "ID", "Title"))
+    @Html.ValidationMessageFor(model => model.GenreID)
+</div>
+
+<div class="editor-label">
+    חברת תקליטים:
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.LabelID, new SelectList((IEnumerable<Eitan.Models.Label>)ViewBag.Labels, "ID", "Title"))
+    @Html.ValidationMessageFor(model => model.LabelID)
+</div>
+
+
+<div class="editor-label">
+    מספר קטלוג:
+</div>
+<div class="editor-field">
+    @Html.TextBoxFor(model => model.CategoryNum)
+    @Html.ValidationMessageFor(model => model.CategoryNum)
+</div>
+
+
+<div class="editor-label">
+    תמונה ראשית:
+</div>
+<div class="editor-field">
+    <span class="admin-info-span">
+    </span>
+    @{ string imageVal = ""; }
+    @if (Model != null && !string.IsNullOrEmpty(Model.MainImage))
+    {
+        imageVal = Model.MainImage;
+        <a href="/Images/Releases/@imageVal" target="_blank">
+        <img src="/Images/Releases/@Model.MainImage"  class="admin-prev-image" alt="@Model.MainImage" title="@Model.MainImage" />
+        </a>
+    }
+    <input type="hidden"  name="MainImage" id="MainImage" value="@imageVal" />
+    @*<span class="span-info">Image Size Up to: 413px X 413px</span>*@
+    <input type="file" name="UploadedMainImage" id="UploadedMainImage" />
+</div>
+
+<div class="editor-label">
+    תמונה מלבנית:
+</div>
+<div class="editor-field">
+    <span class="admin-info-span">
+    </span>
+    @{ string rectImageVal = ""; }
+    @if (Model != null && !string.IsNullOrEmpty(Model.RectImage))
+    {
+        rectImageVal = Model.RectImage;
+        <a href="/Images/Releases/@rectImageVal" target="_blank">
+        <img src="/Images/Releases/@Model.RectImage"  class="admin-prev-image" alt="@Model.RectImage" title="@Model.RectImage" />
+        </a>
+    }
+    <input type="hidden"  name="RectImage" id="RectImage" value="@rectImageVal" />
+    @*<span class="span-info">Image Size Up to: 413px X 413px</span>*@
+    <input type="file" name="UploadedRectImage" id="UploadedRectImage" />
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {        generateTinyMCE('#Content');
+    });
+
+    $("#Date_Release").datepicker({
+        dateFormat: 'dd-mm-yy',
+        changeMonth: true,
+        changeYear: true
+    });
+
+</script>

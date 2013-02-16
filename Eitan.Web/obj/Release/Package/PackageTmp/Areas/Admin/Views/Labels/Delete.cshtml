@@ -1,0 +1,28 @@
+﻿@model Eitan.Models.Label
+
+@{
+    ViewBag.Title = "מחיקת חברת תקליטים";
+}
+
+<h2>מחיקת חברת תקליטים</h2>
+
+<h3>בטוח שאתה רוצה למחוק את חברת התקליטים הזו?</h3>
+<fieldset>
+    <legend>חברת תקליטים</legend>
+
+
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("בחזרה לרשימת חברות תקליטים", "Index")
+    </p>
+}
+
+

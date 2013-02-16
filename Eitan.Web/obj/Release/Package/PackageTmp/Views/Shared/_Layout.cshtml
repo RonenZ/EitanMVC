@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>EITAN REITER - @ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript">
+        var isRunningIE8OrBelow = false;
+    </script>
+    @if (ViewBag.SEO != null)
+    {  
+        @Html.Partial("_SEO", ((Eitan.Models.SEO)ViewBag.SEO)) 
+    }
+    <!--[if lte IE  8]>
+        <link href='~/Content/lte-ie8-fix.css' rel='stylesheet' type='text/css'>
+        <script type="text/javascript">
+            isRunningIE8OrBelow = true;
+        </script>
+    <![endif]-->
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    @Html.Partial("_Floated_Share")
+    <header>
+        <div id="header">
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("EITAN REITER", "Index", "Home")</p>
+                    <div class="site-info">Musical Production Master</div>
+                </div>
+                @Html.Partial("_SocialBtns")
+                <div id="menu-wrap">
+                    <nav>
+                        <ul id="menu">
+                            @Html.Partial("_Menu_Links")
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/Layout")
+    <script src="~/Scripts/jquery.isotope.min.js"></script>
+    @Scripts.Render("~/bundles/Custom")
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section>
+            <div class="content-wrapper main-content clear-fix">
+                <div id="render-body">
+                    @RenderBody()
+                </div>
+                <div id="knockout-js">
+                    @Html.Partial("_KnockoutPartials")
+                </div>
+                <div class="ajax-loading-div">
+                    <div class="ajax-loading-image"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            @Html.Partial("_Footer")
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".floated-share-div").hover(function () {
+                    $(this).animate({ 'width': '175px' }, 300, '', function () {
+                        $(".floated-share-div .share-btns-wrap").fadeIn();
+                    });
+                },
+                function () {
+                    $(".floated-share-div").animate({ 'width': '45px' }, 500);
+                    $(".floated-share-div .share-btns-wrap").hide();
+                });
+            });
+    </script>
+</body>
+</html>
+@Scripts.Render("~/bundles/modernizr")

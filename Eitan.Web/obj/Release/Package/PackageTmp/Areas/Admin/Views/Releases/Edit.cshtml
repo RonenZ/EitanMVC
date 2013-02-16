@@ -1,0 +1,25 @@
+﻿@model Eitan.Models.Release
+
+@using Eitan.Web.Models
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>עריכת @Model.Title</h2>
+
+@using (Html.BeginForm("Edit", "Releases", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.ID)
+    @Html.Partial("_SEOInput", Model.SEO.NullToSEO())
+    @Html.Partial("_CreateOrEdit", Model)
+    @Html.Partial("_SongsList", Model.Songs)
+    
+    <p>
+        <input type="submit" value="שמירה" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לדיסקוגרפיה", "Index")
+</div>

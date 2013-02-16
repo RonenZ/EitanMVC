@@ -1,0 +1,25 @@
+﻿@model Eitan.Models.News
+
+@{
+    ViewBag.Title = "הוספה";
+}
+
+<h2>הוספת מודעה</h2>
+
+@using (Html.BeginForm("Create", "News", FormMethod.Post, new { enctype = "multipart/form-data" })){
+    @Html.ValidationSummary(true)
+        
+        @Html.Partial("_SEOInput", new Eitan.Models.SEO())
+        @Html.Partial("_FBPostMessage")
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="הוספה" />
+        </p>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לחדשות", "Index")
+</div>
+
+
