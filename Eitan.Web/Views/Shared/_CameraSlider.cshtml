@@ -5,7 +5,7 @@
     <script src="~/Scripts/camera.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-                $('#camera_wrap').delay(3000).camera({
+                $('#camera_wrap').camera({
                     thumbnails: false,
                     navigation: false,
                     height: '@ViewBag.SliderSize' + 'px',
@@ -16,7 +16,7 @@
         });
     </script>
 
-<div class="camera-slider-container camera_wrap camera_azure_skin" id="camera_wrap">
+<div class="camera-slider-container camera_wrap camera_black_skin" id="camera_wrap">
     @foreach (var item in Model)
     {
         <div class="camera-main-image" data-thumb="/Images/@ViewBag.FolderName/@item.Source" data-src="/Images/@ViewBag.FolderName/@item.Source">

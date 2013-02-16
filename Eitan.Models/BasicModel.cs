@@ -37,4 +37,10 @@ namespace Eitan.Models
         public string Content { get; set; }
         public bool isOnHomePage { get; set; }
     }
+
+    public interface IWithSEO
+    {
+        int SeoId { get; set; }
+        SEO SEO { get; set; }
+    }
 }

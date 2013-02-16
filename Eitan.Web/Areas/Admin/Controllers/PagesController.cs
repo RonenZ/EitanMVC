@@ -40,9 +40,9 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ViewResult Details(int id)
         {
-            Project project = Uow.ProjectRepository.GetByID(id);
+            Page page = Uow.PagesRepository.GetByID(id, s => s.SEO);
 
-            return View(project);
+            return View(page);
         }
 
         public ActionResult Create()
@@ -55,22 +55,14 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(Project Entity, SEO SEOEntity, HttpPostedFileBase[] SEOfile)
+        public ActionResult Create(Page Entity, SEO SEOEntity, HttpPostedFileBase[] SEOfile)
         {
             if (ModelState.IsValid)
             {
-                var image = WebImage.GetImageFromRequest("UploadedImage");
+                UpsertSEO(Entity, 0, SEOEntity, SEOfile, "Pages");
 
-                if (image != null)
-                    Entity.MainImage = Server.MapPath("/Images/Projects/").SaveImage(image);
-
-                if (SEOEntity != null && SEOfile != null && SEOfile.Length > 0)
-                {
-                    if (SEOfile != null)
-                        SEOEntity.ogImage = SEOfile.FBSaveImages(Server.MapPath("/Images/SEO/"), "News");
-                }
                 Entity.Date_Creation = DateTime.Now;
-                Uow.ProjectRepository.Add(Entity);
+                Uow.PagesRepository.Add(Entity);
 
                 Uow.Commit();
 
@@ -85,7 +77,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Entity = Uow.ProjectRepository.GetByID(id);
+            var Entity = Uow.PagesRepository.GetByID(id);
 
             return View(Entity);
         }
@@ -95,17 +87,14 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(News EditEntity, int id, SEO POSTSEO, int SEOID = 0)
+        public ActionResult Edit(Page EditEntity, int id, SEO POSTSEO, HttpPostedFileBase[] SEOfile, int SEOID = 0)
         {
             if (ModelState.IsValid)
             {
-                var Entity = Uow.ProjectRepository.GetByID(id);
-
-                var image = WebImage.GetImageFromRequest("UploadedImage");
+                var Entity = Uow.PagesRepository.GetByID(id);
                 UpdateModel(Entity);
 
-                if (image != null)
-                    Entity.MainImage = Server.MapPath("/Images/Projects/").SaveImage(image);
+                UpsertSEO(Entity, SEOID, POSTSEO, SEOfile, "Pages");
 
                 Uow.Commit();
 

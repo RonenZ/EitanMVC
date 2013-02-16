@@ -39,7 +39,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            var SEOs = Uow.SEORepository.GetAll();
 
             return View();
         }

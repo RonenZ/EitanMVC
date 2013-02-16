@@ -1,0 +1,84 @@
+﻿@model Eitan.Models.SEO
+
+    @Html.Hidden("SEOID", Model.SEOID)
+    <div class="seo-copy">
+        Copy: Search >> FB
+    </div>
+    <div class="seo-search-meta">
+        <h3>
+            Search Engines:</h3>
+        <div class="editor-label">
+            Title:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.metaTitle)
+            @Html.ValidationMessageFor(model => model.metaTitle)
+        </div>
+        <div class="editor-label editor-label2">
+            Description: (recomended up to 155 characters)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.metaDescription, 7, 40, null)
+            @Html.ValidationMessageFor(model => model.metaDescription)
+        </div>
+        <div class="editor-label editor-label2">
+            Keywords: (divided by colon)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.metaKeywords, 5, 40, null)
+            @Html.ValidationMessageFor(model => model.metaKeywords)
+        </div>
+        @*<div class="editor-field">
+            @if (Model.isFollow.HasValue)
+            {
+                @Html.CheckBoxFor(model => model.isFollow.Value)
+            }
+            else
+            { 
+                @Html.CheckBox("isFollow", true)
+            }
+            @Html.ValidationMessageFor(model => model.isFollow)
+
+            To Index? (by search engines)
+        </div>*@
+    </div>
+
+
+    <div class="seo-fb-opengraph">
+        <h3>
+            Facebook: (open graph)</h3>
+        <div class="editor-label">
+            Title:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ogTitle)
+            @Html.ValidationMessageFor(model => model.ogTitle)
+        </div>
+        <div class="editor-label">
+            Image:
+        </div>
+        <div class="editor-field">
+            <div class="SEO-files-wrapper">
+            @{
+                string imgstr = (Model.ogImage != null) ? Model.ogImage : "";
+                imgstr = (imgstr.Contains(";")) ? imgstr.Substring(0, Model.ogImage.Length - 1) : imgstr;
+                var ImageArr = imgstr.Split(';');}
+            @foreach (var img in ImageArr)
+            {
+                if (string.IsNullOrEmpty(img))
+                { continue; }
+                <img src="@Url.Content("/Images/SEO/" + @img)" class="seo-small-thumb" />
+            }
+            <input type="file" name="SEOfile" id="SEOfile" />
+            </div>
+            <input type="button" value="+" id="AddFiles" onclick="AddFilesFunc()" />
+            @Html.ValidationMessageFor(model => model.ogImage)
+        </div>
+        <div class="editor-label editor-label2">
+            Description: (recomended up to 155 characters)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ogDescription, 7, 40, null)
+            @Html.ValidationMessageFor(model => model.ogDescription)
+        </div>
+    </div>

@@ -19,6 +19,7 @@ namespace Eitan.Data
             return DbContext.Set<Genre>();
         }
 
+
         public virtual void AddGenre(Genre Entity)
         {
             DbEntityEntry DbEntityEntry = DbContext.Entry(Entity);

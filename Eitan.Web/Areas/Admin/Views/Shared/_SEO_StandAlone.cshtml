@@ -1,0 +1,29 @@
+﻿
+<script src="/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+@using (Html.BeginForm("SEOUpsert", "AJAX", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Hidden("RedirectPath", Request.Path)
+    var SEO = new Eitan.Models.SEO();
+    if (ViewBag.SEO != null) {
+        SEO = (Eitan.Models.SEO)ViewBag.SEO;
+    }
+    @Html.ValidationSummary(true)
+    ViewBag.isIndex = "true";
+    @Html.Hidden("Type", (int)ViewBag.SEOType)
+    @Html.Partial("_SEOInput", SEO)
+}
+
+<script type="text/javascript">
+    function SEOSuccess(data) {
+        switch (data.Code) {
+            case "1":
+            case "2":
+                alert("Data updated successfuly");
+                break;
+            case "-1":
+                alert("error, please try again later..");
+                break;
+        }
+    }
+</script>

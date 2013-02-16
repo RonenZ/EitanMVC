@@ -15,6 +15,96 @@ body {
     padding: 0;
 }
 
+/******** SEO *********/
+.editor-seo-wrap
+{
+    display:inline-block;
+}
+.seo-small-thumb
+{
+    max-width: 300px;
+    clear: both;
+    max-height: 50px;
+    float: left;
+}
+
+.SEO-files-wrapper
+{
+}
+
+.seo-copy
+{
+    cursor: pointer;
+}
+
+.seo-toggle
+{
+    background: none !important;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    margin: 15px 0px 10px 0px;
+    font-size: 13px;
+}
+
+    .seo-toggle:hover
+    {
+        color: #0C9676 !important;
+    }
+
+    .seo-toggle img
+    {
+        vertical-align: middle;
+    }
+
+.seo-Hidden
+{
+    display: none;
+}
+
+.editor-SEO-div
+{
+    direction: ltr;
+    display: none;
+    background-color: #ECF4E6;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #235453;
+}
+
+    .editor-SEO-div .editor-label
+    {
+        height: 20px;
+        font-size: 12px;
+        font-weight: normal;
+        width: 43px;
+        position: relative;
+        top: 7px;
+    }
+
+    .editor-SEO-div .editor-label2
+    {
+        width: 269px !important;
+        height: 23px;
+    }
+
+    .editor-SEO-div input[type="text"]
+    {
+        width: 380px;
+    }
+
+    .editor-SEO-div h3
+    {
+    text-align: left;
+    direction: ltr;
+}
+
+    .editor-SEO-div .seo-search-meta, .editor-SEO-div .seo-fb-opengraph
+    {
+        float: right;
+        width: 428px;
+    }
+
 a {
     color: #79BD9A;
     outline: none;
@@ -484,6 +574,14 @@ label.checkbox {
     display: inline;
 }
 
+input[type=file]
+{
+    padding-top: 1px;
+    
+    background: transparent;
+    border: 0px;
+}
+
 input, textarea {
     display: block;
     border: 1px solid #e2e2e2;
@@ -501,7 +599,7 @@ input[type="text"]
 
 textarea {
     font-family: inherit;
-    width: 500px;
+    width: 380px;
 }
 
     input:focus, textarea:focus {

@@ -74,6 +74,9 @@
 </html>
 <script type="text/javascript" src="~/Areas/Admin/Content/jscripts/tiny_mce/jquery.tinymce.js"></script>
 <script type="text/javascript">
+    $('.seo-toggle').click(function () {
+        $('.seo-Hidden').slideToggle('fast');
+    });
     function generateTinyMCE(selector) {
         $(selector).tinymce({
             // Location of TinyMCE script

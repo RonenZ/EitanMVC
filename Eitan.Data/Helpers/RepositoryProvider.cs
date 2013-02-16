@@ -30,7 +30,9 @@ namespace Eitan.Data.Helpers
             return result;
         }
 
-        public T GetRepository<T,O>(Func<DbContext, object> factory = null) where T : IRepository<O> where O: BasicModel
+        public T GetRepository<T, O>(Func<DbContext, object> factory = null)
+            where T : IRepository<O>
+            where O : BasicModel
         {
             object repoObj;
             Repositories.TryGetValue(typeof(T), out repoObj);
@@ -40,7 +42,9 @@ namespace Eitan.Data.Helpers
             return MakeRepository<T, O>(factory, DbContext); //else create repository
         }
 
-        protected virtual T MakeRepository<T, O>(Func<DbContext, object> factory, DbContext DbContext) where T : IRepository<O> where O: BasicModel
+        protected virtual T MakeRepository<T, O>(Func<DbContext, object> factory, DbContext DbContext)
+            where T : IRepository<O>
+            where O : BasicModel
         {
             var f = factory ?? _repositoryFactories.GetRepositoryFactory<T>();
 

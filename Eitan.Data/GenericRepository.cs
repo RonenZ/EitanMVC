@@ -43,22 +43,14 @@ namespace Eitan.Data
             return DbSet.Include(include).AsQueryable();
         }
 
-        public virtual IQueryable<T> GetAllDesc(string include = "")
-        {
-            if (string.IsNullOrEmpty(include))
-                return DbSet.OrderByDescending(o => o.Date_Creation);
-
-            return DbSet.Include(include).OrderByDescending(o => o.Date_Creation);
-            //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAllDESC  @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
-        }
 
         public virtual T GetByID(int id, params Expression<Func<T, object>>[] includes)
         {
-            if (includes != null && includes.Length > 0)
-            {
-                return includes.Aggregate(this.GetAll(),
-                          (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
-            }
+            //if (includes != null && includes.Length > 0)
+            //{
+            //    return includes.Aggregate(this.GetAll(),
+            //              (current, include) => current.Include(include)).FirstOrDefault(f => f.ID == id);
+            //}
 
             return DbSet.Find(id);
 
@@ -75,6 +67,15 @@ namespace Eitan.Data
                 DbEntityEntry.State = EntityState.Added;
             else
                 DbSet.Add(Entity);
+        }
+
+        public virtual IQueryable<T> GetAllDesc(string include = "")
+        {
+            if (string.IsNullOrEmpty(include))
+                return DbSet.OrderByDescending(o => o.Date_Creation);
+
+            return DbSet.Include(include).OrderByDescending(o => o.Date_Creation);
+            //return DbContext.Database.SqlQuery<T>("EXEC GenericStoredProc_getAllDESC  @TableName", new SqlParameter("@TableName", TableName)).AsQueryable();
         }
 
         public virtual void Update(T Entity)

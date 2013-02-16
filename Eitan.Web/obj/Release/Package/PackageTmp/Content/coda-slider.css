@@ -28,7 +28,7 @@ css-tricks.com/musings-on-preprocessing/
   margin-bottom: 10px;
   padding-top: 12px;
   margin-left: 5px;
-  width: 642px !important;
+  width: 651px !important;
 }
   
   .coda-slider-wrapper .coda-slider {
@@ -54,22 +54,19 @@ css-tricks.com/musings-on-preprocessing/
       * of the container as well. 
       *
       *******************************************************/
-      width: 659px; 
+      width: 660px; 
     }
       
       .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
-    width: 648px;
+          margin-top: 15px;
+    width: 645px;
         /******************************************************
         * 
         * Panel wrapper styles 
         *
         *******************************************************/ 
-      ;
-    float: right;
-}
-  .coda-slider-wrapper p
-  {
-      margin-top: 0px !important;}
+      }
+  
   .coda-slider-wrapper .coda-nav {
     /******************************************************
     * 
@@ -223,7 +220,8 @@ css-tricks.com/musings-on-preprocessing/
   * 
   * Margin between slider and arrows 
   *
-  *******************************************************/ 
+  *******************************************************/
+  margin: 0 10px; 
 }
 
 /**********************************************************************
@@ -238,12 +236,9 @@ css-tricks.com/musings-on-preprocessing/
   * Wrapper styles 
   *
   *************************************************/
-  display: inline-block;
   clear: both;
   position: relative;
   overflow: hidden; 
-  padding-right: 10px;
-  padding-top: 27px;
 }
   
   .coda-slider-wrapper .coda-slider {
@@ -252,10 +247,10 @@ css-tricks.com/musings-on-preprocessing/
     * slider styles 
     *
     *************************************************/
-    display: inline !important;
-    overflow: hidden;
+    display: inline-block;
     position: relative; 
-  }
+  
+}
     
     .coda-slider-wrapper .coda-slider .panel-container {
       /************************************************
@@ -264,7 +259,8 @@ css-tricks.com/musings-on-preprocessing/
       *
       *************************************************/
       position: relative; 
-    }
+    
+}
       
       .coda-slider-wrapper .coda-slider .panel-container .panel {
         /************************************************

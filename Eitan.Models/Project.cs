@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Eitan.Models
 {
-    public class Client : BasicModel {
+    public class Client : BasicModel
+    {
         public string MainImage { get; set; }
     }
 
-    public class Project : MainModel, IBasicWithImageModel
+    public class Project : MainModel, IBasicWithImageModel, IWithSEO
     {
         public int ClientID { get; set; }
         public virtual Client Client { get; set; }
@@ -22,7 +23,7 @@ namespace Eitan.Models
         public string VideoPath { get; set; }
 
         public int SeoId { get; set; }
-        public virtual SEO Seo { get; set; }
+        public virtual SEO SEO { get; set; }
     }
 
     public class ProjectType : BasicModel { }

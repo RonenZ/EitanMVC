@@ -49,17 +49,9 @@ namespace Eitan.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var image = WebImage.GetImageFromRequest("UploadedImage");
+                InsertImage(Entity, "UploadedImage", "News");
+                UpsertSEO(Entity, 0, SEOEntity, SEOfile, "News");
 
-                if (image != null)
-                    Entity.MainImage = Server.MapPath("/Images/News/").SaveImage(image);
-
-                if (SEOEntity != null && SEOfile != null && SEOfile.Length > 0)
-                {
-                    if (SEOfile != null)
-                        SEOEntity.ogImage = SEOfile.FBSaveImages(Server.MapPath("/Images/SEO/"), "News");
-
-                }
                 Entity.Date_Creation = DateTime.Now;
                 Uow.NewsRepository.Add(Entity);
 
@@ -75,7 +67,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Entity = Uow.NewsRepository.GetByID(id);
+            var Entity = Uow.NewsRepository.GetByID(id, s => s.SEO);
 
             return View(Entity);
         }
@@ -85,28 +77,15 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(News EditEntity, int id, SEO POSTSEO, int SEOID = 0)
+        public ActionResult Edit(News EditEntity, int id, SEO POSTSEO, HttpPostedFileBase[] SEOfile, int SEOID)
         {
             if (ModelState.IsValid)
             {
                 var Entity = Uow.NewsRepository.GetByID(id);
-
-                var image = WebImage.GetImageFromRequest("UploadedImage");
                 UpdateModel(Entity);
 
-                if (image != null)
-                    Entity.MainImage = Server.MapPath("/Images/News/").SaveImage(image);
-
-                //if (SEOID > 0)
-                //{
-                //    var SEOEntity = repo.GetSEOByID(SEOID);
-                //    UpdateModel(SEOEntity);
-                //}
-                //else if (POSTSEO != null)
-                //    Entity.SEO_ID = Uow.NewsRepository.InsertSEO(POSTSEO);
-
-                //if (SEOfile != null)
-                //    Entity.SEO.ogImage += SEOfile.FBSaveImages(Server.MapPath("/Images/SEO/"), "News");
+                InsertImage(Entity, "UploadedImage", "News");
+                UpsertSEO(EditEntity, POSTSEO.SEOID, POSTSEO, SEOfile, "News");
 
                 Uow.Commit();
 

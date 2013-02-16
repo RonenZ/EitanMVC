@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eitan.Models
 {
-    public class Release : MainModel, IBasicWithImageModel
+    public class Release : MainModel, IBasicWithImageModel, IWithSEO
     {
         public Release()
         {
@@ -25,7 +25,7 @@ namespace Eitan.Models
         public string Link_External { get; set; }
 
         public int SeoId { get; set; }
-        public virtual SEO Seo { get; set; }
+        public virtual SEO SEO { get; set; }
 
         public virtual ICollection<Song> Songs { get; set; }
     }

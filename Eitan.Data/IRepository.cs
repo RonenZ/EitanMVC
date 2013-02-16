@@ -11,8 +11,8 @@ namespace Eitan.Data
     public interface IRepository<T> where T : BasicModel
     {
         void setTableName(string tablename);
-        IQueryable<T> GetAll(string include = "");
         IQueryable<T> GetAllDesc(string include = "");
+        IQueryable<T> GetAll(string include = "");
         T GetByID(int id, params Expression<Func<T, object>>[] includes);
         void Add(T Entity);
         void Update(T Entity);

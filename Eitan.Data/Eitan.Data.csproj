@@ -48,6 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201302151649431_Update2342369.cs" />
+    <Compile Include="Migrations\201302151649431_Update2342369.Designer.cs">
+      <DependentUpon>201302151649431_Update2342369.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302151650032_Update2342310.cs" />
+    <Compile Include="Migrations\201302151650032_Update2342310.Designer.cs">
+      <DependentUpon>201302151650032_Update2342310.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302151650364_Update2342311.cs" />
+    <Compile Include="Migrations\201302151650364_Update2342311.Designer.cs">
+      <DependentUpon>201302151650364_Update2342311.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302151652355_Update2342312.cs" />
+    <Compile Include="Migrations\201302151652355_Update2342312.Designer.cs">
+      <DependentUpon>201302151652355_Update2342312.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEORepository.cs" />
     <Compile Include="EitanDbContext.cs" />
     <Compile Include="EitanUow.cs" />
     <Compile Include="GenericRepository.cs" />
@@ -56,54 +73,6 @@
     <Compile Include="Helpers\RepositoryProvider.cs" />
     <Compile Include="IEitanUow.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Migrations\201301011112440_FirstUpdate.cs" />
-    <Compile Include="Migrations\201301011112440_FirstUpdate.Designer.cs">
-      <DependentUpon>201301011112440_FirstUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011116215_PicturePage.cs" />
-    <Compile Include="Migrations\201301011116215_PicturePage.Designer.cs">
-      <DependentUpon>201301011116215_PicturePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011118083_SEOPage.cs" />
-    <Compile Include="Migrations\201301011118083_SEOPage.Designer.cs">
-      <DependentUpon>201301011118083_SEOPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011220243_UPDATE123.cs" />
-    <Compile Include="Migrations\201301011220243_UPDATE123.Designer.cs">
-      <DependentUpon>201301011220243_UPDATE123.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011224334_UPDATE4.cs" />
-    <Compile Include="Migrations\201301011224334_UPDATE4.Designer.cs">
-      <DependentUpon>201301011224334_UPDATE4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011232322_UPDATE5.cs" />
-    <Compile Include="Migrations\201301011232322_UPDATE5.Designer.cs">
-      <DependentUpon>201301011232322_UPDATE5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301011234440_UPDATE6.cs" />
-    <Compile Include="Migrations\201301011234440_UPDATE6.Designer.cs">
-      <DependentUpon>201301011234440_UPDATE6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302021251144_check1.cs" />
-    <Compile Include="Migrations\201302021251144_check1.Designer.cs">
-      <DependentUpon>201302021251144_check1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302021257502_check2.cs" />
-    <Compile Include="Migrations\201302021257502_check2.Designer.cs">
-      <DependentUpon>201302021257502_check2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302022302468_check5.cs" />
-    <Compile Include="Migrations\201302022302468_check5.Designer.cs">
-      <DependentUpon>201302022302468_check5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302121119062_Update12022013.cs" />
-    <Compile Include="Migrations\201302121119062_Update12022013.Designer.cs">
-      <DependentUpon>201302121119062_Update12022013.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302121139589_Update12022013-2.cs" />
-    <Compile Include="Migrations\201302121139589_Update12022013-2.Designer.cs">
-      <DependentUpon>201302121139589_Update12022013-2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PagesRepository.cs" />
     <Compile Include="ProjectRepository.cs" />
@@ -122,41 +91,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201301011112440_FirstUpdate.resx">
-      <DependentUpon>201301011112440_FirstUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201302151649431_Update2342369.resx">
+      <DependentUpon>201302151649431_Update2342369.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011116215_PicturePage.resx">
-      <DependentUpon>201301011116215_PicturePage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201302151650032_Update2342310.resx">
+      <DependentUpon>201302151650032_Update2342310.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011118083_SEOPage.resx">
-      <DependentUpon>201301011118083_SEOPage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201302151650364_Update2342311.resx">
+      <DependentUpon>201302151650364_Update2342311.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011220243_UPDATE123.resx">
-      <DependentUpon>201301011220243_UPDATE123.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011224334_UPDATE4.resx">
-      <DependentUpon>201301011224334_UPDATE4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011232322_UPDATE5.resx">
-      <DependentUpon>201301011232322_UPDATE5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301011234440_UPDATE6.resx">
-      <DependentUpon>201301011234440_UPDATE6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302021251144_check1.resx">
-      <DependentUpon>201302021251144_check1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302021257502_check2.resx">
-      <DependentUpon>201302021257502_check2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302022302468_check5.resx">
-      <DependentUpon>201302022302468_check5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302121119062_Update12022013.resx">
-      <DependentUpon>201302121119062_Update12022013.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302121139589_Update12022013-2.resx">
-      <DependentUpon>201302121139589_Update12022013-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201302151652355_Update2342312.resx">
+      <DependentUpon>201302151652355_Update2342312.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,9 +15,7 @@
     
     <script type="text/javascript">
 
-        $(document).ready(function () {
-
-
+        $(".project-main-image").load(function () {
             $('#slider-id').codaSlider(
             {
             @if (Model.VideoPath == null || Model.VideoPath == string.Empty)
@@ -56,7 +54,7 @@
                     var videoid = Model.VideoPath.GetYoutubeVideoID();
                     <div>
                         <p>
-                            <iframe class="project-iframe" src="http://www.youtube.com/embed/@videoid?wmode=transparent&amp;rel=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <iframe class="project-iframe" src="http://www.youtube.com/embed/@videoid?wmode=transparent&amp;rel=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                         </p>
                     </div>
                 }

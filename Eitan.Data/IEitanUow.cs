@@ -15,6 +15,7 @@ namespace Eitan.Data
         //Repositories
         IRepository<Artist> ArtistRepository { get; }
         IRepository<News> NewsRepository { get; }
+        SEORepository SEORepository { get; }
         PagesRepository PagesRepository { get; }
         ProjectRepository ProjectRepository { get; }
         ReleaseRepository ReleaseRepository { get; }

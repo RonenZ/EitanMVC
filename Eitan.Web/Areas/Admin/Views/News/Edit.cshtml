@@ -1,5 +1,7 @@
 ﻿@model Eitan.Models.News
 
+@using Eitan.Web.Models
+
 @{
     ViewBag.Title = Model.Title;
 }
@@ -10,7 +12,7 @@
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.ID)
-    
+    @Html.Partial("_SEOInput", Model.SEO.NullToSEO())
     @Html.Partial("_CreateOrEdit", Model)
     <p>
         <input type="submit" value="שמירה" />

@@ -48,6 +48,8 @@ namespace Eitan.Data
         public ProjectRepository ProjectRepository { get { return GetRepo<ProjectRepository, Project>(); } }
         public ReleaseRepository ReleaseRepository { get { return GetRepo<ReleaseRepository, Release>(); } }
         public SongRepository SongRepository { get { return GetRepo<SongRepository, Song>(); } }
+        public SEORepository SEORepository { get { return new SEORepository(DbContext); } }
+
 
         /// <summary>
         /// returns a standard IRepository of Entity Type
@@ -60,7 +62,9 @@ namespace Eitan.Data
         /// <summary>
         /// Returns a unique repository, non standard
         /// </summary>
-        private T GetRepo<T, O>() where T : IRepository<O> where O : BasicModel
+        private T GetRepo<T, O>()
+            where T : IRepository<O>
+            where O : BasicModel
         {
             return RepositoryProvider.GetRepository<T, O>();
         }

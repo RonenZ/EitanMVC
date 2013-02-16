@@ -27,4 +27,3 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Models\bin\Debug\EntityFramewo
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Models\bin\Debug\EntityFramework.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Models\obj\Debug\Eitan.Models.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Models\obj\Debug\Eitan.Models.pdb
-D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Models\obj\Debug\Eitan.Models.csprojResolveAssemblyReference.cache

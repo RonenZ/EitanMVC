@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
 namespace Eitan.Models
 {
-    public class SEO : BasicModel
+    public class SEO
     {
+        [Key]
+        public int SEOID { get; set; }
         public string ogTitle { get; set; }
         public string ogImage { get; set; }
         public string ogDescription { get; set; }
@@ -15,5 +18,6 @@ namespace Eitan.Models
         public string metaDescription { get; set; }
         public string metaKeywords { get; set; }
         public int Type { get; set; }
+        public bool isDeleted { get; set; }
     }
 }

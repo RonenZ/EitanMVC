@@ -82,7 +82,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
             ViewBagReleases();
 
             ViewBag.RelID = id;
-            var Entity = Uow.ReleaseRepository.GetByID(id, s=>s.Songs);
+            var Entity = Uow.ReleaseRepository.GetByID(id, s => s.Songs, s => s.SEO);
 
             return View(Entity);
         }
@@ -218,19 +218,13 @@ namespace Eitan.Web.Areas.Admin.Controllers
         private void ReleasesUpsert(Release Entity, SEO SEOEntity, HttpPostedFileBase[] SEOfile)
         {
             var mainImage = WebImage.GetImageFromRequest("UploadedMainImage");
-            var rectImage = WebImage.GetImageFromRequest("UploadedRectImage");
 
             if (mainImage != null)
                 Entity.MainImage = Server.MapPath("/Images/Releases/").SaveImage(mainImage, true, 315, 315);
-            if (rectImage != null)
-                Entity.RectImage = Server.MapPath("/Images/Releases/").SaveImage(rectImage, false);
 
-            if (SEOEntity != null && SEOfile != null && SEOfile.Length > 0)
-            {
-                if (SEOfile != null)
-                    SEOEntity.ogImage = SEOfile.FBSaveImages(Server.MapPath("/Images/SEO/"), "News");
-            }
+            InsertImage(Entity, "UploadedRectImage", "Releases");
 
+            UpsertSEO(Entity, SEOEntity.SEOID, SEOEntity, SEOfile, "Releases");
         }
 
 

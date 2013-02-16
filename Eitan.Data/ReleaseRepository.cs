@@ -12,6 +12,7 @@ namespace Eitan.Data
     {
         public ReleaseRepository(DbContext context) : base(context, "Releases") { }
 
+
         public IQueryable<Release> GetAllDescWithIncludes()
         {
             return DbContext.Set<Release>().Include("Songs").Include("Label").AsQueryable();

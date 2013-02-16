@@ -1,4 +1,5 @@
-﻿using Eitan.Models;
+﻿using Eitan.Data;
+using Eitan.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Helpers;
+using System.Web.Mvc;
 
 namespace Eitan.Web.Models
 {
@@ -63,6 +65,14 @@ namespace Eitan.Web.Models
                 CreationDate = s.Date_Creation,
                 ImagePath = s.MainImage
             });
+        }
+
+        public static SEO NullToSEO(this object Obj)
+        {
+            if (Obj == null)
+                return new SEO();
+
+            return (SEO)Obj;
         }
 
         public static IEnumerable<ViewModelWithImage> ReleasesToViewModelsWithImage(this IQueryable<Release> Entities)
@@ -224,20 +234,6 @@ namespace Eitan.Web.Models
             }
             return filename;
         }
-
-        //public static string SaveLinkImage(this string fullpath, string imgpath, string url)
-        //{
-        //    var request = (HttpWebRequest)WebRequest.Create(imgpath);
-        //    var response = (HttpWebResponse)request.GetResponse();
-        //    WebImage image = new WebImage(response.GetResponseStream());
-        //    var filename = url.Trim().Replace(".", "").Replace(" ", "_").Replace("&", "").Replace("?", "").Replace("@", "").Replace(":", "").Replace("/", "");
-
-        //    image.Save(fullpath + filename, "png");
-
-        //    return filename + ".png";
-        //}
-
-
 
         public static string SaveFile(this string fullpath, HttpPostedFileBase file)
         {

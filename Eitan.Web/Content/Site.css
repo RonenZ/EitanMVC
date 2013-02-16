@@ -5,6 +5,18 @@ html {
     padding: 0;
 }
 
+
+::selection
+{
+    background: #929496;
+    color: #FFF;
+}
+
+*::-moz-selection {
+    background: #929496;
+    color: #FFF;
+}
+
 body {
     background-color: #fff;
     color: #333;
@@ -44,10 +56,176 @@ nav, section {
     height: 120px;
     width: 921px;
     color: white;
-    background: url('Images/footer-bg.jpg');
+    background: #e5e5e5;
     left: 8px;
 }
 
+#footer a{
+    color: rgb(87, 87, 87) !important;
+}
+#footer a:hover{
+    color: #F9F9F9 !important;
+}
+
+#footer .last_li
+{
+    border: 0px !important;
+}
+
+#footer div, #footer div > *
+{
+    -webkit-transition: background-color .5s ease, background .1s linear;
+    -moz-transition: background-color .5s ease, background .1s linear;
+    -ms-transition: background-color .5s ease, background .1s linear;
+    -o-transition: background-color .5s ease, background .1s linear;
+    transition: background-color .5s ease, background .1s linear;
+}
+
+#footer
+{
+    color: rgb(87, 87, 87) !important;
+    line-height: 20px;
+    padding-top: 18px;
+    font-family: 'Maven Pro', arial;
+}
+
+    #footer #footer-credit span, #footer #footer-contact span
+    {
+        display: inline-block;
+        font-size: 13px;
+    
+        margin: 10px 0px 0px 0px;
+}
+
+    #footer #footer-nav span
+    {
+        display: inline-block;
+    }
+
+#footer-menu-ul
+{
+    right: 10px;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
+    #footer-menu-ul li
+    {
+        float: left;
+        height: 15px;
+        border-right: 1px solid;
+        font-size: 14px;
+        display: inline-block;
+    
+}
+
+        #footer-menu-ul li a
+        {
+            position: relative;
+            color: rgb(87, 87, 87) !important
+            text-decoration: none;
+        
+            margin: 0 10px;
+            bottom: 3px;
+}
+
+.footer-center-wrap
+{
+    width: 955px;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer-column-left
+{
+    position: relative;
+    margin-right: 30px;
+    float: left;
+    width: 500px;
+    top: 10px;
+    left: 10px;
+}
+
+#footer-contact
+{
+    float: left;
+    width: 300px;
+}
+
+#footer-social-links
+{
+}
+
+    #footer-social-links a
+    {
+        margin-left: 10px;
+        display: block;
+        float: left;
+        width: 50px;
+        height: 52px;
+        background: url('images/Layout-Sprites.png') no-repeat;
+    }
+    
+    #footer-social-links a:hover {
+        background-color: transparent !important;
+    }
+    
+    
+.backtotop
+{
+    float: right;
+    top: 15px;
+    position: relative;
+}
+
+    #footer a:hover
+    {
+        background-color: gray;
+        color: white;
+    
+}
+
+#footer-social-links .footer-fb-link
+{
+    background-position: 0px -132px;
+}
+
+#footer-social-links .footer-soundcloud-link
+{
+    background-position: -58px -132px;
+}
+
+#footer-social-links .footer-youtube-link
+{
+    background-position: -174px -132px;
+}
+
+#footer-social-links .footer-twitter-link
+{
+    background-position: -116px -132px;
+}
+
+#footer-social-links .footer-fb-link:hover
+{
+    background-position: 1px -183px;
+}
+
+#footer-social-links .footer-soundcloud-link:hover
+{
+    background-position: -57px -183px;
+}
+
+#footer-social-links .footer-youtube-link:hover
+{
+    background-position: -173px -183px;
+}
+
+#footer-social-links .footer-twitter-link:hover
+{
+    background-position: -115px -183px;
+}
 
 mark {
     background-color: #a6dbed;
@@ -666,6 +844,10 @@ ul#menu {
 
 /*#region NEWS */
 /********** NEWS ***********/
+.span-read-more
+{
+    color: #373737;
+}
 #news-div {
     margin-bottom: 10px;
     padding-left: 5px;
@@ -680,13 +862,13 @@ ul#menu {
     }
 
     #news-single-wrap .news-right-column {
-        max-width: 865px;
+        width: 865px;
         float: left;
         margin-left: -3px;
     }
 
     #news-single-wrap .news-top-image-container {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     #news-single-wrap .news-top-image {
@@ -913,8 +1095,8 @@ ul#menu {
 
 #release-single-wrap .details-left-image-container {
     float: left;
-    padding: 0 5px 10px 0;
-    width: 380px;
+    padding: 0 5px 15px 0;
+    width: 342px;
 }
 
 #release-single-wrap .details-left-image {
@@ -923,7 +1105,7 @@ ul#menu {
 }
 
 #release-single-wrap .details-right-content {
-    max-width: 555px;
+    width: 607px;
     float: left;
 }
 
@@ -954,7 +1136,7 @@ ul#menu {
 }
 
 #release-single-wrap .details-additional-info {
-    width: 570px;
+    width: 610px;
     border-bottom: 1px dashed #403D3E;
     padding: 15px 0;
 }

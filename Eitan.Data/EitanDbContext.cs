@@ -1,6 +1,7 @@
 ﻿using Eitan.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Eitan.Data
         public DbSet<Eitan.Models.Artist> Artists { get; set; }
 
         public DbSet<Eitan.Models.Song> Songs { get; set; }
+
+        public DbSet<Eitan.Models.SEO> SEOs { get; set; }
 
         public DbSet<Eitan.Models.Genre> Genres { get; set; }
 
@@ -39,24 +42,28 @@ namespace Eitan.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Release>()
-                .HasOptional<SEO>(u => u.Seo)
-                .WithRequired()
-                .WillCascadeOnDelete(false);
+                .HasRequired(r => r.SEO)
+                .WithMany()
+                .HasForeignKey(r => r.SeoId)
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Page>()
-                .HasOptional<SEO>(u => u.Seo)
-                .WithRequired()
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<News>()
-                .HasOptional<SEO>(u => u.Seo)
-                .WithRequired()
-                .WillCascadeOnDelete(false);
+            .HasRequired(r => r.SEO)
+            .WithMany()
+            .HasForeignKey(r => r.SeoId)
+            .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Project>()
-                .HasOptional<SEO>(u => u.Seo)
-                .WithRequired()
-                .WillCascadeOnDelete(false);
+            .HasRequired(r => r.SEO)
+            .WithMany()
+            .HasForeignKey(r => r.SeoId)
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<News>()
+             .HasRequired(r => r.SEO)
+             .WithMany()
+             .HasForeignKey(r => r.SeoId)
+             .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Project>()
                 .HasRequired(p => p.Type)
@@ -91,6 +98,9 @@ namespace Eitan.Data
             modelBuilder.Entity<Release>().
               HasMany(c => c.Songs).
               WithMany(p => p.News);
+
+            modelBuilder.Entity<SEO>().Property(p => p.SEOID)
+            .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
 }
