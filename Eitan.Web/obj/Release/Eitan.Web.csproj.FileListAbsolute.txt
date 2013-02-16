@@ -93,6 +93,7 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Newtonsoft.Js
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.Common.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.Mvc.dll
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\PagedList.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\System.Net.Http.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\System.Net.Http.Formatting.dll
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\System.Net.Http.WebRequest.dll
@@ -120,6 +121,7 @@ D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.C
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.Common.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.Mvc.pdb
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Ninject.Web.Mvc.xml
+D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\PagedList.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\Newtonsoft.Json.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\System.Net.Http.xml
 D:\Programming\Projects\VS 2012\EitanReiter\Eitan.Web\bin\Releases\System.Net.Http.Formatting.xml
