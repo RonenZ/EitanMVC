@@ -1,4 +1,7 @@
-﻿/*#region RESET */
+﻿/* Minification failed. Returning unminified contents.
+(145,13): run-time error CSS1062: Expected semicolon or closing curly-brace, found 'text-decoration'
+ */
+/*#region RESET */
 
 html {
     margin: 0;
@@ -60,11 +63,12 @@ nav, section {
     line-height: 25px;
     font-size: 15px;
     padding: 15px;
-    height: 70px;
+    height: 55px;
     width: 921px;
     color: white;
     background: #e5e5e5;
-    left: 10px;
+    left: 8px;
+    top: 12px;
 }
 
 #footer a{
