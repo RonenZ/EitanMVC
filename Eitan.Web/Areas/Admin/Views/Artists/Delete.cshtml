@@ -1,0 +1,26 @@
+﻿@model Eitan.Models.Artist
+
+@{
+    ViewBag.Title = "מחיקת אמן";
+}
+
+<h2>מחיקת אמן</h2>
+
+<h3>בטוח שאתה רוצה למחוק את?</h3>
+<fieldset>
+    <legend>אמן</legend>
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("בחזרה לאמנים", "Index")
+    </p>
+}
+
+
