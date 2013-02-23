@@ -19,6 +19,7 @@ namespace Eitan.Web.Controllers
         public ReleasesController(IEitanUow uow)
         {
             Uow = uow;
+            ViewBag.ActiveReleases = "active";
         }
         //
         // GET: /News/

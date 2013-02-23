@@ -19,6 +19,7 @@ namespace Eitan.Web.Controllers
        public ProjectsController(IEitanUow uow)
         {
             Uow = uow;
+            ViewBag.ActiveProjects = "active";
         }
         //
         // GET: /Projects/

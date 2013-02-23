@@ -16,6 +16,7 @@ namespace Eitan.Web.Controllers
         }
         public ActionResult Index()
         {
+            ViewBag.ActiveHome = "active";
             var HomeModel = new HomePageViewModel();
 
             var Homepage = Uow.PagesRepository.GetByType(1000);
@@ -59,7 +60,7 @@ namespace Eitan.Web.Controllers
             ViewBag.SliderImages = StudioPage.Images.Where(w => w.PictureType == 22).ToList();
             //Left Side Images - of type 33
             ViewBag.LeftImages = StudioPage.Images.Where(w => w.PictureType == 33).ToList();
-
+            ViewBag.ActiveStudio = "active";
             return View(StudioPage);
         }
 
@@ -71,7 +72,7 @@ namespace Eitan.Web.Controllers
 
             ViewBag.PageTitle = ContactPage.Title;
             ViewBag.PageContent = ContactPage.Content;
-            //Left Side Images - of type 33
+            ViewBag.ActiveContact = "active";
             ViewBag.LeftImages = ContactPage.Images.ToList();
 
             return View();

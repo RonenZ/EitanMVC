@@ -20,6 +20,7 @@ namespace Eitan.Web.Controllers
        public NewsController(IEitanUow uow)
         {
             Uow = uow;
+            ViewBag.ActiveNews = "active";
         }
         //
         // GET: /News/

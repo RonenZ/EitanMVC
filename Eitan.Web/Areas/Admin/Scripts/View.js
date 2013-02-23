@@ -17,7 +17,7 @@ ViewModel = {
     LoadNews: function () {
         var data = "?json=true&page=" + page;
         ViewModel.ClearAllArrays();
-        $("#news-div").show();
+        $("#news-container").show();
 
         if (ViewModel.News().length > 0) { }
             //$("#news-div").isotope('shuffle', null);
@@ -33,7 +33,7 @@ ViewModel = {
     LoadReleases: function () {
         var data = "?json=true&page=" + page;
         ViewModel.ClearAllArrays();
-        $("#releases-div").show();
+        $("#releases-container").show();
 
         if (ViewModel.Releases().length > 0) { }
             //$("#releases-div").isotope('shuffle', null);
@@ -50,7 +50,7 @@ ViewModel = {
     LoadProjects: function () {
         var data = "?json=true&page=" + page;
         ViewModel.ClearAllArrays();
-        $("#projects-div").show();
+        $("#projects-container").show();
         
         if (ViewModel.Projects().length > 0) { }
             //$("#projects-div").isotope('shuffle', null);
@@ -64,7 +64,7 @@ ViewModel = {
     },
 
     ClearAllArrays: function () {
-        $(".model-collection-wrap").hide();
+        $(".model-collection-container").hide();
     }
 };
 

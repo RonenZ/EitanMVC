@@ -1084,6 +1084,7 @@
     <Content Include="Views\Shared\_SEO.cshtml" />
     <Content Include="Views\Shared\_ShareBtns.cshtml" />
     <Content Include="Views\Shared\_Floated_Share.cshtml" />
+    <Content Include="Views\Shared\_Release_Filter_Bar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

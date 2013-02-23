@@ -66,6 +66,10 @@
 
         $(".AjaxLink").click(function () {
             var type = $(this).data("type");
+            var toactive = $(this).parent();
+
+            //activate li of link
+            activate_menu_li(toactive);
 
             $("#render-body").hide();
             //reset_isotope(type);
@@ -73,6 +77,11 @@
             return false;
         });
     });
+
+    function activate_menu_li(toactive) {
+        $(".menu-links li").removeClass("active");
+        $(toactive).addClass("active");
+    }
 
     function reset_isotope(colname) {
         //colname = colname.toLowerCase();

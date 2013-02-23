@@ -27,6 +27,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 20px 0 0 0;
+    overflow-y: scroll;
 }
 
 a {
@@ -199,7 +200,10 @@ nav, section {
     top: 15px;
     position: relative;
 }
-
+    #footer li.active a{
+        font-weight: bold;
+        color: rgb(49, 49, 49)!important;
+    }
     #footer a:hover
     {
         background-color: gray;
@@ -534,7 +538,7 @@ mark {
     visibility: hidden;
 }
 
-ul#menu li:hover {
+ul#menu li:hover, ul#menu li.active {
     background-color: black;
     color: white;
 }
@@ -831,7 +835,7 @@ ul#menu {
         padding: 0px 20px;
     }
 
-        ul#menu li a {
+        ul#menu li a, ul#menu li.active a {
             text-transform: uppercase;
             background: none;
             color: #060000;
@@ -842,7 +846,7 @@ ul#menu {
             color: white;
         }
 
-        ul#menu li a:hover {
+        ul#menu li a:hover, ul#menu li.active a  {
             color: white;
             text-decoration: none;
         }
@@ -1361,6 +1365,50 @@ ul#menu {
 
 /*#region RELEASES */
 /*********** RELEASES *********/
+.release-filter-bar
+{
+    overflow: hidden;
+    margin-left: 3px;
+    width: 962px;
+    height: 30px;
+    color: white;
+    background-color: black;
+}
+    .release-filter-bar span {
+    display: block;
+    
+    padding-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+    .release-filter-bar .filter-links
+    {
+    padding: 0px;
+
+    list-style: none;
+    color: white;
+}
+
+    .release-filter-bar .filter-links li
+    {
+    float: left;
+    width: 315px;
+}
+
+    .release-filter-bar .filter-links li a
+    {
+        color: white;
+    
+        display: block;
+        text-align: center;
+}
+
+    .releases-div
+    {
+        min-height: 500px;
+        width: 100%;
+    }
+
 #releases-div .model-item-image, .releases-div .model-item-image {
     width: 315px;
     height: 315px;
@@ -1370,6 +1418,7 @@ ul#menu {
 #releases-div .release-item, .releases-div .release-item {
     padding: 0px;
     margin: 3px 3px;
+    height: 315px;
 }
 
 #release-single-wrap #release-info {
@@ -1470,6 +1519,7 @@ ul#menu {
 }
 
 .model-collection-container {
+    display: none;
 }
 
 /*#endregion */
