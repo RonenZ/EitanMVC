@@ -7,20 +7,12 @@
         <a href="?pagenum=1"> << </a>
         <a href="?pagenum=@(Model.PageNumber - 1)">< Prev</a>
     }
-    else
-    {
-        @:<<
-        @:< Prev
-    }
+
     &nbsp;
     @if (Model.HasNextPage)
     {
         <a href="?pagenum=@(Model.PageNumber + 1)">Next ></a>
         <a href="?pagenum=@Model.PageCount">>></a>
     }
-    else
-    {
-        @:Next >
-        @:>>
-    }
+
 </div>

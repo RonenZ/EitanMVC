@@ -83,7 +83,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var Entity = Uow.PagesRepository.GetByID(id, p => p.SEO);
+            var Entity = Uow.PagesRepository.GetByID(id, p => p.SEO, p => p.Images);
 
             return View(Entity);
         }
@@ -109,6 +109,91 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
             return View(EditEntity);
         }
+
+        #region Pictures
+
+        public ActionResult CreatePicture(int PageId)
+        {
+            ViewBag.PageId = PageId;
+            return View();
+        }
+
+        //
+        // POST: /Clients/Create
+
+        [HttpPost]
+        public ActionResult CreatePicture(int HdnPageId, Picture pic)
+        {
+            Page page = Uow.PagesRepository.GetByID(HdnPageId, s => s.Images);
+            if (ModelState.IsValid && page != null)
+            {
+                var image = WebImage.GetImageFromRequest("UploadedImage");
+
+                if (image != null)
+                    pic.Source = Server.MapPath("/Images/Pages/").SaveImage(image);
+
+                pic.Date_Creation = DateTime.Now;
+
+                page.Images.Add(pic);
+
+                Uow.Commit();
+
+                return RedirectToAction("Edit", new { id = HdnPageId });
+            }
+            ViewBag.PageId = HdnPageId;
+            ViewBag.Genres = Uow.ReleaseRepository.GetAllGenres().ToList();
+
+            return View(pic);
+        }
+
+        public ActionResult EditPicture(int id)
+        {
+            var Entity = Uow.PagesRepository.GetPictureByID(id);
+            if (Entity != null)
+                ViewBag.PageId = Entity.PageId;
+            return View(Entity);
+        }
+
+
+        [HttpPost]
+        public ActionResult EditPicture(int HdnPageID, Picture pic, HttpPostedFileBase UploadedFile)
+        {
+            if (ModelState.IsValid)
+            {
+                Picture Entity = Uow.PagesRepository.GetPictureByID(pic.ID);
+                UpdateModel(Entity);
+
+                var image = WebImage.GetImageFromRequest("UploadedImage");
+
+                if (image != null)
+                    Entity.Source = Server.MapPath("/Images/Pages/").SaveImage(image);
+
+                Uow.Commit();
+                return RedirectToAction("Edit", new { id = HdnPageID });
+            }
+
+            ViewBag.PageId = HdnPageID;
+            return View(pic);
+        }
+
+        public ActionResult DeletePicture(int id)
+        {
+            var Entity = Uow.PagesRepository.GetPictureByID(id);
+            if (Entity != null)
+                ViewBag.PageId = Entity.PageId;
+            return View(Entity);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePicture(int id, int hdnPageID)
+        {
+            Uow.PagesRepository.DeletePicture(id);
+            Uow.Commit();
+
+            return RedirectToAction("Edit", new { id = hdnPageID });
+        }
+
+        #endregion
 
         protected override void Dispose(bool disposing)
         {

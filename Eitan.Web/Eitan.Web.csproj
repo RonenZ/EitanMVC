@@ -671,7 +671,8 @@
     <Content Include="Content\Images\SEO-globe.png" />
     <Content Include="Content\Images\Share-Sprites.png" />
     <Content Include="Content\Images\social-icons-sprites.png" />
-    <Content Include="Content\lte-ie8-fix.css.css" />
+    <Content Include="Content\lte-ie8-fix.css" />
+    <Content Include="Content\lte-ie9-fix.css" />
     <Content Include="Content\Projektor\changelog.txt" />
     <Content Include="Content\Projektor\design.html" />
     <Content Include="Content\Projektor\jarisplayer.swf" />
@@ -939,6 +940,12 @@
     <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Paging.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Search.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\CreatePicture.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\DeletePicture.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\EditPicture.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\_Pictures_List.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -968,6 +975,10 @@
     <Content Include="Images\News\thumb_News4.jpg" />
     <Content Include="Images\Pages\222.jpg" />
     <Content Include="Images\Pages\home-large1.jpg" />
+    <Content Include="Images\Pages\left-bottom-image.jpg" />
+    <Content Include="Images\Pages\left-contact1.jpg" />
+    <Content Include="Images\Pages\left-top-image.jpg" />
+    <Content Include="Images\Pages\top-image.jpg" />
     <Content Include="Images\Projects\abstract_0033small.jpg" />
     <Content Include="Images\Projects\Project1.jpg" />
     <Content Include="Images\Projects\Project2.jpg" />

@@ -11,6 +11,23 @@ namespace Eitan.Data
     {
         public PagesRepository(DbContext context) : base(context) { }
 
+        public Picture GetPictureByID(int ID)
+        {
+            var pics = DbContext.Set<Picture>();
+
+            return pics.Find(ID);
+        }
+
+        public void DeletePicture(int id)
+        {
+            var pics = DbContext.Set<Picture>();
+
+            var pic = pics.Find(id);
+
+            pics.Remove(pic);
+        }
+
+
         public Page GetByType(int type)
         {
             if (DbSet == null) DbSet = DbContext.Set<Page>();

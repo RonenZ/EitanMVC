@@ -14,7 +14,7 @@ using Eitan.Web.Models;
 using PagedList;
 
 namespace Eitan.Web.Areas.Admin.Controllers
-{   
+{
     public class ReleasesController : EitanBaseController
     {
         private static readonly int pageSize = int.Parse(ConfigurationManager.AppSettings["ReleasePageSize"]);
@@ -45,7 +45,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
         public ViewResult Details(int id)
         {
             Release release = Uow.ReleaseRepository.GetByID(id, s => s.Songs);
-            
+
             return View(release);
         }
 
@@ -149,7 +149,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
             {
                 if (UploadedFile != null)
                     song.FilePath = Server.MapPath("/Files/Releases/").SaveFile(UploadedFile);
-                
+
                 song.Date_Creation = DateTime.Now;
 
                 Uow.SongRepository.Add(song);
@@ -224,12 +224,12 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         private void ReleasesUpsert(Release Entity, SEO SEOEntity, HttpPostedFileBase[] SEOfile)
         {
-            var mainImage = WebImage.GetImageFromRequest("UploadedMainImage");
+            var rectImage = WebImage.GetImageFromRequest("UploadedRectImage");
 
-            if (mainImage != null)
-                Entity.MainImage = Server.MapPath("/Images/Releases/").SaveImage(mainImage, true, 315, 315);
+            if (rectImage != null)
+                Entity.RectImage = Server.MapPath("/Images/Releases/").SaveImage(rectImage, true, 315, 315);
 
-            InsertImage(Entity, "UploadedRectImage", "Releases");
+            InsertImage(Entity, "UploadedMainImage", "Releases");
 
             UpsertSEO(Entity, SEOEntity.SEO_ID, SEOEntity, SEOfile, "Releases");
         }
@@ -256,7 +256,8 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing) {
+            if (disposing)
+            {
                 Uow.Dispose();
             }
             base.Dispose(disposing);

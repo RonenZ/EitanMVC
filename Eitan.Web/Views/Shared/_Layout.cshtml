@@ -13,12 +13,16 @@
     {  
         @Html.Partial("_SEO", ((Eitan.Models.SEO)ViewBag.SEO)) 
     }
-    <!--[if lte IE  8]>
-        <link href='~/Content/lte-ie8-fix.css' rel='stylesheet' type='text/css'>
+
+    <!--[if lte IE 9]>
+        <link href='~/Content/lte-ie9-fix.css' rel='stylesheet' type='text/css'>
         <script type="text/javascript">
             isRunningIE8OrBelow = true;
         </script>
     <![endif]-->
+    <!--[if lte IE 8]>
+    <link href='~/Content/lte-ie8-fix.css' rel='stylesheet' type='text/css'>
+     <![endif]-->
     @RenderSection("head", required: false)
     @Styles.Render("~/Content/css")
 </head>
@@ -71,18 +75,18 @@
     </footer>
 
     @RenderSection("scripts", required: false)
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(".floated-share-div").hover(function () {
-                    $(this).animate({ 'width': '175px' }, 300, '', function () {
-                        $(".floated-share-div .share-btns-wrap").fadeIn();
-                    });
-                },
-                function () {
-                    $(".floated-share-div").animate({ 'width': '45px' }, 500);
-                    $(".floated-share-div .share-btns-wrap").hide();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".floated-share-div").hover(function () {
+                $(this).animate({ 'width': '175px' }, 300, '', function () {
+                    $(".floated-share-div .share-btns-wrap").fadeIn();
                 });
+            },
+            function () {
+                $(".floated-share-div").animate({ 'width': '45px' }, 500);
+                $(".floated-share-div .share-btns-wrap").hide();
             });
+        });
     </script>
 </body>
 </html>

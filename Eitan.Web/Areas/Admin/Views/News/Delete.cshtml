@@ -1,4 +1,4 @@
-﻿@model Eitan.Models.Release
+﻿@model Eitan.Models.News
 
 @{
     ViewBag.Title = "מחיקת דיסקוגרפיה";
@@ -19,8 +19,8 @@
     @if (Model != null && !string.IsNullOrEmpty(Model.MainImage))
     {
         imageVal = Model.MainImage;
-        <a href="/Images/Releases/@imageVal" target="_blank">
-        <img src="/Images/Releases/@Model.MainImage"  class="admin-prev-image" alt="@Model.MainImage" title="@Model.MainImage" />
+        <a href="/Images/News/@imageVal" target="_blank">
+        <img src="/Images/News/@Model.MainImage"  class="admin-prev-image" alt="@Model.MainImage" title="@Model.MainImage" />
         </a>
     }
     <div class="display-label">תאריך</div>
@@ -29,7 +29,7 @@
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Delete" /> |
-        @Html.ActionLink("בחזרה לדיסקוגרפיה", "Index")
+        @Html.ActionLink("בחזרה לחדשות", "Index")
     </p>
 }
 

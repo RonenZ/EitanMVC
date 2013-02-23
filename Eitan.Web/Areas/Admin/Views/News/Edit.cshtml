@@ -12,6 +12,7 @@
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.ID)
+    
     @Html.Partial("_SEOInput", Model.SEO.NullToSEO())
     @Html.Partial("_CreateOrEdit", Model)
     <p>

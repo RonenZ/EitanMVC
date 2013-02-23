@@ -12,6 +12,8 @@
     @Html.HiddenFor(model => model.ID)
     @Html.Partial("_SEOInput", Model.SEO.NullToSEO())
     @Html.Partial("_CreateOrEdit", Model)
+
+    @Html.Partial("_Pictures_List", Model.Images)
     <p>
         <input type="submit" value="שמירה" />
     </p>

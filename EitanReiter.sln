@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eitan.Data", "Eitan.Data\Eitan.Data.csproj", "{D0A65543-FC13-4DB4-B2ED-C990E87BB5E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eitan.Models", "Eitan.Models\Eitan.Models.csproj", "{1FDAA192-A6D1-45BE-8CC7-C0CF72FC304A}"

@@ -72,7 +72,7 @@ namespace Eitan.Web.Controllers
             ViewBag.PageTitle = ContactPage.Title;
             ViewBag.PageContent = ContactPage.Content;
             //Left Side Images - of type 33
-            ViewBag.LeftImages = ContactPage.Images.Where(w => w.PictureType == 33).ToList();
+            ViewBag.LeftImages = ContactPage.Images.ToList();
 
             return View();
         }

@@ -45,6 +45,10 @@ body {
 
         }
 
+#searchbar {
+    float: right;
+}
+ 
 
 /******** SEO *********/
 .editor-seo-wrap
@@ -508,8 +512,13 @@ aside {
 }
 
 /* login page */
+#loginForm h2
+{
+    text-align: left;
+}
+
 #loginForm {
-    border-right: solid 2px #c8c8c8;
+    direction: ltr;
     float: left;
     width: 55%;
 }
