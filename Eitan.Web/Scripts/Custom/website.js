@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    if (!isRunningIE8OrBelow) {
+    if (!(isRunningIE10 || isRunningIE8OrBelow)) {
         $('#render-body img').hide().load(function () {
             $(this).fadeIn(500);
         });

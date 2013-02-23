@@ -15,7 +15,7 @@
     
     <script type="text/javascript">
 
-        if (($.browser.msie && $.browser.version == 10) || isRunningIE8OrBelow) {
+        if (isRunningIE10 || isRunningIE8OrBelow) {
         $(".project-main-image").ready(function () {
             InitiateCodaSlider();
         });
