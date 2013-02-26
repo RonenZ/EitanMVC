@@ -891,8 +891,8 @@ ul#menu {
     background-position: 0px 0px;
 }
 
-.release-type-1 .zoom {
-    background-position: 0px -43px !important;
+.release-type-1 .zoom, .release-type-2 .zoom, .release-type-3 .zoom {
+    background-position: -33px -208px !important;
 }
 
 .release-type-2 .zoom {
@@ -1046,7 +1046,7 @@ ul#menu {
         position: relative;
         background: url('images/Home-Sprites.png') no-repeat -5px -5px;
         display: inline-block;
-        width: 35px;
+        width: 36px;
         height: 35px;
         text-indent: -9999px;
     }
