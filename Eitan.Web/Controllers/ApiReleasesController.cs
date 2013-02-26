@@ -31,7 +31,7 @@ namespace Eitan.Web.Api.Controllers
             int itemsleft = Uow.ReleaseRepository.GetAll().Count() - (page * _pageSize);
             ViewModel.ItemsLeft = itemsleft < 0 ? 0 : itemsleft;
             ViewModel.isGotMoreItems = itemsleft > 0 ? true : false;
-            ViewModel.Items = Uow.ReleaseRepository.GetAllDesc("Label")
+            ViewModel.Items = Uow.ReleaseRepository.GetAllDescByReleaseDate("Label")
                                     .Skip(--page * _pageSize)
                                     .Take(_pageSize)
                                     .ReleasesToViewModelsWithImage();

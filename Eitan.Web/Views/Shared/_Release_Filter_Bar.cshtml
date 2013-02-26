@@ -1,7 +1,8 @@
-﻿<div class="release-filter-bar">
+﻿<div class="release-filter-bar panel-closed">
+    <div class="btn-close">+</div>
     <span>FILTER DISCOGRAPHY</span>
     <div class="release-filter-input">
-        <input type="text" class="release-filter-search" placeholder="Query Releases:" />
+        <input type="text" class="release-filter-search" placeholder=" Query Discography Name:" />
     </div>
     <div class="release-filter-ddl">
         @Html.DropDownList("Release_Type", new SelectList(Eitan.Web.Models.StaticCode.ReleaseTypes, "Key", "Value"), new { Class = "Release_Type Release_Filter_DDL" })

@@ -42,14 +42,16 @@ namespace Eitan.Web.Models
         {
         }
 
-        public ViewModelWithImage(int _ID, string _Title, DateTime _Creation, string _ImagePath, string Type = "", int TypeID = 0, string _SubTitle = "")
+        public ViewModelWithImage(int _ID, string _Title, DateTime _Creation, string _ImagePath, string _Controller = "", string Type = "", int TypeID = 0, string _SubTitle = "")
             : base(_ID, _Title, _Creation, Type,  _SubTitle)
         {
             this.ImagePath = _ImagePath;
             this.TypeID = TypeID;
+            this.Controller = _Controller;
         }
 
         public string ImagePath { get; set; }
+        public string Controller { get; set; }
     }
 
     public class ViewModelDetailed : ViewModelWithImage
@@ -68,15 +70,13 @@ namespace Eitan.Web.Models
         public string Content { get; set; }
     }
 
-    public class HomePageViewModel : Dictionary<string, HomeViewModelWithImageWrap> 
+    public class HomePageViewModel 
     {
         public HomePageViewModel()
         {
-            this.Add("Project", new HomeViewModelWithImageWrap() { Controller = "Projects", Type = "Project" });
-            this.Add("Discography", new HomeViewModelWithImageWrap() { Controller = "Releases", Type = "Discography" });
-            this.Add("News", new HomeViewModelWithImageWrap() { Controller = "News", Type = "News" });
-            this.Add("Movie", new HomeViewModelWithImageWrap() { Controller = "Movies", Type = "Movie" });
         }
+
+        public IEnumerable<ViewModelWithImage> Items { get; set; }
     }
 
     public class HomeViewModelWithImageWrap

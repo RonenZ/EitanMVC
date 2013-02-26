@@ -247,7 +247,6 @@
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\StaticCode.cs" />
-    <Compile Include="Models\ViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

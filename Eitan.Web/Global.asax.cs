@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -36,6 +38,14 @@ namespace Eitan.Web
             ResourceLoader.RegisterData();
 
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("he-IL");
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("he-IL");
+        }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("he-IL");
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("he-IL");
         }
     }
 }

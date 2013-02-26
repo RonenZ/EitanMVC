@@ -148,7 +148,7 @@ nav, section {
         #footer-menu-ul li a
         {
             position: relative;
-            color: rgb(87, 87, 87) !important
+            color: rgb(87, 87, 87) !important;
             text-decoration: none;
         
             margin: 0 10px;
@@ -963,12 +963,11 @@ ul#menu {
 #home-items-wrap .portfolio-item-hover-content div.zoom {
     position: relative;
     background: url('images/Home-Sprites.png') no-repeat -5px -5px;
-    margin-left: -15px;
     display: inline-block;
     width: 35px;
     height: 35px;
     text-indent: -9999px;
-    margin-left: 40%;
+    margin-left: 20px;
 }
 
     #home-items-wrap .portfolio-item-hover-content div.zoom:hover {
@@ -1028,6 +1027,7 @@ ul#menu {
 }
 
 .portfolio-content-wrap {
+    text-align: center;
     width: 250px;
     min-height: 35px;
     position: absolute;
@@ -1045,12 +1045,10 @@ ul#menu {
     .portfolio-item-hover-content div.zoom {
         position: relative;
         background: url('images/Home-Sprites.png') no-repeat -5px -5px;
-        margin-left: -15px;
         display: inline-block;
         width: 35px;
         height: 35px;
         text-indent: -9999px;
-        margin-left: 30%;
     }
 
         .portfolio-item-hover-content div.zoom:hover {
@@ -1371,6 +1369,17 @@ ul#menu {
 .release-filter-input {
 }
 
+.release-filter-bar .btn-close
+{
+    line-height: 26px;
+    cursor: pointer;
+    padding: 0px 5px;
+    right: 0px;
+    font-size: 30px;
+    position: absolute;
+    top: 0px;
+}
+
 .release-filter-ddl{
     float: left;
 
@@ -1399,11 +1408,13 @@ ul#menu {
 .release-filter-bar
 {
     overflow: hidden;
-    margin-left: 3px;
-    width: 957px;
+    margin-left: 2px;
+    margin-right: 3px;
+    width: 953px;
     height: 30px;
     color: white;
     background-color: black;
+    position: relative;
 }
     .release-filter-bar span {
     display: block;
@@ -1411,6 +1422,8 @@ ul#menu {
     padding-top: 5px;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
+    width: 919px;
 }
     .release-filter-bar .filter-links
     {
@@ -1466,7 +1479,8 @@ ul#menu {
 }
 
 #release-single-wrap .details-left-image {
-    max-width: 377px;
+    max-width: 315px;
+    max-height: 315px;
     display: block;
 }
 
@@ -1515,13 +1529,72 @@ ul#menu {
     display: inline-block;
 }
 
+/********* SONGS ********/
+.songs-hidden-wrap
+{
+    display: none;
+    margin-bottom: 15px;
+}
+
+.release-track-count div
+{
+    float: left;
+}
+
+.songs-show-details
+{
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    position: relative;
+    bottom: 5px;
+}
+.song-details-wrap {
+    width: 948px;
+    height: 30px;
+    padding: 5px;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.song-details-wrap .song-number{
+    float: left;
+    font-size: 25px;
+    color: #929496;
+    font-weight: bold;
+    margin: 0px 20px;
+}
+.song-details-wrap .song-title{}
+.song-details-wrap .song-genre{
+    font-size: 13px;  font-weight: bold;    
+    color: white;  position: relative;  top: 7px;  margin-right: 5px;
+    float: left;
+}
+.song-details-wrap .song-date{
+    font-size: 13px;
+    font-weight: bold;
+    float: right;
+    color: white;
+    position: relative;
+    top: 7px;
+    margin-right: 5px;
+}
+
+
 #release-track-list .song-wrap {
 }
 
 #release-track-list .song-title {
-    color: black;
+    color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    float: left;
+    position: relative;
+    top: 5px;
+    width: 600px;
 }
 
 
@@ -1542,6 +1615,7 @@ ul#menu {
 
 #release-single-wrap .release-track-count {
     margin-bottom: 5px;
+    display: inline-block;
 }
 
 

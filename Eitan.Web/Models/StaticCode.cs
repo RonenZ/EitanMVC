@@ -23,7 +23,9 @@ namespace Eitan.Web.Models
 
         public static Dictionary<int, string> ReleaseTypes = new Dictionary<int, string>()
         {
-            {0, "Type"}, {1, "Artist Album"}, {2, "Artist Ep"}, {3, "My Album"}, {4, "My EP"}
+            {0, "Type"}, {1, "LOUD | Album"}, {2, "LOUD | EP"}, {3, "LOUD | Compilation"},
+            {4, "Eitan R. | Album"},{5, "Eitan R. | EP"},  {6, "Eitan R. | Compilation"}, 
+            {7, "Featured | Album"},{8, "Featured | EP"},  {9, "Featured | Compilation"} 
         };
 
         public static Dictionary<int, string> GetYears()
@@ -80,6 +82,21 @@ namespace Eitan.Web.Models
             });
         }
 
+        public static IQueryable<ViewModelWithImage> ToViewModelsWithImage_Queryable<T>(this IQueryable<T> Entities, string _label = "", string _controller = "", string _imagePath = "") where T : class, IBasicWithImageModel
+        {
+            _label = string.IsNullOrEmpty(_label) ? _controller : _label;
+            return Entities.Select(s => new ViewModelWithImage()
+            {
+                ID = s.ID,
+                Title = s.Title,
+                CreationDate = s.Date_Creation,
+                ImagePath = "images/" + _imagePath + "/" + s.MainImage,
+                Controller = _controller,
+                Type = _label,
+                TypeID = -1
+            });
+        }
+
         public static SEO NullToSEO(this object Obj)
         {
             if (Obj == null)
@@ -99,6 +116,22 @@ namespace Eitan.Web.Models
                 Type = ReleaseTypes[s.Type],
                 TypeID = s.Type,
                 SubTitle = s.Label == null ? string.Empty : s.Label.Title
+            });
+        }
+
+        public static IQueryable<ViewModelWithImage> ReleasesToViewModelsWithImage_Queryable<T>(this IQueryable<T> Entities, string _label = "", string _controller = "", string _imagePath = "")
+             where T : Release
+        {
+            _label = string.IsNullOrEmpty(_label) ? _controller : _label;
+            return Entities.Select(s => new ViewModelWithImage()
+            {
+                ID = s.ID,
+                Title = s.Title,
+                CreationDate = s.Date_Creation,
+                ImagePath = "images/" + _imagePath + "/" + s.RectImage,
+                Controller = _controller,
+                Type = _label
+                //SubTitle = s.Label == null ? string.Empty : s.Label.Title
             });
         }
 

@@ -15,10 +15,8 @@
 @Html.Partial("_CameraSlider", (IEnumerable<Eitan.Models.Picture>)ViewBag.Images)
 }
     
-@foreach (var item in Model.Values)
+@foreach (var item in Model.Items)
 {
-    if (item.Item == null) { continue; };
-    ViewBag.ImageFolder = ConfigurationManager.AppSettings["ImageFolder_" + item.Controller];    
     @Html.Partial("_HomeItemBox", item)
 }
 

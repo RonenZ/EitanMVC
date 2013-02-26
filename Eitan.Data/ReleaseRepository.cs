@@ -14,9 +14,14 @@ namespace Eitan.Data
         }
 
 
+        public IQueryable<Release> GetAllDescByReleaseDate(string include)
+        {
+            return this.GetAll(include).OrderByDescending(o => o.Date_Release).AsQueryable();
+        }
+
         public IQueryable<Release> GetAllDescWithIncludes()
         {
-            return DbContext.Set<Release>().Include("Songs").Include("Label").AsQueryable();
+            return  DbSet.Include("Songs").Include("Label").OrderByDescending(o => o.Date_Release).AsQueryable();
         }
 
         public IQueryable<Label> GetAllLabels()
@@ -38,7 +43,7 @@ namespace Eitan.Data
 
         public IQueryable<Release> SearchQuery(ReleaseSearchModel query)
         {
-            var Entities = this.GetAllDesc("Label");
+            var Entities = this.GetAllDescByReleaseDate("Label");
 
             if (!string.IsNullOrEmpty(query.Search))
                 Entities = Entities.Where(w => w.Title.ToLower().Contains(query.Search.ToLower()));

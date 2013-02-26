@@ -2,6 +2,7 @@
 using Eitan.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,25 +22,24 @@ namespace Eitan.Web.Controllers
             var HomeModel = new HomePageViewModel();
 
             var Homepage = Uow.PagesRepository.GetByType(1000);
+
+            //Image Paths:
+            string newsImgPath = ConfigurationManager.AppSettings["ImageFolder_News"];
+            string projectsImgPath = ConfigurationManager.AppSettings["ImageFolder_Projects"];
+            string releasesImgPath = ConfigurationManager.AppSettings["ImageFolder_Releases"];    
+
+            //var results = Uow.PagesRepository.GetHomePageTopItems(4);
             ViewBag.SEO = Homepage.SEO;
             ViewBag.Images = Homepage.Images;
 
-            HomeModel["Project"].Item = Uow.ProjectRepository
-                                              .GetAllDesc()
-                                              .ToViewModelWithImage();
+            var Results = Uow.ProjectRepository.GetAllDesc().ToViewModelsWithImage_Queryable(_controller: "Projects", _imagePath: projectsImgPath);
 
-            HomeModel["News"].Item = Uow.NewsRepository
-                                              .GetAllDesc()
-                                              .ToViewModelWithImage();
+            Results = Results.Union(Uow.NewsRepository.GetAllDesc().ToViewModelsWithImage_Queryable(_controller: "News", _imagePath: newsImgPath));
+            var ReleasesResults = Uow.ReleaseRepository.GetAllDesc("Label")
+                                                        .ReleasesToViewModelsWithImage_Queryable("Discography", _controller: "Releases", _imagePath: releasesImgPath).Take(4).ToList();
 
-            HomeModel["Discography"].Item = Uow.ReleaseRepository
-                                                        .GetAllDescWithIncludes()
-                                                        .ReleaseToViewModelWithImage();
-
-            HomeModel["Movie"].Item = Uow.ProjectRepository
-                                                  .GetAllDesc()
-                                                  .Where(w => w.TypeID == 1)
-                                                  .ToViewModelWithImage();
+            HomeModel.Items = Results.OrderByDescending(o => o.CreationDate).Take(4).ToList().Union(ReleasesResults)
+                                     .OrderByDescending(o => o.CreationDate).Take(4);
 
             return View(HomeModel);
         }

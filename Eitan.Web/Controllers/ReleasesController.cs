@@ -30,7 +30,7 @@ namespace Eitan.Web.Controllers
             int itemsleft = Uow.ReleaseRepository.GetAll().Count() - (page * pageSize);
             ViewBag.isMoreItems = itemsleft > 0 ? true : false;
 
-            var entities = Uow.ReleaseRepository.GetAllDesc("Label")
+            var entities = Uow.ReleaseRepository.GetAllDescByReleaseDate("Label")
                                                 .Skip(--page * pageSize)
                                                 .Take(pageSize)
                                                 .ReleasesToViewModelsWithImage();

@@ -102,45 +102,54 @@
 
     });
 
-    $(".release-filter-bar").hover(function () {
-        $(this).animate({ height: '100px' }).delay(700);
-    }, function () {
-        $(this).delay(500).animate({ height: '30px' });
+    $(".release-filter-bar span ,.release-filter-bar .btn-close").click(function () {
+        if ($(".release-filter-bar").hasClass("panel-closed") == true)
+        {
+            $(".release-filter-bar .btn-close").text("-");
+            $(".release-filter-bar").animate({ height: '100px' });
+            $(".release-filter-bar").removeClass("panel-closed");
+        }
+        else{
+            $(".release-filter-bar").animate({ height: '30px' });
+            $(".release-filter-bar .btn-close").text("+");
+            $(".release-filter-bar").addClass("panel-closed");
+        }
     });
-    
 
-    //$('.release-browse-span').live('click', function () {
-    //    var typeid = $(this).data("typeid");
-        
-    //    ViewModel.SearchReleases(typeid, 0, 0, "");
+    $(".release-filter-bar .btn-close").click(function () {
 
-    //    return false;
-    //});
-
-    //$('.release-genre-span').live('click', function () {
-    //    var genreid = $(this).data("genreid");
-
-    //    ViewModel.SearchReleases(0, genreid, 0, "");
-
-    //    return false;
-    //});
+    });
 
     $('.Release_Filter_DDL').change(function () {
-        release_filter_Search();
+        release_filter_Search(this);
     });
-
 
     $('.release-filter-search').keypress(function (e) {
         if (e.keyCode == 13){
-            release_filter_Search();
+            release_filter_Search(this);
+        }
+    });
+
+    $(".songs-show-details").click(function () {
+        if ($(".songs-hidden-wrap").hasClass("state-hidden") == true)
+        {
+            $(".songs-hidden-wrap").slideUp();
+            $(".songs-hidden-wrap").removeClass("state-hidden");
+            $(this).text("Show Songs Details");
+        }
+        else
+        {
+            $(".songs-hidden-wrap").addClass("state-hidden");
+            $(".songs-hidden-wrap").slideDown();
+            $(this).text("Hide Songs Details");
         }
     });
 });
 
 
-function release_filter_Search()
+function release_filter_Search(elem)
 {
-    var filterwrap = $(this).parent().parent();
+    var filterwrap = $(elem).parent().parent();
 
     var typeid = $(filterwrap).find(".Release_Type").val();
     var genreid = $(filterwrap).find(".Release_Genre").val();

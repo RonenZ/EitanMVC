@@ -1,4 +1,5 @@
 ﻿using Eitan.Models;
+using Eitan.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -25,8 +26,8 @@ namespace Eitan.Data
             var pic = pics.Find(id);
 
             pics.Remove(pic);
+            
         }
-
 
         public Page GetByType(int type)
         {
