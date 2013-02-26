@@ -1,4 +1,7 @@
 ﻿/* Minification failed. Returning unminified contents.
+(149,13): run-time error CSS1062: Expected semicolon or closing curly-brace, found 'text-decoration'
+ */
+/* Minification failed. Returning unminified contents.
 (145,13): run-time error CSS1062: Expected semicolon or closing curly-brace, found 'text-decoration'
  */
 /*#region RESET */
@@ -1365,11 +1368,39 @@ ul#menu {
 
 /*#region RELEASES */
 /*********** RELEASES *********/
+.release-filter-input {
+}
+
+.release-filter-ddl{
+    float: left;
+
+    width: 315px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+.Release_Filter_DDL {
+    min-width: 150px;
+}
+
+
+#Release_Year {
+}
+
+.release-filter-search {
+    position: relative;
+    margin-top: 10px;
+
+    left: 35%;
+    width: 300px;
+}
+
 .release-filter-bar
 {
     overflow: hidden;
     margin-left: 3px;
-    width: 962px;
+    width: 957px;
     height: 30px;
     color: white;
     background-color: black;
@@ -1383,6 +1414,7 @@ ul#menu {
 }
     .release-filter-bar .filter-links
     {
+    float: left;  width: 315px;
     padding: 0px;
 
     list-style: none;
@@ -1417,7 +1449,7 @@ ul#menu {
 
 #releases-div .release-item, .releases-div .release-item {
     padding: 0px;
-    margin: 3px 3px;
+    margin: 3px 2px;
     height: 315px;
 }
 
@@ -1566,3 +1598,4 @@ ul#menu {
 
 
 /*#endregion */
+

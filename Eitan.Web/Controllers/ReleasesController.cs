@@ -20,6 +20,7 @@ namespace Eitan.Web.Controllers
         {
             Uow = uow;
             ViewBag.ActiveReleases = "active";
+            StaticCode.StaticYears = Uow.ReleaseRepository.GetReleaseYears();
         }
         //
         // GET: /News/

@@ -103,27 +103,52 @@
     });
 
     $(".release-filter-bar").hover(function () {
-        $(this).animate({ height: '100px' });
+        $(this).animate({ height: '100px' }).delay(700);
     }, function () {
-        $(this).animate({ height: '30px' });
+        $(this).delay(500).animate({ height: '30px' });
     });
     
 
-    $('.release-browse-span').live('click', function () {
-        var selector = $(this).data('value');
-        var $container = $('.releases-div');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-        return false;
+    //$('.release-browse-span').live('click', function () {
+    //    var typeid = $(this).data("typeid");
+        
+    //    ViewModel.SearchReleases(typeid, 0, 0, "");
+
+    //    return false;
+    //});
+
+    //$('.release-genre-span').live('click', function () {
+    //    var genreid = $(this).data("genreid");
+
+    //    ViewModel.SearchReleases(0, genreid, 0, "");
+
+    //    return false;
+    //});
+
+    $('.Release_Filter_DDL').change(function () {
+        release_filter_Search();
+    });
+
+
+    $('.release-filter-search').keypress(function (e) {
+        if (e.keyCode == 13){
+            release_filter_Search();
+        }
     });
 });
 
+
+function release_filter_Search()
+{
+    var filterwrap = $(this).parent().parent();
+
+    var typeid = $(filterwrap).find(".Release_Type").val();
+    var genreid = $(filterwrap).find(".Release_Genre").val();
+    var year = $(filterwrap).find(".Release_Year").val();
+    var search = $(filterwrap).find(".release-filter-search").val();
+
+    ViewModel.SearchReleases(typeid, genreid, year, search);
+}
 
 function activate_menu_li(toactive) {
     $(".menu-links li").removeClass("active");

@@ -17,10 +17,23 @@ namespace Eitan.Web.Models
 {
     public static class StaticCode
     {
+        public static Dictionary<int, string> StaticGenres;
+
+        public static Dictionary<int, string> StaticYears;
+
         public static Dictionary<int, string> ReleaseTypes = new Dictionary<int, string>()
         {
-            {0, "Artist album"}, {1, "Artist album"}, {2, "Artist Ep"}, {3, "My Album"}, {4, "My EP"}
+            {0, "Type"}, {1, "Artist Album"}, {2, "Artist Ep"}, {3, "My Album"}, {4, "My EP"}
         };
+
+        public static Dictionary<int, string> GetYears()
+        {
+            var result = new Dictionary<int, string>();
+            for (int i = DateTime.Now.Year - 5; i < DateTime.Now.Year + 5; i++)
+			    result.Add(i, i.ToString());
+
+            return result;
+        }
 
         public static ViewModelBase ToViewModelBase<T>(this IQueryable<T> Entities) where T : class, IBasicModel
         {

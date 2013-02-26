@@ -1,7 +1,7 @@
 ﻿<div id="releases-container" class="model-collection-container">
     @Html.Partial("_Release_Filter_Bar")
     <div id="releases-div" class="model-collection-wrap releases-div" data-bind="template: {foreach: Releases, afterAdd: releaseAdded}">
-        <div data-bind="attr: { 'class': 'release-item model-item isotope-item release-type-' + TypeID }">
+        <div data-bind="attr: { 'data-typeid': +TypeID, 'class': 'release-item model-item isotope-item release-type-' + TypeID }">
             <a data-bind="attr:{href: '/Releases/Details/' + ID}">
                 <div class="portfolio-item-holder">
                     <div class="portfolio-item-hover-content">

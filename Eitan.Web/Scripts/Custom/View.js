@@ -26,6 +26,26 @@ ViewModel = {
         $("#news-container").show();
     },
 
+    SearchReleases: function (Type, Genre, Year, Search) {
+        Type = ValidateNumber(Type);
+        Genre = ValidateNumber(Genre);
+        Year = ValidateNumber(Year);
+
+        var data = "?json=true&Type=" + Type + "&GenreID=" + Genre + "&Year=" + Year + "&Search=" + Search;
+
+        ViewModel.ClearAllArrays();
+
+        $(".releases-div").isotope('remove', $(".isotope-item"), null);
+        $("#render-body").hide();
+        
+        ViewModel.Releases.removeAll();
+        
+        GetFromWebApi(ViewModel.Releases, "Releases/Searchs", data, ".btn-more-Releases");
+
+        $(".releases-div").isotope('reloadItems');
+        $("#knockout-js #releases-container").show();
+    },
+
     LoadReleases: function () {
         var data = "?json=true&page=" + page;
         ViewModel.ClearAllArrays();
@@ -33,7 +53,7 @@ ViewModel = {
         if(ViewModel.Releases().length > 0)
             $("#releases-container").fadeIn('slow');
         else{
-            GetFromWebApi(ViewModel.Releases, "Releases", data, ".btn-more-Releases");
+            GetFromWebApi(ViewModel.Releases, "Releases/GetAll", data, ".btn-more-Releases");
         }
         $("#releases-container").show();
     },
@@ -104,4 +124,11 @@ ViewModelImageDetail = function (item) {
     this.Type = item.Type;
     this.TypeID = item.TypeID;
     this.SubTitle = item.SubTitle;
+}
+
+function ValidateNumber(tovalitate) {
+    if (tovalitate == undefined || tovalitate == '')
+        return 0;
+
+    return tovalitate;
 }

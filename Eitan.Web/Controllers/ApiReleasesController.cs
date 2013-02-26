@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace Eitan.Web.Api.Controllers
 {
@@ -22,7 +23,7 @@ namespace Eitan.Web.Api.Controllers
         }
 
         // GET api/apirelease
-        public PagedViewModelsContainer Get(int page = 1, int _pageSize = 0)
+        public PagedViewModelsContainer GetAll(int page = 1, int _pageSize = 0)
         {
             _pageSize = _pageSize == 0 ? pageSize : _pageSize;
             var ViewModel = new PagedViewModelsContainer();
@@ -39,9 +40,15 @@ namespace Eitan.Web.Api.Controllers
         }
 
         // GET api/apinews/5
-        public Release Get(int id)
+        [System.Web.Http.ActionName("Searchs")]
+        public PagedViewModelsContainer GetSearchs(int GenreID = 0, int Year = 0, int Type = 0, string Search = "")
         {
-            return Uow.ReleaseRepository.GetByID(id);
+            var Query = new ReleaseSearchModel(Search, Year, Type, GenreID);
+            var ViewModel = new PagedViewModelsContainer();
+            ViewModel.Items = Uow.ReleaseRepository.SearchQuery(Query)
+                                 .ReleasesToViewModelsWithImage();
+
+            return ViewModel;
         }
     }
 }

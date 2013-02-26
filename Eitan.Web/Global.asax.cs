@@ -1,4 +1,5 @@
 ﻿using Eitan.Data;
+using Eitan.Web.App_Start;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -31,6 +32,8 @@ namespace Eitan.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            ResourceLoader.RegisterData();
 
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
         }
