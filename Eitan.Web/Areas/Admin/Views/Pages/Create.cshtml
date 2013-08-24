@@ -4,9 +4,9 @@
     ViewBag.Title = "הוספה";
 }
 
-<h2>הוספת פרוייקט</h2>
+<h2>הוספת עמוד תוכן</h2>
 
-@using (Html.BeginForm("Create", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" })){
+@using (Html.BeginForm("Create", "Pages", FormMethod.Post, new { enctype = "multipart/form-data" })){
     @Html.ValidationSummary(true)
         
         @Html.Partial("_SEOInput", new Eitan.Models.SEO())
@@ -18,7 +18,7 @@
 }
 
 <div>
-    @Html.ActionLink("בחזרה לחדשות", "Index")
+    @Html.ActionLink("בחזרה לעמודי תוכן", "Index")
 </div>
 
 

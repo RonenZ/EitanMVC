@@ -693,6 +693,8 @@
     <Content Include="Content\Projektor\theme\start.png" />
     <Content Include="Content\Projektor\theme\style.css" />
     <Content Include="Content\Projektor\theme\styleb.css" />
+    <Content Include="Content\selectbox\jquery.selectbox-0.2.min.js" />
+    <Content Include="Content\selectbox\jquery.selectbox-mainarticle.css" />
     <Content Include="Content\Speakker\img\album-cover.png" />
     <Content Include="Content\Speakker\img\buffering.gif" />
     <Content Include="Content\Speakker\img\dark\sk-controlbg.png" />

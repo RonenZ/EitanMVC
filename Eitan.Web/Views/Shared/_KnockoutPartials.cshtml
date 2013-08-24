@@ -1,4 +1,7 @@
-﻿<div id="releases-container" class="model-collection-container">
+﻿<script src="~/Content/selectbox/jquery.selectbox-0.2.min.js"></script>
+<link href="~/Content/selectbox/jquery.selectbox-mainarticle.css" rel="stylesheet" />
+
+<div id="releases-container" class="model-collection-container">
     @Html.Partial("_Release_Filter_Bar")
     <div id="releases-div" class="model-collection-wrap releases-div" data-bind="template: {foreach: Releases, afterAdd: releaseAdded}">
         <div data-bind="attr: { 'data-typeid': +TypeID, 'class': 'release-item model-item isotope-item release-type-' + TypeID }">
@@ -63,3 +66,11 @@
     </div>
     <input type="button" class="btn-more-News btn-more" data-path="News" data-name="News" data-page="1" value="More News" />
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".release-filter-ddl select").selectbox();
+    });
+
+</script>

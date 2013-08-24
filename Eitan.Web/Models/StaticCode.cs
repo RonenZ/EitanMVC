@@ -186,15 +186,26 @@ namespace Eitan.Web.Models
 
         public static string GetYoutubeVideoID(this string Value)
         {
-            Regex YoutubeVideoRegex = new Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
-            Match youtubeMatch = YoutubeVideoRegex.Match(Value);
+            //Regex YoutubeVideoRegex = new Regex(@"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+            return getValueByRegex(Value, @"youtu(?:\.be|be\.com)/(?:.*v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)");
+        }
 
-            string videoid = string.Empty;
+        public static string GetVimeoVideoID(this string Value)
+        {
+            return getValueByRegex(Value, @"vimeo\.com/(?:.*#|.*/videos/)?([0-9]+)");
+        }
 
-            if (youtubeMatch.Success)
-                videoid = youtubeMatch.Groups[1].Value;
+        private static string getValueByRegex(string Source, string regex)
+        {
+            Regex RegexObj = new Regex(regex);
+            Match Matchs = RegexObj.Match(Source);
 
-            return videoid;
+            string matchValue = string.Empty;
+
+            if (Matchs.Success)
+                matchValue = Matchs.Groups[1].Value;
+
+            return matchValue;
         }
 
         public static bool SendContact(this ContactModel Entity)

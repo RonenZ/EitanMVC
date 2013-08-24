@@ -1,10 +1,10 @@
 ﻿@model Eitan.Models.News
 
 @{
-    ViewBag.Title = "הוספה";
+    ViewBag.Title = "הוספת אייטם חדשות";
 }
 
-<h2>הוספת מודעה</h2>
+<h2>הוספת אייטם חדשות</h2>
 
 @using (Html.BeginForm("Create", "News", FormMethod.Post, new { enctype = "multipart/form-data" })){
     @Html.ValidationSummary(true)
