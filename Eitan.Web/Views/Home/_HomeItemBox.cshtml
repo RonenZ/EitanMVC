@@ -1,0 +1,18 @@
+﻿@model Eitan.Web.Models.ViewModelWithImage
+
+<div class="home-item-@Model.Type standard-item-div hoverable">
+    <a href="@Url.Content("~/" + Model.Controller + "/Details/" + @Model.ID)">
+        <div class="portfolio-item-holder">
+            <div class="portfolio-item-hover-content">
+                <div class="portfolio-content-wrap" style="top: 150%;"><div data-rel="prettyPhoto" class="zoom"></div><span class="portfolio-type">@Model.Type </span>
+                    <div class="portfolio-content-title" >
+                        @Model.Title
+                    </div>
+                </div>
+                <img src="/@Model.ImagePath" class="standard-item-image standard-rect-image" alt="@Model.Title" title="@Model.Title" />
+                <div class="standard-item-icon standrd-icon-@Model.Type"></div>
+                <div class="hover-options" style="opacity: 0;"></div>
+            </div>
+        </div>
+    </a>
+</div>

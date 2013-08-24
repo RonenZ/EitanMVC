@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Eitan.Models.Picture>
+
+<p>
+    @Html.ActionLink("הוספת תמונה", "CreatePicture", new { PageId = ViewBag.PageID})
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            כותרת
+        </th>
+        <th>
+            תמונה
+        </th>
+        <th>
+            תאריך
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+          <td class="td-edit">
+                @Html.ActionLink("עריכה", "EditPicture", new { id = item.ID }) |
+                @Html.ActionLink("מחיקה", "DeletePicture", new { id = item.ID })
+          </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @if (!string.IsNullOrEmpty(item.Source))
+            {
+                <img class="table-list-img" src="/Images/Pages/@item.Source" alt="@item.Title" title="@item.Title" />
+            }
+        </td>
+        <td>
+            @item.Date_Creation.ToString("dd/MM/yyyy")
+        </td>
+    </tr>
+}
+
+</table>

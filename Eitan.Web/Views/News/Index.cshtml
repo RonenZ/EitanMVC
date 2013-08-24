@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Eitan.Web.Models.ViewModelDetailed>
+
+@{
+    ViewBag.Title = "News";
+}
+
+<div class="model-collection-container">
+    <group class="news-div">
+        @foreach (var item in Model)
+        {
+            <article class="news-item model-item" data-created="@item.Creation">
+                <a href="~/News/Details/@item.ID">
+                    <div class="news-item-image-wrap">
+                        <img class="model-item-image" src="@Url.Content("~/Images/News/thumb_" + @item.ImagePath)" alt="@item.Title" title="@item.Title" />
+                    </div>
+                    <div class="news-item-text">
+                        <h2>@item.Title</h2>
+                        <div class="news-text-content">
+                            @Html.Raw(item.Content)... <span class="span-read-more">Read More..</span>
+                        </div>
+                        <div class="news-text-date">
+                            @item.Creation
+                        </div>
+                    </div>
+                </a>
+            </article>
+        }
+    </group>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#render-body").hide();
+        ViewModel.LoadNews();
+    });
+</script>

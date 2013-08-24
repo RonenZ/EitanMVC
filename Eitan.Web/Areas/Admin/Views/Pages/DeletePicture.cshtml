@@ -1,0 +1,31 @@
+﻿@model Eitan.Models.Picture
+
+@{
+    ViewBag.Title = "מחיקת תמונה";
+}
+
+<h2>מחיקת תמונה</h2>
+
+<h3>בטוח שאתה רוצה למחוק את התמונה הזאת?</h3>
+<fieldset>
+    <legend>תמונה</legend>
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">תמונה</div>
+    <div class="display-field">
+        <img src="/Images/Pages/@Model.Source"  class="admin-prev-image" alt="@Model.Title" title="@Model.Title" /></div>
+
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.Hidden("hdnPageID", (int)ViewBag.PageId)
+        <input type="submit" value="מחק" />
+    </p>
+}
+
+

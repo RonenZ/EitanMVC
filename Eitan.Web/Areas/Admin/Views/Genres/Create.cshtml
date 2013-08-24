@@ -1,0 +1,26 @@
+﻿@model Eitan.Models.Genre
+
+@{
+    ViewBag.Title = "הוספת סגנון";
+}
+
+<h2>הוספת סגנון</h2>
+
+@using (Html.BeginForm()){
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>xdbui</legend>
+
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לרשימת סגנונות", "Index")
+</div>
+
+

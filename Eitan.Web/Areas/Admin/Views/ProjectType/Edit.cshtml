@@ -1,0 +1,27 @@
+﻿@model Eitan.Models.ProjectType
+
+@{
+    ViewBag.Title = "עריכת לקוח";
+}
+
+<h2>עריכת סוג פרוייקט</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>סוג פרוייקט</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.Date_Creation)
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("בחזרה לרשימת סוגים", "Index")
+</div>

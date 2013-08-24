@@ -1,0 +1,65 @@
+﻿<div id="releases-container" class="model-collection-container">
+    @Html.Partial("_Release_Filter_Bar")
+    <div id="releases-div" class="model-collection-wrap releases-div" data-bind="template: {foreach: Releases, afterAdd: releaseAdded}">
+        <div data-bind="attr: { 'data-typeid': +TypeID, 'class': 'release-item model-item isotope-item release-type-' + TypeID }">
+            <a data-bind="attr:{href: '/Releases/Details/' + ID}">
+                <div class="portfolio-item-holder">
+                    <div class="portfolio-item-hover-content">
+                        <div class="portfolio-content-wrap" style="top: 150%;">
+                            <div data-rel="prettyPhoto" class="zoom"></div>
+                            <span class="portfolio-type" data-bind="text: Type">Discography </span>
+                            <div class="portfolio-content-title" data-bind="text: SubTitle">
+                            </div>
+                        </div>
+                        <img class="model-item-image" data-bind="attr:{src: '/Images/Releases/thumb_' + ImagePath, title: Title, alt: Title}" />
+                        <div class="release-item-bar standard-list-bar" data-bind="text: Title"></div>
+                        <div class="hover-options" style="opacity: 0;"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <input type="button" class="btn-more-Releases btn-more" data-name="Releases" data-path="Releases/GetAll" data-page="1" value="More Releases" />
+</div>
+<div id="projects-container" class="model-collection-container">
+    <div id="projects-div" class="model-collection-wrap" data-bind="template: {foreach: Projects, afterAdd: projectAdded}">
+        <div class="project-item model-item isotope-item">
+            <a data-bind="attr:{href: '/Projects/Details/' + ID}">
+                <div class="portfolio-item-holder">
+                    <div class="portfolio-item-hover-content">
+                        <div class="portfolio-content-wrap" style="top: 150%;">
+                            <div data-rel="prettyPhoto" class="zoom"></div>
+                            <span class="portfolio-type" data-bind="text: SubTitle">Project </span>
+                            <div class="portfolio-content-title" data-bind="text: Title">
+                            </div>
+                        </div>
+                        <img class="model-item-image" data-bind="attr:{src: '/Images/Projects/thumb_' + ImagePath, title: Title, alt: Title}" />
+                        @*<div class="project-item-bar standard-list-bar" data-bind="text: Title"></div>*@
+                        <div class="hover-options" style="opacity: 0;"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <input type="button" class="btn-more-Projects btn-more" data-name="Projects" data-path="Projects" data-page="1" value="More Projects" />
+</div>
+<div id="news-container" class="model-collection-container">
+    <div id="news-div" class="model-collection-wrap" data-bind="template: {foreach: News, afterAdd: newsAdded}">
+        <div class="news-item model-item isotope-item">
+            <a data-bind="attr:{href: '/News/Details/' + ID}">
+                <div class="news-item-image-wrap">
+                    <img class="model-item-image" data-bind="attr:{src: '/Images/News/thumb_' + ImagePath, title: Title, alt: Title}" />
+                </div>
+                <div class="news-item-text">
+                    <h2 data-bind="text: Title"></h2>
+                    <div class="news-text-content" data-bind="html: Content + '... <span class=span-read-more>Read More..</span>'">
+                    </div>
+              
+                    <div class="news-text-date" data-bind="text: Creation">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <input type="button" class="btn-more-News btn-more" data-path="News" data-name="News" data-page="1" value="More News" />
+</div>

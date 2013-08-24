@@ -1,0 +1,28 @@
+﻿@model Eitan.Models.ProjectType
+
+@{
+    ViewBag.Title = "מחיקת סוג פרוייקט";
+}
+
+<h2>מחיקת סוג פרוייקט</h2>
+
+<h3>בטוח שאתה רוצה למחוק את הסוג הזה?</h3>
+<fieldset>
+    <legend>לקוח</legend>
+
+
+
+    <div class="display-label">כותרת</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">תאריך</div>
+    <div class="display-field">@Model.Date_Creation.ToString("dd/MM/yyyy")</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("בחזרה לרשימת הסוגים", "Index")
+    </p>
+}
+
+

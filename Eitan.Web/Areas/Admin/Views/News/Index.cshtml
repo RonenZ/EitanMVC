@@ -1,0 +1,58 @@
+﻿@model PagedList.IPagedList<Eitan.Models.News>
+
+@using Eitan.Web.Models
+@{
+    ViewBag.Title = "חדשות";
+}
+
+<h2>חדשות</h2>
+
+<p>
+    @Html.ActionLink("הוספת מודעה", "Create")
+</p>
+    @Html.Partial("_Search")
+    @Html.Partial("_Paging")
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>תמונה
+            </th>
+            <th>כותרת
+            </th>
+            <th>תקציר
+            </th>
+            <th>תאריך 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+        
+            <tr class="@{if ((i++ % 2) == 0)
+                         {<text>normal-tr-item</text>}
+                         else
+                         {<text>alternate-tr-item</text>}} ">
+                <td class="td-edit">
+                    @Html.ActionLink("עריכה", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("מחיקה", "Delete", new { id = item.ID })
+                </td>
+                <td>
+                    <img class="table-list-img" src="/Images/News/thumb_@item.MainImage" alt="@item.Title" title="@item.Title" />
+                </td>
+                <td width="250">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td width="350">
+                    @item.Content.The_Excerpt(200)...
+                </td>
+                <td>
+                    @item.Date_Creation.ToString("dd/MM/yyyy")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.Partial("_Paging")

@@ -1,0 +1,16 @@
+﻿<div class="release-filter-bar" style="height: 100px;">
+    <div class="btn-close">-</div>
+    <span>FILTER DISCOGRAPHY</span>
+    <div class="release-filter-input">
+        <input type="text" class="release-filter-search" placeholder=" Query Discography Name:" />
+    </div>
+    <div class="release-filter-ddl">
+        @Html.DropDownList("Release_Type", new SelectList(Eitan.Web.Models.StaticCode.ReleaseTypes, "Key", "Value"), new { Class = "Release_Type Release_Filter_DDL" })
+    </div>
+    <div class="release-filter-ddl">
+        @Html.DropDownList("Release_Genre", new SelectList(Eitan.Web.Models.StaticCode.StaticGenres, "Key", "Value"), "By Genre", new { Class = "Release_Genre Release_Filter_DDL" })
+    </div>
+    <div class="release-filter-ddl">
+        @Html.DropDownList("Release_Year", new SelectList(Eitan.Web.Models.StaticCode.StaticYears, "Key", "Value"), "By Year", new { Class = "Release_Year Release_Filter_DDL" })
+    </div>
+</div>

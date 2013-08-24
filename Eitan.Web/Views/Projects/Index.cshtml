@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Eitan.Web.Models.ViewModelWithImage>
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<div class="model-collection-container">
+    <group>
+    <div class="projects-div">
+        @foreach (var item in Model)
+        {
+
+            <article class="project-item model-item" data-created="@item.Creation">
+
+                <a href="~/Projects/Details/@item.ID">
+                    <div class="portfolio-item-holder">
+                        <div class="portfolio-item-hover-content">
+                            <div class="portfolio-content-wrap" style="top: 150%;">
+                                <div data-rel="prettyPhoto" class="zoom"></div>
+                                <span class="portfolio-type">@item.SubTitle </span>
+                                <div class="portfolio-content-title">
+                                    @item.Title
+                                </div>
+                            </div>
+                            <img class="model-item-image" src="~/Images/Projects/thumb_@item.ImagePath" alt="@item.Title" title="@item.Title" />
+                            @*<div class="project-item-bar standard-list-bar">@item.Title</div>*@
+                            <div class="hover-options" style="opacity: 0;"></div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $("#render-body").hide();
+        ViewModel.LoadProjects();
+    });
+</script>

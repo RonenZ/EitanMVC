@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>מערכת ניהול - @ViewBag.Title</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("איתן ריטר - ניהול", "Index", "Home")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                @if (User.Identity.IsAuthenticated)
+                {
+
+                    <nav>
+                        <ul id="menu">
+                            <li class="@ViewBag.HomeActive">@Html.ActionLink("עמוד הבית", "Index", "Home")</li>
+                            <li class="@ViewBag.NewsActive">@Html.ActionLink("חדשות", "Index", "News")</li>
+                            <li class="@ViewBag.ProjectsActive">@Html.ActionLink("פרוייקטים", "Index", "Projects")</li>
+                            <li class="@ViewBag.ReleasesActive">@Html.ActionLink("דיסקוגרפיה", "Index", "Releases")</li>
+                            <li class="@ViewBag.ArtistsActive">
+                                <a href="#">נוספים</a>
+                                <ul class="sub-menu">
+                                    <li>@Html.ActionLink("לקוחות", "Index", "Clients")</li>
+                                    <li>@Html.ActionLink("אמנים", "Index", "Artists")</li>
+                                    <li>@Html.ActionLink("סוגי פרוייקטים", "Index", "ProjectType")</li>
+                                </ul>
+                        </ul>
+                    </nav>
+                }
+            </div>
+        </div>
+
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            <div id="render-body">
+                @RenderBody()
+            </div>
+            @*            <div id="knockout-js">
+                @Html.Partial("_KnockoutPartials")
+            </div>
+            <div class="ajax-loading-div">
+                <div class="ajax-loading-image"></div>
+            </div>*@
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Admin</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+<script type="text/javascript" src="~/Content/jscripts/tiny_mce/jquery.tinymce.js"></script>
+<script type="text/javascript">
+    function generateTinyMCE(selector) {
+        $(selector).tinymce({
+            // Location of TinyMCE script
+            script_url: '@Url.Content("~/Content/jscripts/tiny_mce/tiny_mce.js")',
+            skin: 'cirkuit',
+            // General options
+            theme: "advanced",
+            height: "280",
+            plugins: "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
+
+            // Theme options
+            theme_advanced_buttons1: "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,|,ltr,rtl,|,fullscreen",
+            theme_advanced_buttons2: "cut,copy,paste,pastetext,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,image,cleanup,code,forecolor,backcolor,media,advhr",
+            theme_advanced_buttons3: "",
+            theme_advanced_toolbar_location: "top",
+            theme_advanced_toolbar_align: "left",
+            theme_advanced_statusbar_location: "bottom",
+            theme_advanced_resizing: false,
+            theme_advanced_background_colors: "FF00FF,FFFF00,000000",
+
+
+            // Drop lists for link/image/media/template dialogs
+            template_external_list_url: "lists/template_list.js",
+            external_link_list_url: "lists/link_list.js",
+            external_image_list_url: "lists/image_list.js",
+            media_external_list_url: "lists/media_list.js",
+        });
+
+    }
+</script>
