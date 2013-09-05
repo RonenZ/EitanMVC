@@ -81,7 +81,7 @@ namespace Eitan.Web.Areas.Admin.Controllers
                 InsertImage(Entity, "UploadedImage", "Projects");
                 UpsertSEO(Entity, SEOEntity.SEO_ID, SEOEntity, SEOfile, "Projects");
 
-                Entity.Date_Creation = DateTime.Now;
+                //Entity.Date_Creation = DateTime.Now;
                 Uow.ProjectRepository.Add(Entity);
 
                 Uow.Commit();

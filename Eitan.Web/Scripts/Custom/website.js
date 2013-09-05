@@ -105,7 +105,7 @@
     function releasePanel_openClose() {
         if ($(".release-filter-bar").hasClass("panel-closed") == true) {
             $(".release-filter-bar .btn-close").text("-");
-            $(".release-filter-bar").animate({ height: '100px' });
+            $(".release-filter-bar").animate({ height: '100px'});
             $(".release-filter-bar").removeClass("panel-closed");
         }
         else {
@@ -138,13 +138,13 @@
         {
             $(".songs-hidden-wrap").slideUp();
             $(".songs-hidden-wrap").removeClass("state-hidden");
-            $(this).text("Show Songs Details");
+            $(this).text(" + Show Track Details");
         }
         else
         {
             $(".songs-hidden-wrap").addClass("state-hidden");
             $(".songs-hidden-wrap").slideDown();
-            $(this).text("Hide Songs Details");
+            $(this).text(" - Hide Track Details");
         }
     });
 });

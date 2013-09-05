@@ -213,6 +213,20 @@ nav, section {
         color: white;
     
 }
+.track-list-items-wrap {
+    display:none;
+}
+.release-track-item {
+}
+
+    .release-track-item .track-list-num {
+    }
+    .release-track-item .track-title {
+    }
+    .release-track-item .track-type {
+    }
+    .release-track-item .track-artists {
+    }
 
 /********* SHARE ***********/
 /*#region Share*/
@@ -1354,7 +1368,7 @@ ul#menu {
     left: 6px;
     position: relative;
     margin-bottom: 30px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #project-info .property-type {
@@ -1429,7 +1443,6 @@ ul#menu {
 
 .release-filter-bar
 {
-    overflow: hidden;
     margin-left: 2px;
     margin-right: 3px;
     width: 953px;
@@ -1438,6 +1451,10 @@ ul#menu {
     background-color: black;
     position: relative;
 }
+
+    .release-filter-bar.panel-closed .release-filter-input, .release-filter-bar.panel-closed .release-filter-ddl {
+        display: none;
+    }
     .release-filter-bar span {
     display: block;
     
@@ -1546,6 +1563,11 @@ ul#menu {
 .details-property-div {
 }
 
+    .details-property-div a:hover {
+        background-color: gray;
+        color: #fff;
+    }
+
 .property-type {
     width: 105px;
     display: inline-block;
@@ -1566,7 +1588,7 @@ ul#menu {
 .songs-show-details
 {
     cursor: pointer;
-    margin-right: 10px;
+    margin-top: 10px;
     font-weight: bold;
     color: white;
     background-color: black;
@@ -1575,19 +1597,20 @@ ul#menu {
     bottom: 5px;
 }
 .song-details-wrap {
-    width: 948px;
-    height: 30px;
-    padding: 5px;
-    background-color: black;
-    display: inline-block;
-    margin-bottom: 5px;
+width: 945px;
+height: 30px;
+padding: 5px;
+background-color: #000;
+display: inline-block;
+margin-bottom: 1px;
 }
 .song-details-wrap .song-number{
-    float: left;
-    font-size: 25px;
-    color: #929496;
-    font-weight: bold;
-    margin: 0px 20px;
+float: left;
+font-size: 25px;
+color: #929496;
+font-weight: bold;
+width: 50px;
+text-align: center;
 }
 .song-details-wrap .song-title{}
 .song-details-wrap .song-genre{
@@ -1610,13 +1633,13 @@ ul#menu {
 }
 
 #release-track-list .song-title {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    float: left;
-    position: relative;
-    top: 5px;
-    width: 600px;
+color: #fff;
+font-weight: bold;
+font-size: 14px;
+float: left;
+position: relative;
+top: 5px;
+width: 600px;
 }
 
 

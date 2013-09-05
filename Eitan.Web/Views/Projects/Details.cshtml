@@ -28,7 +28,7 @@
         }
 
         function InitiateCodaSlider() {
-            @if (Model.VideoPath != null || Model.VideoPath != string.Empty)
+            @if (Model.VideoPath != null && Model.VideoPath != string.Empty)
             {
                <text>
                 $('#slider-id').codaSlider();
@@ -102,7 +102,7 @@
                                                                                       { @Model.Type.Title}</div>
             @if (!string.IsNullOrEmpty(Model.Link_External))
             {
-                <div class="details-property-div"><span class="property-type">External Link:</span><a href="@Model.Link_External">Click Here!</a></div>
+                <div class="details-property-div"><span class="property-type">External Link:</span><a href="@Model.Link_External" target="_blank">Click Here!</a></div>
             }
         </div>
         <div class="details-content">
