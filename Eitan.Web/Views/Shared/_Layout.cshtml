@@ -85,14 +85,19 @@
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".floated-share-div").hover(function () {
-                $(this).animate({ 'width': '175px' }, 300, '', function () {
-                    $(".floated-share-div .share-btns-wrap").fadeIn();
-                });
-            },
-            function () {
-                $(".floated-share-div").animate({ 'width': '45px' }, 500);
-                $(".floated-share-div .share-btns-wrap").hide();
+            $(".floated-toggle").click(function () {
+                if (!$(this).hasClass('share-open')) {
+                    $(this).addClass('share-open');
+                    $(this).text('-');
+                    $(".floated-share-div").animate({ 'width': '175px' }, 300, '', function () {
+                        $(".floated-share-div .share-btns-wrap").fadeIn();
+                    });
+                } else {
+                    $(this).text('+');
+                    $(this).removeClass('share-open');
+                    $(".floated-share-div").animate({ 'width': '45px' }, 500);
+                    $(".floated-share-div .share-btns-wrap").hide();
+                }
             });
         });
     </script>
