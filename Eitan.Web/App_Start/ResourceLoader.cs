@@ -15,7 +15,9 @@ namespace Eitan.Web.App_Start
             {
                 var relRepo = new ReleaseRepository(_db);
                 //Static Genres Resource - lives in memory not in db...
-                StaticCode.StaticGenres = _db.Genres.Where(w => w.isDeleted == false).ToDictionary(d => d.ID, d => d.Title);
+                StaticCode.StaticClients = _db.Clients.Where(w => w.isDeleted == false).OrderBy(o => o.Title).ToDictionary(d => d.ID, d => d.Title);
+                StaticCode.StaticProjectTypes = _db.ProjectTypes.Where(w => w.isDeleted == false).OrderBy(o => o.Title).ToDictionary(d => d.ID, d => d.Title);
+                StaticCode.StaticGenres = _db.Genres.Where(w => w.isDeleted == false).OrderBy(o => o.Title).ToDictionary(d => d.ID, d => d.Title);
                 StaticCode.StaticYears = relRepo.GetReleaseYears();
             }
         }

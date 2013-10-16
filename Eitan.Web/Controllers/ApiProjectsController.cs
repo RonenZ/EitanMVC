@@ -22,7 +22,7 @@ namespace Eitan.Web.Api.Controllers
         }
 
         // GET api/apiProjects
-        public PagedViewModelsContainer Get(int page = 1, int _pageSize = 0)
+        public PagedViewModelsContainer GetAll(int page = 1, int _pageSize = 0)
         {
             _pageSize = _pageSize == 0 ? pageSize : _pageSize;
 
@@ -30,7 +30,7 @@ namespace Eitan.Web.Api.Controllers
             int itemsleft = Uow.ProjectRepository.GetAll().Count() - (page * _pageSize);
             ViewModel.ItemsLeft = itemsleft < 0 ? 0 : itemsleft;
             ViewModel.isGotMoreItems = itemsleft > 0 ? true : false;
-            ViewModel.Items = Uow.ProjectRepository.GetAllDesc("Client")
+            ViewModel.Items = Uow.ProjectRepository.GetAll("Client").OrderBy(o => o.Priority)
                                     .Skip(--page * _pageSize)
                                     .Take(_pageSize)
                                     .ProjectsToViewModelsWithImage();
@@ -42,6 +42,18 @@ namespace Eitan.Web.Api.Controllers
         public Project Get(int id)
         {
             return Uow.ProjectRepository.GetByID(id);
+        }
+
+        // GET api/apinews/5
+        [System.Web.Http.ActionName("Searchs")]
+        public PagedViewModelsContainer GetSearchs(int ClientID, int Year, int Type = 0, string Search = "")
+        {
+            var Query = new ProjectSearchModel(Search, Year, Type, ClientID);
+            var ViewModel = new PagedViewModelsContainer();
+            ViewModel.Items = Uow.ProjectRepository.SearchQuery(Query)
+                                 .ProjectsToViewModelsWithImage();
+
+            return ViewModel;
         }
     }
 }

@@ -59,6 +59,26 @@ ViewModel = {
         $("#releases-container").show();
     },
 
+    SearchProjects: function (Type, Client, Year, Search) {
+        Type = ValidateNumber(Type);
+        Client = ValidateNumber(Client);
+        Year = ValidateNumber(Year);
+
+        var data = "?json=true&Type=" + Type + "&ClientID=" + Client + "&Year=" + Year + "&Search=" + Search;
+
+        ViewModel.ClearAllArrays();
+
+        $("#projects-div").isotope('remove', $(".isotope-item"), null);
+        $("#render-body").hide();
+
+        ViewModel.Projects.removeAll();
+
+        GetFromWebApi(ViewModel.Projects, "Projects/Searchs", data, ".btn-more-Projects");
+
+        $("#projects-div").isotope('reloadItems');
+        $("#knockout-js #projects-container").show();
+    },
+
     LoadProjects: function () {
         var data = "?json=true&page=" + page;
         ViewModel.ClearAllArrays();

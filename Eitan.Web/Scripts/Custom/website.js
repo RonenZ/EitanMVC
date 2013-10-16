@@ -1,5 +1,23 @@
 ﻿$(document).ready(function () {
 
+    $('#projects-container').jscroll({
+        padding: 20,
+        nextSelector: '.btn-more-Projects',
+        contentSelector: '.projects-container'
+    });
+
+    $('#releases-container').jscroll({
+        padding: 20,
+        nextSelector: '.btn-more-Releases',
+        contentSelector: '.releases-container'
+    });
+
+    $('#news-container').jscroll({
+        padding: 20,
+        nextSelector: '.btn-more-News',
+        contentSelector: '.news-container'
+    });
+
     if (!(isRunningIE10 || isRunningIE8OrBelow)) {
         $('#render-body img').hide().load(function () {
             $(this).fadeIn(500);
@@ -7,22 +25,22 @@
     }
 
     if ($('.portfolio-item-hover-content').length && jQuery()) {
-            function hover_effect() {
-                $('.portfolio-item-hover-content').live({
-                    mouseenter:
-                    function () {
-                        $(this).find('div,a').stop(0, 0).removeAttr('style');
-                        $(this).find('.hover-options').animate({ opacity: 0.5 }, 'fast');
-                        $(this).find('.portfolio-content-wrap').animate({ "top": "35%" }, 400);
-                    }, mouseleave:
-                    function () {
-                        $(this).find('.hover-options').stop(0, 0).animate({ opacity: 0 }, "fast");
-                        $(this).find('a').stop(0, 0).animate({ "top": "150%" }, "slow");
-                        $(this).find('.portfolio-content-wrap').stop(0, 0).animate({ "top": "150%" }, "slow");
-                    }
-                });
-            }
+        function hover_effect() {
+            $('.portfolio-item-hover-content').live({
+                mouseenter:
+                function () {
+                    $(this).find('div,a').stop(0, 0).removeAttr('style');
+                    $(this).find('.hover-options').animate({ opacity: 0.5 }, 'fast');
+                    $(this).find('.portfolio-content-wrap').animate({ "top": "35%" }, 400);
+                }, mouseleave:
+                function () {
+                    $(this).find('.hover-options').stop(0, 0).animate({ opacity: 0 }, "fast");
+                    $(this).find('a').stop(0, 0).animate({ "top": "150%" }, "slow");
+                    $(this).find('.portfolio-content-wrap').stop(0, 0).animate({ "top": "150%" }, "slow");
+                }
+            });
         }
+    }
     hover_effect();
 
 
@@ -68,7 +86,7 @@
         else
             GetFromWebApi(Objects, path, data, ".btn-more-" + name);
 
-        $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+        //$('html, body').animate({ scrollTop: $(document).height() }, 'slow');
     });
 
 
@@ -102,46 +120,55 @@
 
     });
 
-    function releasePanel_openClose() {
-        if ($(".release-filter-bar").hasClass("panel-closed") == true) {
-            $(".release-filter-bar .btn-close").text("-");
-            $(".release-filter-bar").animate({ height: '100px'});
-            $(".release-filter-bar").removeClass("panel-closed");
+    function Panel_openClose(selector) {
+        if ($(selector + " .black-filter-bar").hasClass("panel-closed") == true) {
+            $(selector + " .black-filter-bar .btn-close").text("-");
+            $(selector + " .black-filter-bar").animate({ height: '100px' });
+            $(selector + " .black-filter-bar").removeClass("panel-closed");
         }
         else {
-            $(".release-filter-bar").animate({ height: '30px' });
-            $(".release-filter-bar .btn-close").text("+");
-            $(".release-filter-bar").addClass("panel-closed");
+            $(selector + " .black-filter-bar").animate({ height: '30px' });
+            $(selector + " .black-filter-bar .btn-close").text("+");
+            $(selector + " .black-filter-bar").addClass("panel-closed");
         }
     }
 
     $(".release-filter-bar span ,.release-filter-bar .btn-close").click(function () {
-        releasePanel_openClose();
+        Panel_openClose('#releases-container');
     });
 
-    $(".release-filter-bar .btn-close").click(function () {
-
+    $(".projects-filter-bar span ,.projects-filter-bar .btn-close").click(function () {
+        Panel_openClose('#projects-container');
     });
+
 
     $('.Release_Filter_DDL').change(function () {
         release_filter_Search(this);
     });
 
     $('.release-filter-search').keypress(function (e) {
-        if (e.keyCode == 13){
+        if (e.keyCode == 13) {
             release_filter_Search(this);
         }
     });
 
+    $('.Project_Filter_DDL').change(function () {
+        project_filter_Search(this);
+    });
+
+    $('.project-filter-search').keypress(function (e) {
+        if (e.keyCode == 13) {
+            project_filter_Search(this);
+        }
+    });
+
     $(".songs-show-details").click(function () {
-        if ($(".songs-hidden-wrap").hasClass("state-hidden") == true)
-        {
+        if ($(".songs-hidden-wrap").hasClass("state-hidden") == true) {
             $(".songs-hidden-wrap").slideUp();
             $(".songs-hidden-wrap").removeClass("state-hidden");
             $(this).text(" + Show Track Details");
         }
-        else
-        {
+        else {
             $(".songs-hidden-wrap").addClass("state-hidden");
             $(".songs-hidden-wrap").slideDown();
             $(this).text(" - Hide Track Details");
@@ -150,8 +177,7 @@
 });
 
 
-function release_filter_Search(elem)
-{
+function release_filter_Search(elem) {
     var filterwrap = $(elem).parent().parent();
 
     var typeid = $(filterwrap).find(".Release_Type").val();
@@ -160,6 +186,17 @@ function release_filter_Search(elem)
     var search = $(filterwrap).find(".release-filter-search").val();
 
     ViewModel.SearchReleases(typeid, genreid, year, search);
+}
+
+function project_filter_Search(elem) {
+    var filterwrap = $(elem).parent().parent();
+
+    var typeid = $(filterwrap).find(".Project_Type").val();
+    var clientid = $(filterwrap).find(".Project_Client").val();
+    var year = $(filterwrap).find(".Project_Year").val();
+    var search = $(filterwrap).find(".project-filter-search").val();
+
+    ViewModel.SearchProjects(typeid, clientid, year, search);
 }
 
 function activate_menu_li(toactive) {

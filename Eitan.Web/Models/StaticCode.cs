@@ -17,6 +17,10 @@ namespace Eitan.Web.Models
 {
     public static class StaticCode
     {
+        public static Dictionary<int, string> StaticClients;
+
+        public static Dictionary<int, string> StaticProjectTypes;
+
         public static Dictionary<int, string> StaticGenres;
 
         public static Dictionary<int, string> StaticYears;

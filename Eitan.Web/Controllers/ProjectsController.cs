@@ -29,7 +29,7 @@ namespace Eitan.Web.Controllers
             int itemsleft = Uow.ProjectRepository.GetAll().Count() - (page * pageSize);
             ViewBag.isMoreItems = itemsleft > 0 ? true : false;
 
-            var entities = Uow.ProjectRepository.GetAllDesc("Client")
+            var entities = Uow.ProjectRepository.GetAll("Client").OrderBy(o => o.Priority)
                                                 .Skip(--page * pageSize)
                                                 .Take(pageSize)
                                                 .ProjectsToViewModelsWithImage();

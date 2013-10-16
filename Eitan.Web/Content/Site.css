@@ -680,6 +680,11 @@ h5, h6 {
  }
 
 
+.btn-more {
+    height: 0px !important;
+    visibility: hidden;
+}
+
 .btn-more, .btnSendContact {
     color: white;
     margin: 15px auto;
@@ -820,7 +825,11 @@ footer {
 #header-wrap {
 }
 
-
+.model-collection-container {
+    margin-bottom: 400px;
+}
+.jscroll-loading {
+}
 
 /* site title
 ----------------------------------------------------------*/
@@ -1421,7 +1430,7 @@ ul#menu {
     top: 4px;
 }
 
-.release-filter-bar .btn-close
+.black-filter-bar .btn-close
 {
     line-height: 26px;
     cursor: pointer;
@@ -1432,7 +1441,7 @@ ul#menu {
     top: 0px;
 }
 
-.release-filter-ddl{
+.filter-ddl{
     float: left;
 
     width: 315px;
@@ -1441,7 +1450,7 @@ ul#menu {
     top: 10px;
 }
 
-.Release_Filter_DDL {
+.Filter_DDL {
     min-width: 150px;
 }
 
@@ -1449,7 +1458,7 @@ ul#menu {
 #Release_Year {
 }
 
-.release-filter-search {
+.filter-search {
     padding: 5px 0px;
     position: relative;
     margin-top: 1px;
@@ -1457,8 +1466,10 @@ ul#menu {
     width: 300px;
 }
 
-.release-filter-bar
+.black-filter-bar
 {
+    padding-bottom: 3px;
+    margin-bottom: 3px;
     margin-left: 2px;
     margin-right: 3px;
     width: 953px;
@@ -1468,10 +1479,10 @@ ul#menu {
     position: relative;
 }
 
-    .release-filter-bar.panel-closed .release-filter-input, .release-filter-bar.panel-closed .release-filter-ddl {
+    .black-filter-bar.panel-closed .filter-input, .black-filter-bar.panel-closed .filter-ddl {
         display: none;
     }
-    .release-filter-bar span {
+    .black-filter-bar span {
     display: block;
     
     padding-top: 5px;
@@ -1480,7 +1491,7 @@ ul#menu {
     cursor: pointer;
     width: 919px;
 }
-    .release-filter-bar .filter-links
+    .black-filter-bar .filter-links
     {
     float: left;  width: 315px;
     padding: 0px;
@@ -1489,13 +1500,13 @@ ul#menu {
     color: white;
 }
 
-    .release-filter-bar .filter-links li
+    .black-filter-bar .filter-links li
     {
     float: left;
     width: 315px;
 }
 
-    .release-filter-bar .filter-links li a
+    .black-filter-bar .filter-links li a
     {
         color: white;
     

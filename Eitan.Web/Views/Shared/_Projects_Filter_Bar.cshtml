@@ -1,0 +1,16 @@
+﻿<div class="projects-filter-bar black-filter-bar" style="height: 100px;">
+    <div class="btn-close">-</div>
+    <span>FILTER PROJECTS</span>
+    <div class="projects-filter-input filter-input">
+        <input type="text" class="project-filter-search filter-search" placeholder=" Query Project Name:" />
+    </div>
+    <div class="project-filter-ddl filter-ddl">
+        @Html.DropDownList("Project_Type", new SelectList(Eitan.Web.Models.StaticCode.StaticProjectTypes, "Key", "Value"), "By Type", new { Class = "Project_Type Project_Filter_DDL Filter_DDL" })
+    </div>
+    <div class="project-filter-ddl filter-ddl">
+        @Html.DropDownList("Project_Clients", new SelectList(Eitan.Web.Models.StaticCode.StaticClients, "Key", "Value"), "By Client", new { Class = "Project_Client Project_Filter_DDL Filter_DDL" })
+    </div>
+    <div class="project-filter-ddl filter-ddl">
+        @Html.DropDownList("Project_Year", new SelectList(Eitan.Web.Models.StaticCode.StaticYears, "Key", "Value"), "By Year", new { Class = "Project_Year Project_Filter_DDL Filter_DDL" })
+    </div>
+</div>

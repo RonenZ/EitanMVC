@@ -12,6 +12,7 @@ using System.Web.Helpers;
 using Eitan.Web.Controllers;
 using Eitan.Web.Models;
 using PagedList;
+using Eitan.Web.Areas.Admin.Models;
 
 namespace Eitan.Web.Areas.Admin.Controllers
 {   
@@ -50,6 +51,46 @@ namespace Eitan.Web.Areas.Admin.Controllers
 
             return View(Uow.ProjectRepository.SearchStringInTitle(searchbar)
                                               .ToPagedList(pagenum, pageSize));
+        }
+
+        [HttpGet]
+        public ViewResult Priority()
+        {
+            return View(Uow.ProjectRepository.GetAll().OrderBy(o => o.Priority));
+        }
+
+        [HttpPost]
+        public JsonResult PrioritySubmit(IEnumerable<ProjectPriority> priorities)
+        {
+            Dictionary<string, string> response = new Dictionary<string,string>();
+            var totalProjects = Uow.ProjectRepository.GetAll();
+            
+            int prio = int.MaxValue;
+
+            try
+            {
+                foreach (var proj in totalProjects)
+                {
+                    var currentPrio = priorities.Where(w => w.ID == proj.ID).SingleOrDefault();
+                    if (currentPrio == null)
+                        continue;
+
+                    proj.Priority = currentPrio.Priority;
+                }
+
+                Uow.Commit();
+            }
+            catch (Exception ex)
+            {
+                response.Add("responseCode", "500");
+                response.Add("error", ex.Message);
+                response.Add("message", "somethingwentwrong");
+                return Json(response);
+            }
+
+            response.Add("responseCode", "200");
+            response.Add("message", "prioritiesupdatedsuccessfuly");
+            return Json(response);
         }
 
 

@@ -35,8 +35,6 @@ namespace Eitan.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            ResourceLoader.RegisterData();
-
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("he-IL");
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("he-IL");

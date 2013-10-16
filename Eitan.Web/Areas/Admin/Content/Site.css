@@ -234,6 +234,41 @@ h5, h6 {
     }
 
 
+  /********PROJECTS*******/
+.projects-wrap {
+
+}
+
+    .projects-wrap .project-item {
+    float: left;
+    border: 1px solid #5E5E5E;
+    color: white;
+    padding: 15px 0px;
+    background-color: #868686;
+    text-align: center;
+    width: 200px;
+    height: 115px;
+}
+.project-title {
+    direction: ltr;
+}
+
+        .projects-wrap .project-item .project-img img {
+    border: 1px solid #333333;
+        }
+
+.projects-wrap .ui-sortable-helper {
+        cursor:pointer;
+        border: 1px solid #0B486B;
+        background-color: #3B8686;
+}
+    .projects-wrap .draggable {
+    }
+
+
+
+
+
 /* main layout
 ----------------------------------------------------------*/
 .span-info{

@@ -7,12 +7,18 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Eitan.Web.Models;
+using Eitan.Web.App_Start;
 
 namespace Eitan.Web.Controllers
 {
     public class EitanBaseController : Controller
     {
         protected IEitanUow Uow;
+
+        public EitanBaseController()
+        {
+            ResourceLoader.RegisterData();
+        }
 
         protected void UpsertSEO(IWithSEO Entity, int SEOID, SEO POSTSEO, HttpPostedFileBase[] SEOfile, string ModelName)
         {

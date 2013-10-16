@@ -228,6 +228,7 @@
     <Compile Include="Areas\Admin\Controllers\ProjectsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReleasesController.cs" />
+    <Compile Include="Areas\Admin\Models\ProjectPriority.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApiContentPageController.cs" />
     <Compile Include="Controllers\ApiNewsController.cs" />
@@ -662,6 +663,7 @@
     <Content Include="Content\camera.css" />
     <Content Include="Content\coda-slider.css" />
     <Content Include="Content\Images\btnFire.png" />
+    <Content Include="Content\Images\camera-loader.gif" />
     <Content Include="Content\Images\camera_skins.png" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\favicon.jpg" />
@@ -949,6 +951,7 @@
     <Content Include="Areas\Admin\Views\Pages\_Pictures_List.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Areas\Admin\Views\Projects\Priority.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy %282%29.pubxml" />
@@ -1025,6 +1028,8 @@
     <Content Include="Scripts\jquery.coda-slider-3.0.min.js" />
     <Content Include="Scripts\jquery.history.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.jscroll.js" />
+    <Content Include="Scripts\jquery.jscroll.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1037,6 +1042,7 @@
     <Content Include="Scripts\native.history.js" />
     <Content Include="Scripts\Custom\View.js" />
     <Content Include="Scripts\Custom\website.js" />
+    <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Songs\01 - Orchids in the Moonlight.mp3" />
     <Content Include="Songs\02 - Blue Tango.mp3" />
     <Content Include="Songs\03 - Jalousie.mp3" />
@@ -1089,6 +1095,7 @@
     <Content Include="Views\Shared\_ShareBtns.cshtml" />
     <Content Include="Views\Shared\_Floated_Share.cshtml" />
     <Content Include="Views\Shared\_Release_Filter_Bar.cshtml" />
+    <Content Include="Views\Shared\_Projects_Filter_Bar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1165,7 +1172,6 @@
     <Folder Include="Areas\Admin\Content\jscripts\tiny_mce\themes\simple %281%29\skins\default\" />
     <Folder Include="Areas\Admin\Content\jscripts\tiny_mce\themes\simple %281%29\skins\o2k7\img\" />
     <Folder Include="Areas\Admin\Content\jscripts\tiny_mce\themes\simple\skins\o2k7 %281%29\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

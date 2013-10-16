@@ -25,6 +25,7 @@
     <input type="button" class="btn-more-Releases btn-more" data-name="Releases" data-path="Releases/GetAll" data-page="1" value="More Releases" />
 </div>
 <div id="projects-container" class="model-collection-container">
+    @Html.Partial("_Projects_Filter_Bar")
     <div id="projects-div" class="model-collection-wrap" data-bind="template: {foreach: Projects, afterAdd: projectAdded}">
         <div class="project-item model-item isotope-item">
             <a data-bind="attr:{href: '/Projects/Details/' + ID}">
@@ -70,7 +71,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".release-filter-ddl select").selectbox();
+        $(".filter-ddl select").selectbox();
     });
 
 </script>

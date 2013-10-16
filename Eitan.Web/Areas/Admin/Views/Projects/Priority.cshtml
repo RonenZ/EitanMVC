@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Eitan.Models.Project>
+
+@{
+    ViewBag.Title = "סידור פרוייקטים";
+}
+    
+    <input type="button" id="btnSave" value="שמור" />
+
+    <div class="projects-wrap sortable">
+        @foreach (var item in Model)
+        {
+            <div class="project-item draggable">
+                <div class="project-img">
+                    <img class="table-list-img" src="/Images/Projects/thumb_@item.MainImage" alt="@item.Title" title="@item.Title" />
+                </div>
+                <div class="project-title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </div>
+                <div class="project-hid-id" style="display: none;">
+                    @item.ID
+                </div>
+            </div>
+        }
+    </div>
+
+    @section scripts
+    {
+
+    @Scripts.Render("~/bundles/jqueryui")
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnSave').click(function () {
+                var i = 1;
+                var prioArr = []; //declare object
+                $('.project-item').each(function (ind, elem) {
+                    var proj_id = $(elem).find('.project-hid-id').text();
+                    prioArr.push({ ID: Number(proj_id), Priority: i++ });
+                });
+
+                $.ajax({
+                    url: '/Admin/Projects/PrioritySubmit',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    data: JSON.stringify(prioArr),
+                    success: function (r) {
+                        console.log(r);
+                        if (r.responseCode == '500') {
+                            alert('Opps, Something went wrong.. please try again later...');
+                        }
+                        else if (r.responseCode == '200') {
+                            alert('Priority changes updated successfuly!');
+                        }
+                        else {
+                            alert('this is odd.. unexpected response.. please contact developer..');
+                        }
+                    }
+                });
+
+            });
+
+            $(".sortable").sortable({
+            });
+
+            //$(".draggable").draggable({
+            //    connectToSortable: ".sortable",
+            //    revert: "invalid"
+            //});
+        });
+  </script>
+        }
