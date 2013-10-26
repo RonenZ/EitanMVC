@@ -59,20 +59,12 @@
     <div class="float-right" id="project-single-slider">
         <div class="main-images">
             <div class="coda-slider" id="slider-id">
-                @if (!string.IsNullOrEmpty(Model.MainImage))
-                {
-                <div>
-                    <p>
-                        <img class="project-main-image" src="~/Images/Projects/@Model.MainImage" alt="@Model.Title" alt="@Model.Title" />
-                    </p>
-                </div>
-                }
                 @if (Model.VideoPath != null && Model.VideoPath.Contains("youtube.com"))
                 {
                     var videoid = Model.VideoPath.GetYoutubeVideoID();
                     <div>
                         <p>
-                            <iframe class="project-iframe" src="http://www.youtube.com/embed/@videoid?wmode=transparent&amp;" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <iframe class="project-iframe" src="http://www.youtube.com/embed/@videoid?wmode=transparent&amp;" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                         </p>
                     </div>
                 }
@@ -84,6 +76,14 @@
                             <iframe class="project-iframe" src="http://player.vimeo.com/video/@videoid" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                         </p>
                     </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.MainImage))
+                {
+                <div>
+                    <p>
+                        <img class="project-main-image" src="~/Images/Projects/@Model.MainImage" alt="@Model.Title" alt="@Model.Title" />
+                    </p>
+                </div>
                 }
             </div>
 

@@ -12,4 +12,6 @@
 
 @Html.Partial("_LeftColumnImages", (List<Eitan.Models.Picture>)ViewBag.LeftImages)
 
-@Html.Raw(Model.Content)
+<div id="studio-main">
+    @Html.Raw(Model.Content)
+</div>

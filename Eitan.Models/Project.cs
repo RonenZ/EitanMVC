@@ -21,6 +21,7 @@ namespace Eitan.Models
         public string Link_External { get; set; }
         public string MainImage { get; set; }
         public string VideoPath { get; set; }
+        public int Priority { get; set; }
 
         public virtual int? SeoId { get; set; }
         public virtual SEO SEO { get; set; }

@@ -33,7 +33,7 @@ namespace Eitan.Data
         {
             if (DbSet == null) DbSet = DbContext.Set<Page>();
 
-            return DbSet.Include("Images").FirstOrDefault(f => f.Type == type);
+            return DbSet.Include("Images").Include("SEO").FirstOrDefault(f => f.Type == type);
         }
     }
 }

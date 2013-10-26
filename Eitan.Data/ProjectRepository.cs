@@ -21,5 +21,24 @@ namespace Eitan.Data
         {
             return DbContext.Set<Client>().Where(w => w.isDeleted == false).OrderBy(o => o.Title);
         }
+
+        public IQueryable<Project> SearchQuery(ProjectSearchModel query)
+        {
+            var Entities = this.GetAllDesc("Client");
+
+            if (!string.IsNullOrEmpty(query.Search))
+                Entities = Entities.Where(w => w.Title.ToLower().Contains(query.Search.ToLower()));
+
+            if (query.ClientID > 0)
+                Entities = Entities.Where(w => w.ClientID == query.ClientID);
+
+            if (query.ProjectTypeID > 0)
+                Entities = Entities.Where(w => w.TypeID == query.ProjectTypeID);
+
+            if (query.Year > 0)
+                Entities = Entities.Where(w => w.Date_Creation.Year == query.Year);
+
+            return Entities;
+        }
     }
 }

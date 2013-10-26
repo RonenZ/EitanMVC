@@ -26,6 +26,11 @@ namespace Eitan.Web.Controllers
 
         public ViewResult Index(int page = 1)
         {
+            var projectsPage = Uow.PagesRepository.GetByType(22);
+
+            if (projectsPage != null)
+                ViewBag.SEO = projectsPage.SEO;
+
             int itemsleft = Uow.ProjectRepository.GetAll().Count() - (page * pageSize);
             ViewBag.isMoreItems = itemsleft > 0 ? true : false;
 

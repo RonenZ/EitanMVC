@@ -336,6 +336,7 @@ css-tricks.com/musings-on-preprocessing/
     }
 
     .coda-nav-left{
+        display: none;
         left: 10px;
     }
   .coda-slider-wrapper .coda-nav-left, .coda-slider-wrapper .coda-nav-right {
