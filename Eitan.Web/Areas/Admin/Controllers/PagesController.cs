@@ -85,6 +85,8 @@ namespace Eitan.Web.Areas.Admin.Controllers
         {
             var Entity = Uow.PagesRepository.GetByID(id, p => p.SEO, p => p.Images);
 
+            ViewBag.PageId = id;
+
             return View(Entity);
         }
 
