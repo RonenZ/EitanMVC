@@ -662,6 +662,7 @@
     <Content Include="Content\acornmediaplayer\themes\darkglass\darkglass-volume.png" />
     <Content Include="Content\camera.css" />
     <Content Include="Content\coda-slider.css" />
+    <Content Include="Content\Images\arrow-scroll-down.png" />
     <Content Include="Content\Images\btnFire.png" />
     <Content Include="Content\Images\camera-loader.gif" />
     <Content Include="Content\Images\camera_skins.png" />
@@ -953,8 +954,10 @@
     </Content>
     <Content Include="Areas\Admin\Views\Projects\Priority.cshtml" />
     <None Include="Properties\PublishProfiles\eitan - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\eitan - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\eitan - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\eitan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\CameraSlider\blank.gif" />

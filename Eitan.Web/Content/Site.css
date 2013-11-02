@@ -900,6 +900,15 @@ ul#menu {
 /*#region Master_Layout */
 /*********** LAYOUT ****************/
 /********** Presentation  **********/
+.scroll-down
+{
+    right: 10px;
+    bottom: -70px;
+    background: url(images/arrow-scroll-down.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+}
 .camera-main-image
 {
     max-width: 954px;
@@ -1406,7 +1415,6 @@ ul#menu {
 
 
 /*#endregion */
-
 
 /*#region RELEASES */
 /*********** RELEASES *********/
